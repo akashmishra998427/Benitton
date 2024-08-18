@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- main-content -->
+<div class="main-content">
+  
+    <div class="row">
+        <div class="col-xl-12 col-lg-12">
+            <div class="panel mb-g">
+                <div class="panel-heading">
+                    <h3>Add A Product</h3>
+                </div>
+                <div class="panel-body">
+                    <form class="add-product">
+                        <div class="row g-lg-4 g-2 align-items-center">
+                            <div class="col-sm-4">
+                                <label for="AddProduct">Product Thumbnail :</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="file" id="AddProduct" name="Product Thumbnail" class="form-control form-control-lg" accept=".jpg,.jpeg,.png" multiple>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="SKU">Product SKU :</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" id="SKU" name="SKU" class="form-control form-control-lg">
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="ProductName">Product Name :</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" id="ProductName" name="Product Name" class="form-control form-control-lg">
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="Category">Product Category :</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <select name="Category" id="Category" class="form-select form-control form-control-lg">
+                                    <option value="" selected hidden>Select Category</option>
+                                    <option value="Fashion">Fashion</option>
+                                    <option value="Shoe">Shoe</option>
+                                    <option value="Cloth">Cloth</option>
+                                    <option value="Cosmetic">Cosmetic</option>
+                                    <option value="Gadget">Gadget</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="ProductDscr">Product Description :</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <textarea name="Product Description" id="ProductDscr" rows="5" class="form-control form-control-lg"></textarea>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="ProductPrice">Product Price :</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" id="ProductPrice" name="Price" class="form-control form-control-lg" max="100" min="5">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="ProductQuantity">Product Quantity :</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="number" id="ProductQuantity" name="Stock" class="form-control form-control-lg" max="100">
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="Status">Product Status :</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <select name="Status" id="Status" class="form-select form-control form-control-lg">
+                                    <option value="" selected hidden>Select Status</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Sold Out">Sold Out</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="Discount">Discount :</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-text">%</span>
+                                    <input type="number" id="Discount" name="Discount" class="form-control form-control-lg" max="100">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="btn-box justify-content-end">
+                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                    <button type="submit" class="btn btn-primary">Add Product</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- main-content -->

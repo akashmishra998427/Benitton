@@ -1,0 +1,238 @@
+﻿@model Benitton.Models.ViewProducts
+@{
+    ViewBag.Title = "UpdateProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!-- main-content -->
+<div class="main-content">
+    <div class="panel mb-g">
+        <div class="panel-heading">
+            <h3>
+                <div class="col-sm-12 row">
+                    <div class="col-sm-4"><a href="/Admin/products/1/1" id="" class="btn btn-sm btn-success "><i class="bi bi-add-square"></i>Cancel</a></div>
+                    <div class="col-sm-4">
+                        Edit  Product
+                    </div>
+                </div>
+
+            </h3>
+
+        </div>
+        <div class="panel-body">
+
+            <form method="post" enctype="multipart/form-data" id="form_UpdateProduct">
+                @*<input type="hidden" name="oldImgPath_1" id="oldImgPath_1" value="@Model.tbl_singleProduct">
+                    <input type="hidden" name="oldImgPath_2" id="oldImgPath_2" value="@Model.tbl_singleProduct.Image_2">
+                    <input type="hidden" name="oldImgPath_3" id="oldImgPath_3" value="@Model.tbl_singleProduct.Image_3">
+                    <input type="hidden" name="oldImgPath_4" id="oldImgPath_4" value="@Model.tbl_singleProduct.Image_4">
+                    <input type="hidden" name="oldImgPath_5" id="oldImgPath_5" value="@Model.tbl_singleProduct.Image_5">
+                    <input type="hidden" name="oldImgPath_6" id="oldImgPath_6" value="@Model.tbl_singleProduct.Image_6">
+                    <input type="hidden" name="oldImgPath_7" id="oldImgPath_7" value="@Model.tbl_singleProduct.Image_7">
+                    <input type="hidden" name="oldImgPath_8" id="oldImgPath_8" value="@Model.tbl_singleProduct.Image_8">
+                    <input type="hidden" name="oldpdf_image" id="oldpdf_image" value="@Model.tbl_singleProduct.pdf_image">*@
+
+                <input type="hidden" name="Pid" id="Pid" value="@Model.tbl_singleProduct.ID">
+
+                <div class="row g-lg-4 g-2 align-items-center">
+                    <div class="col-sm-3">
+                        <label for="ProductName">Product Name :</label>
+                        <input type="text" id="Title" name="Title" class="form-control form-control-lg" placeholder="Product Name" value="@Model.tbl_singleProduct.Title" required>
+                    </div>
+
+
+                    <div class="col-sm-3">
+                        <label for="Category">Product Category :</label>
+
+                        <select name="CategoryID" id="CategoryID" class="form-select form-control form-control-lg" required>
+                            <option value="" selected hidden>Select Category</option>
+                            @if (Model != null && Model.categoryMd != null && Model.categoryMd.Any())
+                            {
+                                foreach (var item in Model.categoryMd)
+                                {
+                                    if (Model.tbl_singleProduct.CategoryID == item.ID)
+                                    {
+                                        <option value="@item.ID" selected>@item.title</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.ID">@item.title</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="Category">Product Sub Category :</label>
+
+                        <select name="SubCategoryID" id="SubCategoryID" class="form-select form-control form-control-lg" required>
+                            <option value="" selected hidden>Select Sub Category</option>
+
+                            @if (Model != null && Model.subcategoryMd != null && Model.subcategoryMd.Any())
+                            {
+                                foreach (var item in Model.subcategoryMd)
+                                {
+                                    if (Model.tbl_singleProduct.SubCategoryID == item.ID)
+                                    {
+                                        <option value="@item.ID" selected>@item.title</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.ID">@item.title</option>
+                                    }
+                                }
+                            }
+
+
+
+                        </select>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label for="AddProduct">Pdf File size must be less than 500 KB :</label>
+                        <input type="file" id="pdf_image" name="pdf_image" class="form-control form-control-lg" accept=".pdf">
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label for="AddProduct">Home Image, File size must be less than 500 KB :</label>
+                        <input type="file" id="home_image" name="home_image" class="form-control form-control-lg" accept="image/*">
+                    </div>
+                    <div class="col-md-3" id="home_imageHideShow">
+
+                        @if (@Model.tbl_singleProduct.home_image != null)
+                        {<a href="~/@Model.tbl_singleProduct.home_image" target="_blank"> <img src="~/@Model.tbl_singleProduct.home_image" style="height:100px;width:100px;object-fit:contain;"></a>}
+                    </div>
+
+
+
+                    <div class="form-group row g-3">
+                        <div class="col-sm-3">
+                            <label for="AddProduct">File size must be less than 500 KB :</label>
+                            <input type="file" id="Image_1" name="Image_1" class="form-control form-control-lg" accept="image/*">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">Image  File size must be less than 500 KB</label>
+                            <input type="file" name="Image_2" id="Image_2" class="form-control  form-control-lg" accept="image/*" />
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">Image  File size must be less than 500 KB</label>
+                            <input type="file" name="Image_3" id="Image_3" class="form-control  form-control-lg" accept="image/*" />
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">Image  File size must be less than 500 KB</label>
+                            <input type="file" name="Image_4" id="Image_4" class="form-control  form-control-lg" accept="image/*" />
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="form-group row  g-3">
+                        <div class="col-md-3" id="Image_1HideShow">
+
+                            @if (@Model.tbl_singleProduct.Image_1 != null)
+                            {<a href="~/@Model.tbl_singleProduct.Image_1" target="_blank"> <img src="~/@Model.tbl_singleProduct.Image_1" style="height:100px;width:100px;object-fit:contain;"></a>}
+                        </div>
+                        <div class="col-md-3" id="Image_2HideShow">
+
+                            @if (@Model.tbl_singleProduct.Image_2 != null)
+                            {<a href="~/@Model.tbl_singleProduct.Image_2" target="_blank"> <img src="~/@Model.tbl_singleProduct.Image_2" style="height:100px;width:100px;object-fit:contain;"></a> <div><a href="javascript:void()" onclick="RemoveProductImage('@Model.tbl_singleProduct.ID','Image_2')">Remove</a></div>}
+                        </div>
+                        <div class="col-md-3" id="Image_3HideShow">
+
+                            @if (@Model.tbl_singleProduct.Image_3 != null)
+                            {<a href="~/@Model.tbl_singleProduct.Image_3" target="_blank"> <img src="~/@Model.tbl_singleProduct.Image_3" style="height:100px;width:100px;object-fit:contain;"></a> <div><a href="javascript:void()" onclick="RemoveProductImage('@Model.tbl_singleProduct.ID','Image_3')">Remove</a></div>}
+                        </div>
+                        <div class="col-md-3" id="Image_4HideShow">
+
+                            @if (@Model.tbl_singleProduct.Image_4 != null)
+                            {<a href="~/@Model.tbl_singleProduct.Image_4" target="_blank"> <img src="~/@Model.tbl_singleProduct.Image_4" style="height:100px;width:100px;object-fit:contain;"></a> <div><a href="javascript:void()" onclick="RemoveProductImage('@Model.tbl_singleProduct.ID','Image_4')">Remove</a></div>}
+                        </div>
+                    </div>
+                    <div class="form-group row  g-3">
+                        <div class="col-md-3">
+                            <label for="">Image  File size must be less than 500 KB</label>
+                            <input type="file" name="Image_5" id="Image_4" class="form-control  form-control-lg" accept="image/*" />
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">Image  File size must be less than 500 KB</label>
+                            <input type="file" name="Image_6" id="Image_4" class="form-control  form-control-lg" accept="image/*" />
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">Image  File size must be less than 500 KB</label>
+                            <input type="file" name="Image_7" id="Image_4" class="form-control  form-control-lg" accept="image/*" />
+                        </div>
+                        <div class="col-md-3">
+                            <label for="">Image  File size must be less than 500 KB</label>
+                            <input type="file" name="Image_8" id="Image_4" class="form-control  form-control-lg" accept="image/*" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-3" id="Image_5HideShow">
+
+                            @if (@Model.tbl_singleProduct.Image_5 != null)
+                            {<a href="~/@Model.tbl_singleProduct.Image_5" target="_blank"> <img src="~/@Model.tbl_singleProduct.Image_5" style="height:100px;width:100px;object-fit:contain;"></a><div><a href="javascript:void()" onclick="RemoveProductImage('@Model.tbl_singleProduct.ID','Image_5')">Remove</a></div>}
+                        </div>
+                        <div class="col-md-3" id="Image_6HideShow">
+
+                            @if (@Model.tbl_singleProduct.Image_6 != null)
+                            {<a href="~/@Model.tbl_singleProduct.Image_6" target="_blank"> <img src="~/@Model.tbl_singleProduct.Image_6" style="height:100px;width:100px;object-fit:contain;"></a><div><a href="javascript:void()" onclick="RemoveProductImage('@Model.tbl_singleProduct.ID','Image_6')">Remove</a></div>}
+                        </div>
+                        <div class="col-md-3" id="Image_7HideShow">
+
+                            @if (@Model.tbl_singleProduct.Image_7 != null)
+                            {<a href="~/@Model.tbl_singleProduct.Image_7" target="_blank"> <img src="~/@Model.tbl_singleProduct.Image_7" style="height:100px;width:100px;object-fit:contain;"></a><div><a href="javascript:void()" onclick="RemoveProductImage('@Model.tbl_singleProduct.ID','Image_7')">Remove</a></div>}
+                        </div>
+                        <div class="col-md-3" id="Image_8HideShow">
+
+                            @if (@Model.tbl_singleProduct.Image_8 != null)
+                            {<a href="~/@Model.tbl_singleProduct.Image_8" target="_blank"> <img src="~/@Model.tbl_singleProduct.Image_8" style="height:100px;width:100px;object-fit:contain;"></a><div><a href="javascript:void()" onclick="RemoveProductImage('@Model.tbl_singleProduct.ID','Image_8')">Remove</a></div>}
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 mb-15">
+                        <div class="col-sm-12">
+                            <label for="">Video Iframe : width="100%" height="450"</label>
+                            <input type="text" id="video_iframe" name="video_iframe" class="form-control form-control-lg" placeholder="Video Iframe" value="@Model.tbl_singleProduct.video_iframe">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 mb-15">
+                        <label for="ProductDscr">Product Description :</label>
+                        <textarea name="Detail" id="Detail" rows="3" class="form-control form-control-lg textareaeditor">@Model.tbl_singleProduct.Detail</textarea>
+                    </div>
+                    <div class="col-sm-12 mb-15">
+                        <label for="ProductDscr">Product Optionals :</label>
+                        <textarea name="optional_ddetail" id="optional_ddetail" rows="3" class="form-control form-control-lg textareaeditor">@Model.tbl_singleProduct.optional_ddetail</textarea>
+                    </div>
+                    <div class="col-sm-12 mb-15">
+                        <label for="ProductDscr">Salient Features :</label>
+                        <textarea name="salient_features" id="Detail" rows="10" class="form-control form-control-lg textareaeditor">@Model.tbl_singleProduct.salient_features</textarea>
+                    </div>
+                    <div class="col-sm-12 mb-15">
+                        <label for="ProductDscr">Specifications :</label>
+                        <textarea name="specifications" id="Detail" rows="12" class="form-control form-control-lg textareaeditor">@Model.tbl_singleProduct.specifications</textarea>
+                    </div>
+
+                    <div class="col-sm-12  btn-box">
+                        <button type="submit" name="save" class="btn btn-lg btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-lg btn-secondary">Reset</button>
+                    </div>
+
+                </div>
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+</div>
+<!-- main-content -->

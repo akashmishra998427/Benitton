@@ -1,0 +1,1529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC6B8221-FE9B-4463-9500-775D1EBA35EA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Benitton</RootNamespace>
+    <AssemblyName>Benitton</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44310</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.61.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.61\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Data\DatabaseCon.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CaptchaResponse.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Database_Access_Layer\Db.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Aboutus.cs" />
+    <Compile Include="Models\about_certification.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\about_ourvalues.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\about_ourvision.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\about_us.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Benitton_db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Benitton_db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Benitton_db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Benitton_db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Benitton_db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BlogModel.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\contact_detail.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\contact_us.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbConnection.cs" />
+    <Compile Include="Models\HtmlToText.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\product_enq.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sale_support.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Subcategory.cs" />
+    <Compile Include="Models\tbl_admin.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_banner.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_blog.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_career.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_category.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Contact.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_faq.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Menu.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_product.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_saleSupportBannes.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_subCategory.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_subscribe.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_testimonial.cs">
+      <DependentUpon>Benitton_db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewProducts.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\aboutcertificate\2.png" />
+    <Content Include="assets\aboutcertificate\3.png" />
+    <Content Include="assets\aboutcertificate\Ajashy-Engineering-Sales.png" />
+    <Content Include="assets\Admin\css\pnotify.custom.min.css" />
+    <Content Include="assets\Admin\css\style.css" />
+    <Content Include="assets\Admin\images\403.png" />
+    <Content Include="assets\Admin\images\404.png" />
+    <Content Include="assets\Admin\images\500.png" />
+    <Content Include="assets\Admin\images\ajashy_logo.png" />
+    <Content Include="assets\Admin\images\ajashy_logoAdmin.png" />
+    <Content Include="assets\Admin\images\authentication-bg.png" />
+    <Content Include="assets\Admin\images\avatar-1.jpg" />
+    <Content Include="assets\Admin\images\avatar-10.jpg" />
+    <Content Include="assets\Admin\images\avatar-11.jpg" />
+    <Content Include="assets\Admin\images\avatar-12.jpg" />
+    <Content Include="assets\Admin\images\avatar-2.jpg" />
+    <Content Include="assets\Admin\images\avatar-3.jpg" />
+    <Content Include="assets\Admin\images\avatar-4.jpg" />
+    <Content Include="assets\Admin\images\avatar-5.jpg" />
+    <Content Include="assets\Admin\images\avatar-6.jpg" />
+    <Content Include="assets\Admin\images\avatar-7.jpg" />
+    <Content Include="assets\Admin\images\avatar-8.jpg" />
+    <Content Include="assets\Admin\images\avatar-9.jpg" />
+    <Content Include="assets\Admin\images\calendar.svg" />
+    <Content Include="assets\Admin\images\caret-down-2.png" />
+    <Content Include="assets\Admin\images\caret-down.png" />
+    <Content Include="assets\Admin\images\chevron-down-2.svg" />
+    <Content Include="assets\Admin\images\chevron-down.svg" />
+    <Content Include="assets\Admin\images\favicon.png" />
+    <Content Include="assets\Admin\images\image-1.jpg" />
+    <Content Include="assets\Admin\images\image-10.jpg" />
+    <Content Include="assets\Admin\images\image-11.jpg" />
+    <Content Include="assets\Admin\images\image-12.jpg" />
+    <Content Include="assets\Admin\images\image-2.jpg" />
+    <Content Include="assets\Admin\images\image-3.jpg" />
+    <Content Include="assets\Admin\images\image-4.jpg" />
+    <Content Include="assets\Admin\images\image-5.jpg" />
+    <Content Include="assets\Admin\images\image-6.jpg" />
+    <Content Include="assets\Admin\images\image-7.jpg" />
+    <Content Include="assets\Admin\images\image-8.jpg" />
+    <Content Include="assets\Admin\images\image-9.jpg" />
+    <Content Include="assets\Admin\images\logo-big.png" />
+    <Content Include="assets\Admin\images\logo-small.png" />
+    <Content Include="assets\Admin\images\navbar-toggler-icon.svg" />
+    <Content Include="assets\Admin\images\product-1.jpg" />
+    <Content Include="assets\Admin\images\product-10.jpg" />
+    <Content Include="assets\Admin\images\product-11.jpg" />
+    <Content Include="assets\Admin\images\product-12.jpg" />
+    <Content Include="assets\Admin\images\product-13.jpg" />
+    <Content Include="assets\Admin\images\product-14.jpg" />
+    <Content Include="assets\Admin\images\product-15.jpg" />
+    <Content Include="assets\Admin\images\product-16.jpg" />
+    <Content Include="assets\Admin\images\product-17.jpg" />
+    <Content Include="assets\Admin\images\product-18.jpg" />
+    <Content Include="assets\Admin\images\product-19.jpg" />
+    <Content Include="assets\Admin\images\product-2.jpg" />
+    <Content Include="assets\Admin\images\product-20.jpg" />
+    <Content Include="assets\Admin\images\product-3.jpg" />
+    <Content Include="assets\Admin\images\product-4.jpg" />
+    <Content Include="assets\Admin\images\product-5.jpg" />
+    <Content Include="assets\Admin\images\product-6.jpg" />
+    <Content Include="assets\Admin\images\product-7.jpg" />
+    <Content Include="assets\Admin\images\product-8.jpg" />
+    <Content Include="assets\Admin\images\product-9.jpg" />
+    <Content Include="assets\Admin\js\ajaxPage.js" />
+    <Content Include="assets\Admin\js\bootstrap.min.js" />
+    <Content Include="assets\Admin\js\chart-page.js" />
+    <Content Include="assets\Admin\js\datatables-init.js" />
+    <Content Include="assets\Admin\js\finance-page-chart.js" />
+    <Content Include="assets\Admin\js\it-page-chart.js" />
+    <Content Include="assets\Admin\js\jquery-3.2.1.min.js" />
+    <Content Include="assets\Admin\js\main.js" />
+    <Content Include="assets\Admin\js\mainAlert.js" />
+    <Content Include="assets\Admin\js\marketing-page-chart.js" />
+    <Content Include="assets\Admin\js\plugins\bootstrap-datepicker.min.js" />
+    <Content Include="assets\Admin\js\plugins\bootstrap-notify.min.js" />
+    <Content Include="assets\Admin\js\plugins\chart.js" />
+    <Content Include="assets\Admin\js\plugins\dataTables.bootstrap.min.js" />
+    <Content Include="assets\Admin\js\plugins\fullcalendar.min.js" />
+    <Content Include="assets\Admin\js\plugins\jquery-ui.custom.min.js" />
+    <Content Include="assets\Admin\js\plugins\jquery.dataTables.min.js" />
+    <Content Include="assets\Admin\js\plugins\jquery.vmap.min.js" />
+    <Content Include="assets\Admin\js\plugins\jquery.vmap.sampledata.js" />
+    <Content Include="assets\Admin\js\plugins\jquery.vmap.world.js" />
+    <Content Include="assets\Admin\js\plugins\moment.min.js" />
+    <Content Include="assets\Admin\js\plugins\pace.min.js" />
+    <Content Include="assets\Admin\js\plugins\select2.min.js" />
+    <Content Include="assets\Admin\js\plugins\sweetalert.min.js" />
+    <Content Include="assets\Admin\js\pnotify.custom.min.js" />
+    <Content Include="assets\Admin\js\popper.min.js" />
+    <Content Include="assets\Admin\js\sales-page-chart.js" />
+    <Content Include="assets\Admin\js\script.js" />
+    <Content Include="assets\Admin\js\service-page-chart.js" />
+    <Content Include="assets\Admin\js\text-editor.js" />
+    <Content Include="assets\Admin\js\tinymce\icons\default\icons.min.js" />
+    <Content Include="assets\Admin\js\tinymce\license.txt" />
+    <Content Include="assets\Admin\js\tinymce\models\dom\model.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\emoticons\js\emojiimages.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\emoticons\js\emojiimages.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\emoticons\js\emojis.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\emoticons\js\emojis.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\help\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\quickbars\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="assets\Admin\js\tinymce\skins\content\dark\content.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\content\default\content.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\content\document\content.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\content\tinymce-5-dark\content.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\content\tinymce-5\content.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\content\writer\content.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\oxide-dark\content.inline.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\oxide-dark\content.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\oxide-dark\skin.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\oxide-dark\skin.shadowdom.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\oxide\content.inline.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\oxide\content.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\oxide\skin.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\oxide\skin.shadowdom.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\tinymce-5-dark\content.inline.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\tinymce-5-dark\content.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\tinymce-5-dark\skin.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\tinymce-5\content.inline.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\tinymce-5\content.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\tinymce-5\skin.min.css" />
+    <Content Include="assets\Admin\js\tinymce\skins\ui\tinymce-5\skin.shadowdom.min.css" />
+    <Content Include="assets\Admin\js\tinymce\themes\silver\theme.min.js" />
+    <Content Include="assets\Admin\js\tinymce\tinymce.min.js" />
+    <Content Include="assets\Admin\js\toastify-init.js" />
+    <Content Include="assets\Admin\vendor\bootstrap-icon\bootstrap-icons.css" />
+    <Content Include="assets\Admin\vendor\css\bootstrap.min.css" />
+    <Content Include="assets\Admin\vendor\css\bs-dropzone.min.css" />
+    <Content Include="assets\Admin\vendor\css\codemirror-theme.css" />
+    <Content Include="assets\Admin\vendor\css\codemirror.css" />
+    <Content Include="assets\Admin\vendor\css\dragula.css" />
+    <Content Include="assets\Admin\vendor\css\fontawesome.min.css" />
+    <Content Include="assets\Admin\vendor\css\jquery.dataTables.min.css" />
+    <Content Include="assets\Admin\vendor\css\prettify.css" />
+    <Content Include="assets\Admin\vendor\css\responsive.bootstrap.min.css" />
+    <Content Include="assets\Admin\vendor\css\simplebar.css" />
+    <Content Include="assets\Admin\vendor\css\sweetalert.css" />
+    <Content Include="assets\Admin\vendor\css\toastify.min.css" />
+    <Content Include="assets\Admin\vendor\fonts\fa-brands-400.html" />
+    <Content Include="assets\Admin\vendor\fonts\fa-brands-400.svg" />
+    <Content Include="assets\Admin\vendor\fonts\fa-regular-400.html" />
+    <Content Include="assets\Admin\vendor\fonts\fa-regular-400.svg" />
+    <Content Include="assets\Admin\vendor\fonts\fa-solid-900.html" />
+    <Content Include="assets\Admin\vendor\fonts\fa-solid-900.svg" />
+    <Content Include="assets\Admin\vendor\images\sort_asc.png" />
+    <Content Include="assets\Admin\vendor\images\sort_asc_disabled.html" />
+    <Content Include="assets\Admin\vendor\images\sort_both.png" />
+    <Content Include="assets\Admin\vendor\images\sort_desc.png" />
+    <Content Include="assets\Admin\vendor\images\sort_desc_disabled.html" />
+    <Content Include="assets\Admin\vendor\images\switch-1.svg" />
+    <Content Include="assets\Admin\vendor\images\switch-2.svg" />
+    <Content Include="assets\Admin\vendor\js\apexcharts.js" />
+    <Content Include="assets\Admin\vendor\js\bootstrap-modal.js" />
+    <Content Include="assets\Admin\vendor\js\bootstrap.bundle.min.js" />
+    <Content Include="assets\Admin\vendor\js\bs-dropzone.min.js" />
+    <Content Include="assets\Admin\vendor\js\dataTables.responsive.min.js" />
+    <Content Include="assets\Admin\vendor\js\dragula.min.js" />
+    <Content Include="assets\Admin\vendor\js\jquery-3.6.0.min.js" />
+    <Content Include="assets\Admin\vendor\js\jquery.dataTables.min.js" />
+    <Content Include="assets\Admin\vendor\js\prettify.js" />
+    <Content Include="assets\Admin\vendor\js\simplebar.min.js" />
+    <Content Include="assets\Admin\vendor\js\sweetalert.min.js" />
+    <Content Include="assets\Admin\vendor\js\toastify-js.js" />
+    <Content Include="assets\Banner\Ajyshy-banner-Slope.jpg" />
+    <Content Include="assets\Banner\Ajyshy-banner-van%2520%281%29.jpg" />
+    <Content Include="assets\Banner\banner1_1920x600.jpg" />
+    <Content Include="assets\Banner\banner2_1920x600.jpg" />
+    <Content Include="assets\Banner\banner3_1920x600 %281%29.jpg" />
+    <Content Include="assets\Banner\bending.jpg" />
+    <Content Include="assets\Banner\bk\Ajyshy-banner-Slope.jpg" />
+    <Content Include="assets\Banner\bk\Ajyshy-banner-van %281%29.jpg" />
+    <Content Include="assets\Banner\bk\Ajyshy-banner-van%2520%281%29.jpg" />
+    <Content Include="assets\Banner\bk\Ajyshy-banner-van.jpg" />
+    <Content Include="assets\Banner\bk\Auto Winder Reels.png" />
+    <Content Include="assets\Banner\bk\banner1.jpg" />
+    <Content Include="assets\Banner\bk\banner1_1920x600.jpg" />
+    <Content Include="assets\Banner\bk\banner1_revised.png" />
+    <Content Include="assets\Banner\bk\banner2.jpg" />
+    <Content Include="assets\Banner\bk\banner2_1920x600.jpg" />
+    <Content Include="assets\Banner\bk\banner3.jpg" />
+    <Content Include="assets\Banner\bk\banner3_1920x600 %281%29.jpg" />
+    <Content Include="assets\Banner\bk\banner3_1920x600%2520%281%29.jpg" />
+    <Content Include="assets\Banner\bk\banner3_1920x600.jpg" />
+    <Content Include="assets\Banner\bk\banner3_revised2.png" />
+    <Content Include="assets\Banner\bk\banner4.jpg" />
+    <Content Include="assets\Banner\bk\banner4_1920x600.jpg" />
+    <Content Include="assets\Banner\bk\Screenshot %283%29.png" />
+    <Content Include="assets\Banner\bk\Screenshot 2023-12-10 224651.png" />
+    <Content Include="assets\Banner\compactor.jpg" />
+    <Content Include="assets\Banner\facing.jpg" />
+    <Content Include="assets\Banner\fueltank.jpg" />
+    <Content Include="assets\Banner\lightingmust.jpg" />
+    <Content Include="assets\blog\114609_1_02-1.jpg" />
+    <Content Include="assets\blog\3.jpg" />
+    <Content Include="assets\blog\blogimg.jfif" />
+    <Content Include="assets\blog\imgpsh_fullsize_anim.jpg" />
+    <Content Include="assets\blog\indian_market_inner.jpg" />
+    <Content Include="assets\blog\lighting_for_construction_inner.jpg" />
+    <Content Include="assets\blog\looking_at_augmenting_inner.jpg" />
+    <Content Include="assets\blog\pipelayer-2.jpg" />
+    <Content Include="assets\blog\pipelayerimg.jpg" />
+    <Content Include="assets\blog\POD-1024x1024.jpg" />
+    <Content Include="assets\blog\Procurement.jpg" />
+    <Content Include="assets\blog\right_attachement_inner.jpg" />
+    <Content Include="assets\blog\roller %281%29.jpg" />
+    <Content Include="assets\blog\stable-slopes.jpg" />
+    <Content Include="assets\blog\weldlight-1.jpg" />
+    <Content Include="assets\blog\weldlight-2.png" />
+    <Content Include="assets\carresume\014184834y_thailand2.jpg" />
+    <Content Include="assets\carresume\02441014525.jpg" />
+    <Content Include="assets\carresume\10335451bavatar-1.jpg" />
+    <Content Include="assets\carresume\122529530profesinal.png" />
+    <Content Include="assets\carresume\125030915icalsupport.png" />
+    <Content Include="assets\carresume\12589861profesinal.png" />
+    <Content Include="assets\carresume\1304709cfeenshot-%282%29.png" />
+    <Content Include="assets\carresume\1311483c1tagram_icon.png" />
+    <Content Include="assets\carresume\1331965b1feed-slide2.png" />
+    <Content Include="assets\carresume\1436457cfeenshot-%282%29.png" />
+    <Content Include="assets\carresume\150398f1_5a7cf6b2e2.png" />
+    <Content Include="assets\carresume\1510155fmprehensive.png" />
+    <Content Include="assets\carresume\181848841avatar-1.jpg" />
+    <Content Include="assets\carresume\183775160404.png" />
+    <Content Include="assets\carresume\1850919de404.png" />
+    <Content Include="assets\carresume\careerssvg.png" />
+    <Content Include="assets\carresume\devil-tree.png" />
+    <Content Include="assets\carresume\job_img.jpg" />
+    <Content Include="assets\carresume\Screenshot %281%29.png" />
+    <Content Include="assets\carresume\Screenshot %282%29.png" />
+    <Content Include="assets\category\1-1-300x300.jpg" />
+    <Content Include="assets\category\1-audioMessage.mp3" />
+    <Content Include="assets\category\2-1.jpg" />
+    <Content Include="assets\category\3.jpg" />
+    <Content Include="assets\category\6-1-1024x1024.jpg" />
+    <Content Include="assets\category\6-1.jpg" />
+    <Content Include="assets\category\7.jpg" />
+    <Content Include="assets\category\Agility.svg" />
+    <Content Include="assets\category\ajashy_logo.svg" />
+    <Content Include="assets\category\dealership-2.png" />
+    <Content Include="assets\category\images.png" />
+    <Content Include="assets\category\job_img.jpg" />
+    <Content Include="assets\category\offshore.jpg" />
+    <Content Include="assets\category\Passion.svg" />
+    <Content Include="assets\category\Performance.svg" />
+    <Content Include="assets\category\Photo-4.jpg" />
+    <Content Include="assets\category\Reliability.svg" />
+    <Content Include="assets\category\team-work.svg" />
+    <Content Include="assets\category\Teamwork.svg" />
+    <Content Include="assets\css\css.css" />
+    <Content Include="assets\css\owl.carousel.min.css" />
+    <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\images\403.png" />
+    <Content Include="assets\images\404.png" />
+    <Content Include="assets\images\500.png" />
+    <Content Include="assets\images\about-us-img.png" />
+    <Content Include="assets\images\ajashy_logo.png" />
+    <Content Include="assets\images\ajashy_logoAdmin.png" />
+    <Content Include="assets\images\ajayshy_bankok.jpg" />
+    <Content Include="assets\images\ajayshy_dubai.jpg" />
+    <Content Include="assets\images\ajayshy_gurgaon.jpg" />
+    <Content Include="assets\images\authentication-bg.png" />
+    <Content Include="assets\images\avatar-1.jpg" />
+    <Content Include="assets\images\avatar-10.jpg" />
+    <Content Include="assets\images\avatar-11.jpg" />
+    <Content Include="assets\images\avatar-12.jpg" />
+    <Content Include="assets\images\avatar-2.jpg" />
+    <Content Include="assets\images\avatar-3.jpg" />
+    <Content Include="assets\images\avatar-4.jpg" />
+    <Content Include="assets\images\avatar-5.jpg" />
+    <Content Include="assets\images\avatar-6.jpg" />
+    <Content Include="assets\images\avatar-7.jpg" />
+    <Content Include="assets\images\avatar-8.jpg" />
+    <Content Include="assets\images\avatar-9.jpg" />
+    <Content Include="assets\images\Bangkok -icon.svg" />
+    <Content Include="assets\images\calendar.svg" />
+    <Content Include="assets\images\careerssvg.png" />
+    <Content Include="assets\images\careerssvg1.png" />
+    <Content Include="assets\images\caret-down-2.png" />
+    <Content Include="assets\images\caret-down.png" />
+    <Content Include="assets\images\chevron-down-2.svg" />
+    <Content Include="assets\images\chevron-down.svg" />
+    <Content Include="assets\images\comprehensive.png" />
+    <Content Include="assets\images\csm_FDMS_BLE_SKETCH_5a7cf6b2e2.png" />
+    <Content Include="assets\images\csm_FLMS_ROD_sketch_1b5b002258.png" />
+    <Content Include="assets\images\csm_PUMP_712213e216-1024x729.jpg" />
+    <Content Include="assets\images\csm_Teaser-MAWIS-U2-Product_bf753721f1.png" />
+    <Content Include="assets\images\Dubai-icon.svg" />
+    <Content Include="assets\images\favicon.png" />
+    <Content Include="assets\images\feed-slide1.png" />
+    <Content Include="assets\images\feed-slide2.png" />
+    <Content Include="assets\images\feed-slide3.png" />
+    <Content Include="assets\images\feed1.jpg" />
+    <Content Include="assets\images\feed2.jpg" />
+    <Content Include="assets\images\feed3.jpg" />
+    <Content Include="assets\images\Garbage-Truck-Fleet-Management.jpg" />
+    <Content Include="assets\images\image 107 %282%29.png" />
+    <Content Include="assets\images\image%2520107%2520%282%29.jpg" />
+    <Content Include="assets\images\image-1.jpg" />
+    <Content Include="assets\images\image-10.jpg" />
+    <Content Include="assets\images\image-11.jpg" />
+    <Content Include="assets\images\image-12.jpg" />
+    <Content Include="assets\images\image-2.jpg" />
+    <Content Include="assets\images\image-3.jpg" />
+    <Content Include="assets\images\image-4.jpg" />
+    <Content Include="assets\images\image-5.jpg" />
+    <Content Include="assets\images\image-6.jpg" />
+    <Content Include="assets\images\image-7.jpg" />
+    <Content Include="assets\images\image-8.jpg" />
+    <Content Include="assets\images\image-9.jpg" />
+    <Content Include="assets\images\image_2024_01_18T07_11_38_170Z.png" />
+    <Content Include="assets\images\image_2024_01_18T07_11_44_383Z.png" />
+    <Content Include="assets\images\image_2024_01_18T07_11_47_812Z.png" />
+    <Content Include="assets\images\image_2024_01_18T07_11_51_677Z.png" />
+    <Content Include="assets\images\img1.jpg" />
+    <Content Include="assets\images\img2.jpg" />
+    <Content Include="assets\images\img3.jpg" />
+    <Content Include="assets\images\india.svg" />
+    <Content Include="assets\images\job_img.jpg" />
+    <Content Include="assets\images\logo-big.png" />
+    <Content Include="assets\images\logo-small.png" />
+    <Content Include="assets\images\mission.jpg" />
+    <Content Include="assets\images\mission1.jpg" />
+    <Content Include="assets\images\mission1.svg" />
+    <Content Include="assets\images\moba-gps.png" />
+    <Content Include="assets\images\Moba_Performance_CLR_W.png" />
+    <Content Include="assets\images\navbar-toggler-icon.svg" />
+    <Content Include="assets\images\no-data.svg" />
+    <Content Include="assets\images\Office_college.jpg" />
+    <Content Include="assets\images\operating-data.png" />
+    <Content Include="assets\images\people-1979261.jpg" />
+    <Content Include="assets\images\product-1.jpg" />
+    <Content Include="assets\images\product-10.jpg" />
+    <Content Include="assets\images\product-11.jpg" />
+    <Content Include="assets\images\product-12.jpg" />
+    <Content Include="assets\images\product-13.jpg" />
+    <Content Include="assets\images\product-14.jpg" />
+    <Content Include="assets\images\product-15.jpg" />
+    <Content Include="assets\images\product-16.jpg" />
+    <Content Include="assets\images\product-17.jpg" />
+    <Content Include="assets\images\product-18.jpg" />
+    <Content Include="assets\images\product-19.jpg" />
+    <Content Include="assets\images\product-2.jpg" />
+    <Content Include="assets\images\product-20.jpg" />
+    <Content Include="assets\images\product-3.jpg" />
+    <Content Include="assets\images\product-4.jpg" />
+    <Content Include="assets\images\product-5.jpg" />
+    <Content Include="assets\images\product-6.jpg" />
+    <Content Include="assets\images\product-7.jpg" />
+    <Content Include="assets\images\product-8.jpg" />
+    <Content Include="assets\images\product-9.jpg" />
+    <Content Include="assets\images\substitutedriver.png" />
+    <Content Include="assets\images\vision copy.jpg" />
+    <Content Include="assets\images\vision.jpg" />
+    <Content Include="assets\images\vision.svg" />
+    <Content Include="assets\img\about-us-img.svg" />
+    <Content Include="assets\img\banner-one.png" />
+    <Content Include="assets\img\banner-two.png" />
+    <Content Include="assets\img\call.svg" />
+    <Content Include="assets\img\contact-us-img.png" />
+    <Content Include="assets\img\contact-us-phone-icon.svg" />
+    <Content Include="assets\img\demo-icon.svg" />
+    <Content Include="assets\img\e-catalogue-img.png" />
+    <Content Include="assets\img\email.svg" />
+    <Content Include="assets\img\fav-icon.svg" />
+    <Content Include="assets\img\footer-logo.svg" />
+    <Content Include="assets\img\header-logo.svg" />
+    <Content Include="assets\img\office-bulding.svg" />
+    <Content Include="assets\img\product-img.png" />
+    <Content Include="assets\img\PTMT-img.png" />
+    <Content Include="assets\img\sanitaryware.png" />
+    <Content Include="assets\img\why-choose-us.jpg" />
+    <Content Include="assets\js\index.js" />
+    <Content Include="assets\pdf\1 %281%29.jpg" />
+    <Content Include="assets\pdf\Bending-1.jpg" />
+    <Content Include="assets\pdf\Hydralic-1.jpg" />
+    <Content Include="assets\pdf\Mechnical-1.jpg" />
+    <Content Include="assets\pdf\no-image.jpg" />
+    <Content Include="assets\pdf\NUWU5855.JPG" />
+    <Content Include="assets\pdf\Snow Plows1.jpg" />
+    <Content Include="assets\pdf\Spreaders1.jpg" />
+    <Content Include="assets\Product\1 %281%29.jpg" />
+    <Content Include="assets\Product\1-1-300x300.jpg" />
+    <Content Include="assets\Product\1-2.png" />
+    <Content Include="assets\Product\1-7-500x300.jpg" />
+    <Content Include="assets\Product\1.jfif" />
+    <Content Include="assets\Product\1.jpg" />
+    <Content Include="assets\Product\1.png" />
+    <Content Include="assets\Product\100MM-MARBLE-CUTTER-NEW %281%29.png" />
+    <Content Include="assets\Product\100MM-MARBLE-CUTTER-NEW.png" />
+    <Content Include="assets\Product\1100W-ANGLE-GRINDER-new-1.jpg" />
+    <Content Include="assets\Product\125MM-MARBLE-CUTTER-NEW-2 %281%29.jpg" />
+    <Content Include="assets\Product\125MM-MARBLE-CUTTER-NEW-2.jpg" />
+    <Content Include="assets\Product\185MM-CIRCULAR-SAW-NEW-2 %281%29.jpg" />
+    <Content Include="assets\Product\185MM-CIRCULAR-SAW-NEW-2.jpg" />
+    <Content Include="assets\Product\2 %281%29.jpg" />
+    <Content Include="assets\Product\2 %282%29.jpg" />
+    <Content Include="assets\Product\2-1-1024x1024.jpg" />
+    <Content Include="assets\Product\2-1.jpg" />
+    <Content Include="assets\Product\2-3.png" />
+    <Content Include="assets\Product\2.jfif" />
+    <Content Include="assets\Product\2.jpg" />
+    <Content Include="assets\Product\2.png" />
+    <Content Include="assets\Product\20MM-ROTARY-HAMMER-NEW-1.jpg" />
+    <Content Include="assets\Product\240LN080_FOCUS_2-500x500.jpg" />
+    <Content Include="assets\Product\3-2.jpg" />
+    <Content Include="assets\Product\3.jfif" />
+    <Content Include="assets\Product\3.jpg" />
+    <Content Include="assets\Product\3.png" />
+    <Content Include="assets\Product\355MM-CUT-OFF-MACHINE-NEW-2.jpg" />
+    <Content Include="assets\Product\4-2.jpg" />
+    <Content Include="assets\Product\4.jpg" />
+    <Content Include="assets\Product\4.png" />
+    <Content Include="assets\Product\450W-ROTARY-DRILL-1 %281%29.jpg" />
+    <Content Include="assets\Product\450W-ROTARY-DRILL-1.jpg" />
+    <Content Include="assets\Product\5 %281%29.png" />
+    <Content Include="assets\Product\5-2.jpg" />
+    <Content Include="assets\Product\5.jpg" />
+    <Content Include="assets\Product\5.png" />
+    <Content Include="assets\Product\500-x-300.jpg" />
+    <Content Include="assets\Product\500.png" />
+    <Content Include="assets\Product\550W-IMPACT-DRILL-1.jpg" />
+    <Content Include="assets\Product\6-1-1024x1024.jpg" />
+    <Content Include="assets\Product\6-1.jpg" />
+    <Content Include="assets\Product\600WE000100_FOCU2-500x500.jpg" />
+    <Content Include="assets\Product\600WE000100_FOCUS1-500x500.jpg" />
+    <Content Include="assets\Product\600WE000100_FOCUS3_1-1-500x500.jpg" />
+    <Content Include="assets\Product\7.jpg" />
+    <Content Include="assets\Product\710W-IMPACT-DRILL-1.jpg" />
+    <Content Include="assets\Product\800-X-530-1.png" />
+    <Content Include="assets\Product\800-X-530.png" />
+    <Content Include="assets\Product\900W-ANGLE-GRINDER-new-1.jpg" />
+    <Content Include="assets\Product\agata-1600-szare-tlo-1.800-1.png" />
+    <Content Include="assets\Product\Ajashy-Cleaning-Pump %281%29.jpg" />
+    <Content Include="assets\Product\Ajashy-Cleaning-Pump.jpg" />
+    <Content Include="assets\Product\American Augers 1.jpg" />
+    <Content Include="assets\Product\American Augers 2.jpg" />
+    <Content Include="assets\Product\American Augers 3.jpg" />
+    <Content Include="assets\Product\American Augers 4.jpg" />
+    <Content Include="assets\Product\American Augers 5.jpg" />
+    <Content Include="assets\Product\American-Augers-36-600-Auger-Boring-Machine-2.png" />
+    <Content Include="assets\Product\American-Augers-36-600-Auger-Boring-Machine-3.png" />
+    <Content Include="assets\Product\American-Augers-36-600-Auger-Boring-Machine-4.png" />
+    <Content Include="assets\Product\Auger-TR.jpg" />
+    <Content Include="assets\Product\Auger1.jpg" />
+    <Content Include="assets\Product\Auger2.jpg" />
+    <Content Include="assets\Product\Auger3.jpg" />
+    <Content Include="assets\Product\Auto-1.jpg" />
+    <Content Include="assets\Product\Auto-2.jpg" />
+    <Content Include="assets\Product\Auto-3.jpg" />
+    <Content Include="assets\Product\Auto-4.jpg" />
+    <Content Include="assets\Product\Auto-Winder-Reels.jpg" />
+    <Content Include="assets\Product\BC.jpg" />
+    <Content Include="assets\Product\BE-1024x791-1.jpg" />
+    <Content Include="assets\Product\Bendin-11.jpg" />
+    <Content Include="assets\Product\Bending-2.jpg" />
+    <Content Include="assets\Product\Bending-22.png" />
+    <Content Include="assets\Product\Bending-3.jpg" />
+    <Content Include="assets\Product\Bending-33.png" />
+    <Content Include="assets\Product\Bending-44.jpg" />
+    <Content Include="assets\Product\Bending1.jpg" />
+    <Content Include="assets\Product\Bending2.jpg" />
+    <Content Include="assets\Product\Bending3.jpg" />
+    <Content Include="assets\Product\Bending4.jpg" />
+    <Content Include="assets\Product\Bending5.jpg" />
+    <Content Include="assets\Product\BM-1024x791-1.jpg" />
+    <Content Include="assets\Product\boring-1.png" />
+    <Content Include="assets\Product\boring-2.png" />
+    <Content Include="assets\Product\boring-augers-small.png" />
+    <Content Include="assets\Product\Breakers1.png" />
+    <Content Include="assets\Product\Breakers2.png" />
+    <Content Include="assets\Product\Breakers3.png" />
+    <Content Include="assets\Product\Breakers4.png" />
+    <Content Include="assets\Product\Carco USA1.jpg" />
+    <Content Include="assets\Product\Carco USA2.jpg" />
+    <Content Include="assets\Product\Carco USA4.jpg" />
+    <Content Include="assets\Product\Carco-USA-G80PSC-Paccar-Winch-1.png" />
+    <Content Include="assets\Product\Carco-USA-G80PSC-Paccar-Winch-2.png" />
+    <Content Include="assets\Product\Carco-USA-G80PSC-Paccar-Winch-3.png" />
+    <Content Include="assets\Product\Carco-USA-G80PSC-Paccar-Winch-4.png" />
+    <Content Include="assets\Product\Caterpillar-583-Pipelayer-w-Hyd-Kit-2.png" />
+    <Content Include="assets\Product\Caterpillar-583-Pipelayer-w-Hyd-Kit-3.png" />
+    <Content Include="assets\Product\Caterpillar-583-Pipelayer-w-Hyd-Kit-4.png" />
+    <Content Include="assets\Product\Caterpillar1.jpg" />
+    <Content Include="assets\Product\Caterpillar2.jpg" />
+    <Content Include="assets\Product\Caterpillar3.jpg" />
+    <Content Include="assets\Product\Caterpillar4.jpg" />
+    <Content Include="assets\Product\Container1.jpg" />
+    <Content Include="assets\Product\CP100.15.jpg" />
+    <Content Include="assets\Product\CPB-1024x791.jpg" />
+    <Content Include="assets\Product\Darby-6-20-Pipe-Bending-Machine-1.png" />
+    <Content Include="assets\Product\Darby-6-20-Pipe-Bending-Machine-2.png" />
+    <Content Include="assets\Product\Darby-6-20-Pipe-Bending-Machine-3.png" />
+    <Content Include="assets\Product\Darby-6-20-Pipe-Bending-Machine-4.png" />
+    <Content Include="assets\Product\Darby.jpg" />
+    <Content Include="assets\Product\Darby1.jpg" />
+    <Content Include="assets\Product\Darby2.jpg" />
+    <Content Include="assets\Product\DEMOLITION-HAMMER-11-KG-new-1.jpg" />
+    <Content Include="assets\Product\DEMOLITION-HAMMER-16-KG-NEW-1.jpg" />
+    <Content Include="assets\Product\DEMOLITION-HAMMER-5-KG-new-1.jpg" />
+    <Content Include="assets\Product\demolition_hammer1 %281%29.jpg" />
+    <Content Include="assets\Product\demolition_hammer1.jpg" />
+    <Content Include="assets\Product\demolition_hammer2.jpg" />
+    <Content Include="assets\Product\demolition_hammer3.jpg" />
+    <Content Include="assets\Product\Disinfactant1.png" />
+    <Content Include="assets\Product\Disinfect-Tunnel.jpeg" />
+    <Content Include="assets\Product\DMI-USA-24---26-Internal-Pneumatic-Line-Up-Clamp-%28IPLC%29-1.png" />
+    <Content Include="assets\Product\DMI-USA-24---26-Internal-Pneumatic-Line-Up-Clamp-%28IPLC%29-2.png" />
+    <Content Include="assets\Product\DMI-USA-24---26-Internal-Pneumatic-Line-Up-Clamp-%28IPLC%29-3.png" />
+    <Content Include="assets\Product\DMI-USA-24---26-Internal-Pneumatic-Line-Up-Clamp-%28IPLC%29-4.png" />
+    <Content Include="assets\Product\download %281%29.jpg" />
+    <Content Include="assets\Product\download %282%29.jpg" />
+    <Content Include="assets\Product\download %283%29.jpg" />
+    <Content Include="assets\Product\E280_1.jpg" />
+    <Content Include="assets\Product\Excavator1.jpg" />
+    <Content Include="assets\Product\Excavator2.jpg" />
+    <Content Include="assets\Product\Excavator3.jpg" />
+    <Content Include="assets\Product\Excavator4.jpg" />
+    <Content Include="assets\Product\External-Line-Up-Clamp.jpg" />
+    <Content Include="assets\Product\fam-800x400-1.png" />
+    <Content Include="assets\Product\FDMS_Menu1 %281%29.png" />
+    <Content Include="assets\Product\FDMS_Menu2 %281%29.png" />
+    <Content Include="assets\Product\FLMS_menu-1 %281%29.png" />
+    <Content Include="assets\Product\FLMS_menu-2.png" />
+    <Content Include="assets\Product\FOCUS-1-.jpg" />
+    <Content Include="assets\Product\FOCUS-1-1-500x500.jpg" />
+    <Content Include="assets\Product\FOCUS-1-2-400x400 %281%29.png" />
+    <Content Include="assets\Product\FOCUS-1-2-400x400.png" />
+    <Content Include="assets\Product\focus-1-500x500 %281%29.jpg" />
+    <Content Include="assets\Product\FOCUS-1-500x500.jpg" />
+    <Content Include="assets\Product\focus-2-500x500 %281%29.jpg" />
+    <Content Include="assets\Product\FOCUS-2-500x500.jpg" />
+    <Content Include="assets\Product\FOCUS-2.jpg" />
+    <Content Include="assets\Product\focus-3-500x500 %281%29.jpg" />
+    <Content Include="assets\Product\FOCUS-3-500x500.jpg" />
+    <Content Include="assets\Product\focus-4-500x500.jpg" />
+    <Content Include="assets\Product\FOCUS_1-1-500x500.jpg" />
+    <Content Include="assets\Product\focus_1-2-500x500.jpg" />
+    <Content Include="assets\Product\focus_1-3-500x500.jpg" />
+    <Content Include="assets\Product\focus_1-500x500.jpg" />
+    <Content Include="assets\Product\FOCUS_2-1-500x500.jpg" />
+    <Content Include="assets\Product\FOCUS_2-2-500x500.jpg" />
+    <Content Include="assets\Product\focus_2-3-500x500.jpg" />
+    <Content Include="assets\Product\focus_2-500x500 %281%29.jpg" />
+    <Content Include="assets\Product\focus_2-500x500.jpg" />
+    <Content Include="assets\Product\FOCUS_3-1-500x500.jpg" />
+    <Content Include="assets\Product\FOCUS_3-2-500x500.jpg" />
+    <Content Include="assets\Product\focus_3-3-500x500.jpg" />
+    <Content Include="assets\Product\focus_3-4-500x500.jpg" />
+    <Content Include="assets\Product\focus_3-500x500.jpg" />
+    <Content Include="assets\Product\Forestry-Excavator-Mulcher-TFC-TFAM-TFA-TFB-TFW-TFX-TFS.jpg" />
+    <Content Include="assets\Product\Forestry-Excavator-Mulcher-TFC-TFAM-TFA-TFB-TFW-TFX-TFS2.jpg" />
+    <Content Include="assets\Product\Forestry-Excavator-Mulcher-TFC-TFAM-TFA-TFB-TFW-TFX-TFS3.jpg" />
+    <Content Include="assets\Product\Forestry-Excavator-Mulcher-TFC-TFAM-TFA-TFB-TFW-TFX-TFS4.jpg" />
+    <Content Include="assets\Product\Forestry1.jpg" />
+    <Content Include="assets\Product\Forestry2.jpg" />
+    <Content Include="assets\Product\Forestry3.jpg" />
+    <Content Include="assets\Product\front-1-500x300.jpg" />
+    <Content Include="assets\Product\Frontal-Forestry-Mulcher-TFM-TFF.jpg" />
+    <Content Include="assets\Product\FT2.jpg" />
+    <Content Include="assets\Product\FT3.jpg" />
+    <Content Include="assets\Product\FT4.jpg" />
+    <Content Include="assets\Product\FT5.jpg" />
+    <Content Include="assets\Product\FT6.jpg" />
+    <Content Include="assets\Product\Fuel POD1.jpg" />
+    <Content Include="assets\Product\Fuel POD2.jpg" />
+    <Content Include="assets\Product\Fuel POD3.jpg" />
+    <Content Include="assets\Product\Fuel POD4.jpg" />
+    <Content Include="assets\Product\Fuel POD5.jpg" />
+    <Content Include="assets\Product\fuel-dispensing.jpg" />
+    <Content Include="assets\Product\fueltanker.jpg" />
+    <Content Include="assets\Product\fulePod1.png" />
+    <Content Include="assets\Product\fulePod2.png" />
+    <Content Include="assets\Product\fulePod3.png" />
+    <Content Include="assets\Product\fulePod4.png" />
+    <Content Include="assets\Product\fulePod5.png" />
+    <Content Include="assets\Product\GPS_Menu %281%29.png" />
+    <Content Include="assets\Product\GPS_Menu-2.jpg" />
+    <Content Include="assets\Product\GPS_Menu.png" />
+    <Content Include="assets\Product\Grapples1.jpg" />
+    <Content Include="assets\Product\Grapples2.jpg" />
+    <Content Include="assets\Product\Grapples3.jpg" />
+    <Content Include="assets\Product\Grapples4.jpg" />
+    <Content Include="assets\Product\Guard_Rail.jpg" />
+    <Content Include="assets\Product\HP-1500-1.png" />
+    <Content Include="assets\Product\HP-600-1.png" />
+    <Content Include="assets\Product\HP-700-1.png" />
+    <Content Include="assets\Product\HP-900-1.png" />
+    <Content Include="assets\Product\Hydralic-2.jpg" />
+    <Content Include="assets\Product\Hydralic-3.jpg" />
+    <Content Include="assets\Product\Hydralic-4.jpg" />
+    <Content Include="assets\Product\Hydralic-5.jpg" />
+    <Content Include="assets\Product\Hydrauli-2.JPG" />
+    <Content Include="assets\Product\Hydraulic-1.JPG" />
+    <Content Include="assets\Product\hydraulic-power-packs.jpg" />
+    <Content Include="assets\Product\hydraulika-ZMC-3_1.jpg" />
+    <Content Include="assets\Product\image 107.png" />
+    <Content Include="assets\Product\IMG-300_1000x1000-px_D-2.png" />
+    <Content Include="assets\Product\IMG-300_1000x1000-px_S.png" />
+    <Content Include="assets\Product\IMG-400-new_1000x1000-px.png" />
+    <Content Include="assets\Product\IMG-400_1000x1000-px_H-1.png" />
+    <Content Include="assets\Product\IMG-600_1000x1000-px.png" />
+    <Content Include="assets\Product\img.jpg" />
+    <Content Include="assets\Product\img2.jpg" />
+    <Content Include="assets\Product\imgajashy.jpg" />
+    <Content Include="assets\Product\imgpsh_fullllsize %281%29.jpeg" />
+    <Content Include="assets\Product\imgpsh_fullsize_anim %281%29.jpg" />
+    <Content Include="assets\Product\imgpsh_fullsize_anim.jpg" />
+    <Content Include="assets\Product\IMG_2728.jpg" />
+    <Content Include="assets\Product\industry-visual-demolition-1024x416.jpg" />
+    <Content Include="assets\Product\Ingersoll Rand 1.jpg" />
+    <Content Include="assets\Product\Ingersoll Rand 2.jpg" />
+    <Content Include="assets\Product\Ingersoll Rand 3.jpg" />
+    <Content Include="assets\Product\Ingersoll Rand 4.jpg" />
+    <Content Include="assets\Product\Ingersoll-Rand-FA5A-24MK1G-3621-1.png" />
+    <Content Include="assets\Product\Ingersoll-Rand-FA5A-24MK1G-3621-2.png" />
+    <Content Include="assets\Product\Ingersoll-Rand-FA5A-24MK1G-3621-3.png" />
+    <Content Include="assets\Product\Ingersoll-Rand-FA5A-24MK1G-3621-4.png" />
+    <Content Include="assets\Product\Ingersoll-Rand-USA-0990596-Air-Winch-%28Man-Rider%29-1.png" />
+    <Content Include="assets\Product\Ingersoll-Rand-USA-0990596-Air-Winch-%28Man-Rider%29-2.png" />
+    <Content Include="assets\Product\Ingersoll-Rand-USA-0990596-Air-Winch-%28Man-Rider%29-3.png" />
+    <Content Include="assets\Product\Ingersoll-Rand-USA-0990596-Air-Winch-%28Man-Rider%29-4.png" />
+    <Content Include="assets\Product\Ingersoll-Rand-USA-FA5A-Air-Winch-2.png" />
+    <Content Include="assets\Product\Ingersoll-Rand-USA-FA5A-Air-Winch-3.png" />
+    <Content Include="assets\Product\Ingersoll-Rand-USA-FA5A-Air-Winch-4.png" />
+    <Content Include="assets\Product\Ingersoll1.jpg" />
+    <Content Include="assets\Product\Ingersoll2.jpg" />
+    <Content Include="assets\Product\Ingersoll3.jpg" />
+    <Content Include="assets\Product\Ingersoll4.jpg" />
+    <Content Include="assets\Product\internal lineup1.jpg" />
+    <Content Include="assets\Product\internal lineup2.jpg" />
+    <Content Include="assets\Product\internal lineup3.jpg" />
+    <Content Include="assets\Product\internal p1.png" />
+    <Content Include="assets\Product\internal p2.png" />
+    <Content Include="assets\Product\internal p3.png" />
+    <Content Include="assets\Product\internal p4.png" />
+    <Content Include="assets\Product\internal1.png" />
+    <Content Include="assets\Product\internal2.png" />
+    <Content Include="assets\Product\IOT_menu1.png" />
+    <Content Include="assets\Product\IOT_menu2.png" />
+    <Content Include="assets\Product\IPEC-Canada-28---30-Internal-Pneumatic-Line-Up-Clamp-2.png" />
+    <Content Include="assets\Product\IPEC-Canada-28---30-Internal-Pneumatic-Line-Up-Clamp-3.png" />
+    <Content Include="assets\Product\IPEC-Canada-28---30-Internal-Pneumatic-Line-Up-Clamp-4.png" />
+    <Content Include="assets\Product\IPEC1.jpg" />
+    <Content Include="assets\Product\IPEC2.jpg" />
+    <Content Include="assets\Product\IPEC3.jpg" />
+    <Content Include="assets\Product\IPEC4.jpg" />
+    <Content Include="assets\Product\IPEC5.jpg" />
+    <Content Include="assets\Product\JLG 1.jpg" />
+    <Content Include="assets\Product\JLG 2.jpg" />
+    <Content Include="assets\Product\JLG 3.jpg" />
+    <Content Include="assets\Product\JLG 4.jpg" />
+    <Content Include="assets\Product\JLG 5.jpg" />
+    <Content Include="assets\Product\KCT07_pronar_800.png" />
+    <Content Include="assets\Product\LB.jpg" />
+    <Content Include="assets\Product\Leveling-Blade-LB.jpg" />
+    <Content Include="assets\Product\Leveling-Grader-LG.jpg" />
+    <Content Include="assets\Product\LG.jpg" />
+    <Content Include="assets\Product\LN80.jpg" />
+    <Content Include="assets\Product\LTD.jpg" />
+    <Content Include="assets\Product\Maintenance Van.jpg" />
+    <Content Include="assets\Product\Maintenance Van1.jpg" />
+    <Content Include="assets\Product\Maintenance Van4.jpg" />
+    <Content Include="assets\Product\Maintenance Van5.jpg" />
+    <Content Include="assets\Product\main_LM-1024x768-1.jpg" />
+    <Content Include="assets\Product\Mandrel-1.JPG" />
+    <Content Include="assets\Product\Mandrel-2.JPG" />
+    <Content Include="assets\Product\Mandrel-3.JPG" />
+    <Content Include="assets\Product\Mechanical1.png" />
+    <Content Include="assets\Product\Mechanical2.png" />
+    <Content Include="assets\Product\Mechanical3.png" />
+    <Content Include="assets\Product\Mechanical4.png" />
+    <Content Include="assets\Product\Mechincal-1 %281%29.jpg" />
+    <Content Include="assets\Product\Mechincal-1 %282%29.jpg" />
+    <Content Include="assets\Product\Mechincal-2.jpg" />
+    <Content Include="assets\Product\Mechnical-1.jpg" />
+    <Content Include="assets\Product\Mechnical-3 %281%29.jpg" />
+    <Content Include="assets\Product\Mechnical-3.jpg" />
+    <Content Include="assets\Product\mini-trincia-frontale-MTC-1024x576-1.jpg" />
+    <Content Include="assets\Product\Mixing-Bucket-BC.jpg" />
+    <Content Include="assets\Product\MOBA-CLOUD-SOFTWARE.jpg" />
+    <Content Include="assets\Product\MOBA-FUEL-LEVEL-MONITORING-SYSTEM-2.jpg" />
+    <Content Include="assets\Product\MOBA-GPS-FLEET-MANAGEMENT.jpg" />
+    <Content Include="assets\Product\Mobile-2.png" />
+    <Content Include="assets\Product\Mobile-3.png" />
+    <Content Include="assets\Product\Mobile-4.png" />
+    <Content Include="assets\Product\Mobile-5.png" />
+    <Content Include="assets\Product\Mobile-7.png" />
+    <Content Include="assets\Product\Mobile-Service-Van-2-300x300.jpg" />
+    <Content Include="assets\Product\Mobile1.jpg" />
+    <Content Include="assets\Product\Mobile2.jpg" />
+    <Content Include="assets\Product\Mobile3.jpg" />
+    <Content Include="assets\Product\Mobile4.jpg" />
+    <Content Include="assets\Product\Moblie-van-111.jpeg" />
+    <Content Include="assets\Product\Multi-Grab-1.jpg" />
+    <Content Include="assets\Product\Multi-Grab-2.jpg" />
+    <Content Include="assets\Product\Multi-Grab-3.jpg" />
+    <Content Include="assets\Product\Multi-Grab-4.jpg" />
+    <Content Include="assets\Product\myjka-cisnieniowa-ZMC-3_1.jpg" />
+    <Content Include="assets\Product\new.jpg" />
+    <Content Include="assets\Product\no-image.jpg" />
+    <Content Include="assets\Product\odchylane-zbiorniki-ZMC-3_1.jpg" />
+    <Content Include="assets\Product\odsniezarka-OW1.5.png" />
+    <Content Include="assets\Product\odsniezarka-OW2_1M-2.png" />
+    <Content Include="assets\Product\odsniezarka-OW2_4M-2.png" />
+    <Content Include="assets\Product\Odsniezarka-PRONAR-OW1.5-hydraulicznie-skretny-komin-pozwala-wyrzucac-snieg-na-odleglosc-do-20-m.jpg" />
+    <Content Include="assets\Product\Odsniezarka-wirnikowa-PRONAR-OW1.5-dzieki-niewielkim-gabarytom-doskonale-sprawdza-sie-w-miejscach-o-ograniczonym-dostepie..jpg" />
+    <Content Include="assets\Product\Odsniezarka-wirnikowa-PRONAR-OW1.5-zagregowana-z-ciagnikiem-rolniczym-Zefir40K-1.jpg" />
+    <Content Include="assets\Product\offshore.jpg" />
+    <Content Include="assets\Product\ofw26_pronar-10.jpg" />
+    <Content Include="assets\Product\ofw26_pronar-11-1.jpg" />
+    <Content Include="assets\Product\ofw26_pronar-6.jpg" />
+    <Content Include="assets\Product\ofw26_pronar-7.jpg" />
+    <Content Include="assets\Product\ofw26_pronar-9.jpg" />
+    <Content Include="assets\Product\ofw26_szare-tlo-1 %281%29.png" />
+    <Content Include="assets\Product\ofw26_szare-tlo-1.png" />
+    <Content Include="assets\Product\Pallet-Fork-PF.jpg" />
+    <Content Include="assets\Product\PF_2-1024x791-1.jpg" />
+    <Content Include="assets\Product\photo-1577900475484-b3c5e6d52f4f.jfif" />
+    <Content Include="assets\Product\Photo-4.jpg" />
+    <Content Include="assets\Product\Photo-5.jpg" />
+    <Content Include="assets\Product\Photo2.jpeg" />
+    <Content Include="assets\Product\Photo2.jpg" />
+    <Content Include="assets\Product\Photo3.jpg" />
+    <Content Include="assets\Product\Photo4.jpeg" />
+    <Content Include="assets\Product\Photo5.jpeg" />
+    <Content Include="assets\Product\Photo6.jpeg" />
+    <Content Include="assets\Product\Photo7.jpeg" />
+    <Content Include="assets\Product\pic %281%29.jpg" />
+    <Content Include="assets\Product\pipe-bending-machine-1.png" />
+    <Content Include="assets\Product\Pipe-Facing-Machine-1.png" />
+    <Content Include="assets\Product\Pipe-Facing-Machine-2.png" />
+    <Content Include="assets\Product\Pipe-Facing-Machine-3.png" />
+    <Content Include="assets\Product\pipe_bending1.jpg" />
+    <Content Include="assets\Product\pipe_bending2.jpg" />
+    <Content Include="assets\Product\pipe_bending3.jpg" />
+    <Content Include="assets\Product\pipe_bending4.jpg" />
+    <Content Include="assets\Product\Plate-11.JPG" />
+    <Content Include="assets\Product\Plate-33.JPG" />
+    <Content Include="assets\Product\Plate-44.JPG" />
+    <Content Include="assets\Product\Plate-441.JPG" />
+    <Content Include="assets\Product\Plate-Compactor.jpg" />
+    <Content Include="assets\Product\plug-odsniezny-.png" />
+    <Content Include="assets\Product\plug-samochodowy-.png" />
+    <Content Include="assets\Product\plug-samochodowy-PUS25HL-1024x1010.png" />
+    <Content Include="assets\Product\Pneumatic1.jpg" />
+    <Content Include="assets\Product\Pneumatic2.jpg" />
+    <Content Include="assets\Product\Pneumatic3.jpg" />
+    <Content Include="assets\Product\Pneumatic4.jpg" />
+    <Content Include="assets\Product\POD-1024x1024.jpg" />
+    <Content Include="assets\Product\posypywarka-800.png" />
+    <Content Include="assets\Product\posypywarka-EPT15.800.png" />
+    <Content Include="assets\Product\posypywarka-HPT40-1-1024x1010.png" />
+    <Content Include="assets\Product\posypywarka_Pronar_pw120_800.png" />
+    <Content Include="assets\Product\Power-1.jpg" />
+    <Content Include="assets\Product\power-11.jpg" />
+    <Content Include="assets\Product\Power-2.jpg" />
+    <Content Include="assets\Product\power-22.jpg" />
+    <Content Include="assets\Product\Power-3.jpg" />
+    <Content Include="assets\Product\power-33.jpg" />
+    <Content Include="assets\Product\power-4.jpg" />
+    <Content Include="assets\Product\Product-Flier_Ajashy-Bear-Cage_Rev-2020.jpg" />
+    <Content Include="assets\Product\pronar-PUV2800-szare-tlo-800.png" />
+    <Content Include="assets\Product\PRONAR-SWEEPER-ZMC-800.png" />
+    <Content Include="assets\Product\pronar_ZM28H_odsniezarko-zamiatarka.5800.png" />
+    <Content Include="assets\Product\pulpit-sterowniczy-ZMC-3_1.jpg" />
+    <Content Include="assets\Product\reels-1.jpg" />
+    <Content Include="assets\Product\Reels-11.jpg" />
+    <Content Include="assets\Product\Reels-2.jpg" />
+    <Content Include="assets\Product\Reels-3.jpg" />
+    <Content Include="assets\Product\Reels-4.jpg" />
+    <Content Include="assets\Product\Reels-5.jpg" />
+    <Content Include="assets\Product\roller.jpg" />
+    <Content Include="assets\Product\RolliCradle-1.png" />
+    <Content Include="assets\Product\RolliCradle-2.png" />
+    <Content Include="assets\Product\RolliCradle-3 %281%29.png" />
+    <Content Include="assets\Product\RolliCradle-3.png" />
+    <Content Include="assets\Product\RolliCradle-4 %281%29.png" />
+    <Content Include="assets\Product\RolliCradle-4.png" />
+    <Content Include="assets\Product\SA.jpg" />
+    <Content Include="assets\Product\SCR1.jpg" />
+    <Content Include="assets\Product\SCR3.jpg" />
+    <Content Include="assets\Product\SCR4.jpg" />
+    <Content Include="assets\Product\SCR5.jpg" />
+    <Content Include="assets\Product\SCR6.jpg" />
+    <Content Include="assets\Product\show-2.png" />
+    <Content Include="assets\Product\show.png" />
+    <Content Include="assets\Product\SI.jpg" />
+    <Content Include="assets\Product\Side-lifter-1-small.png" />
+    <Content Include="assets\Product\Sideshift-Backhoe-E.jpg" />
+    <Content Include="assets\Product\Skid-Steer-Loader-Buckets-BS-BE-BM.jpg" />
+    <Content Include="assets\Product\slm2.jpg" />
+    <Content Include="assets\Product\slope1.jpg" />
+    <Content Include="assets\Product\slope2.jpg" />
+    <Content Include="assets\Product\slope3.jpg" />
+    <Content Include="assets\Product\slope4.jpg" />
+    <Content Include="assets\Product\slope5.jpg" />
+    <Content Include="assets\Product\Snow Plows2.jpg" />
+    <Content Include="assets\Product\Snow Plows3.jpg" />
+    <Content Include="assets\Product\Snow Plows4.jpg" />
+    <Content Include="assets\Product\Snow Plows5.jpg" />
+    <Content Include="assets\Product\Snow Plows6.jpg" />
+    <Content Include="assets\Product\Snow Plows7.jpg" />
+    <Content Include="assets\Product\Snow Plows8.jpg" />
+    <Content Include="assets\Product\snow.png" />
+    <Content Include="assets\Product\Snowblowers %281%29.png" />
+    <Content Include="assets\Product\Snowblowers-2.png" />
+    <Content Include="assets\Product\Snowblowers-3.png" />
+    <Content Include="assets\Product\snowblowers.png" />
+    <Content Include="assets\Product\snowblowers1.png" />
+    <Content Include="assets\Product\snowblowers2.png" />
+    <Content Include="assets\Product\snowp.png" />
+    <Content Include="assets\Product\snowp5 %281%29.png" />
+    <Content Include="assets\Product\snowplows2.png" />
+    <Content Include="assets\Product\snowplows3.png" />
+    <Content Include="assets\Product\snowplows4.png" />
+    <Content Include="assets\Product\solar-lighting-mast.jpg" />
+    <Content Include="assets\Product\Solar1.jpg" />
+    <Content Include="assets\Product\Solar2.jpg" />
+    <Content Include="assets\Product\SPR-1024x791.png" />
+    <Content Include="assets\Product\SPR-1536x1186.png" />
+    <Content Include="assets\Product\spreaders1.png" />
+    <Content Include="assets\Product\Spreaders2.jpg" />
+    <Content Include="assets\Product\spreaders2.png" />
+    <Content Include="assets\Product\Spreaders3.jpg" />
+    <Content Include="assets\Product\spreaders3.png" />
+    <Content Include="assets\Product\Spreaders4.jpg" />
+    <Content Include="assets\Product\spreaders4.png" />
+    <Content Include="assets\Product\Spreaders5.jpg" />
+    <Content Include="assets\Product\Spreaders6.jpg" />
+    <Content Include="assets\Product\Spreaders7.jpg" />
+    <Content Include="assets\Product\Spreaders8.jpg" />
+    <Content Include="assets\Product\spreades.png" />
+    <Content Include="assets\Product\SteelWeldingHut-1.png" />
+    <Content Include="assets\Product\SteelWeldingHut-2.png" />
+    <Content Include="assets\Product\SteelWeldingHut-3.png" />
+    <Content Include="assets\Product\SteelWeldingHut-4.png" />
+    <Content Include="assets\Product\SteelWeldingHut-5.png" />
+    <Content Include="assets\Product\Superior USA.jpg" />
+    <Content Include="assets\Product\Superior USA1.jpg" />
+    <Content Include="assets\Product\Superior USA2.jpg" />
+    <Content Include="assets\Product\Superior USA3.jpg" />
+    <Content Include="assets\Product\Superior USA4.jpg" />
+    <Content Include="assets\Product\Superior USA5.jpg" />
+    <Content Include="assets\Product\Superior-SPB-16-30-Pipe-Bending-Machine-1.png" />
+    <Content Include="assets\Product\Superior-SPB-16-30-Pipe-Bending-Machine-2.png" />
+    <Content Include="assets\Product\Superior-SPB-16-30-Pipe-Bending-Machine-4.png" />
+    <Content Include="assets\Product\Superior-SPB-16-30-Pipe-Bending-Machine.png" />
+    <Content Include="assets\Product\Superior-USA-12---14-Internal-Pneumatic-Line-Up-Clamp-%28IPLC%29-1.png" />
+    <Content Include="assets\Product\Superior-USA-12---14-Internal-Pneumatic-Line-Up-Clamp-%28IPLC%29-2.png" />
+    <Content Include="assets\Product\Superior-USA-12---14-Internal-Pneumatic-Line-Up-Clamp-%28IPLC%29-3.png" />
+    <Content Include="assets\Product\Superior-USA-12---14-Internal-Pneumatic-Line-Up-Clamp-%28IPLC%29-4.png" />
+    <Content Include="assets\Product\Superior-USA-12---14-Internal-Pneumatic-Line-Up-Clamp-%28IPLC%29-5.png" />
+    <Content Include="assets\Product\Superior1.jpg" />
+    <Content Include="assets\Product\Superior2.jpg" />
+    <Content Include="assets\Product\Superior3.jpg" />
+    <Content Include="assets\Product\Superior4.jpg" />
+    <Content Include="assets\Product\Superior5.jpg" />
+    <Content Include="assets\Product\SuperiorUSA1.jpg" />
+    <Content Include="assets\Product\SuperiorUSA2.jpg" />
+    <Content Include="assets\Product\SuperiorUSA3.jpg" />
+    <Content Include="assets\Product\SuperiorUSA4.jpg" />
+    <Content Include="assets\Product\SuperiorUSA5.jpg" />
+    <Content Include="assets\Product\SuperiorUSA6.jpg" />
+    <Content Include="assets\Product\Sweeper1.jpg" />
+    <Content Include="assets\Product\sweeper1.png" />
+    <Content Include="assets\Product\Sweeper2.jpg" />
+    <Content Include="assets\Product\sweeper2.png" />
+    <Content Include="assets\Product\Sweeper3.jpg" />
+    <Content Include="assets\Product\sweeper3.png" />
+    <Content Include="assets\Product\Sweeper4.jpg" />
+    <Content Include="assets\Product\sweeper4.png" />
+    <Content Include="assets\Product\sweeper5.png" />
+    <Content Include="assets\Product\SWm.png" />
+    <Content Include="assets\Product\szare-tlo-nowe-800.png" />
+    <Content Include="assets\Product\szare-tlo-nowe.800.png" />
+    <Content Include="assets\Product\szczotka-walcowa-ZMC-3_1.jpg" />
+    <Content Include="assets\Product\TCB_RULLO1.png" />
+    <Content Include="assets\Product\TCB_SUPPORTO_OSCILLANTE1-500x500.png" />
+    <Content Include="assets\Product\TCB_VALVOLA1-500x500.png" />
+    <Content Include="assets\Product\TC_SISTEMA_FLOTTANTE2-500x500.png" />
+    <Content Include="assets\Product\TC_TRASLAZIONE_MECCANICA1-500x500.png" />
+    <Content Include="assets\Product\TC_VALVOLA2-500x500.png" />
+    <Content Include="assets\Product\TFC_CILINDRO_COFANO1-500x500.png" />
+    <Content Include="assets\Product\TFC_VALVOLA2-500x500.png" />
+    <Content Include="assets\Product\TFM_ABBATTIRAMI1-500x500.png" />
+    <Content Include="assets\Product\TFM_CILINDRO_COFANO1-500x500.png" />
+    <Content Include="assets\Product\Tiltdozer-Blade-LTD.jpg" />
+    <Content Include="assets\Product\TN.jpg" />
+    <Content Include="assets\Product\TN_FOCUS1-500x500.jpg" />
+    <Content Include="assets\Product\TN_FOCUS2-500x500.jpg" />
+    <Content Include="assets\Product\TN_FOCUS3-500x500.jpg" />
+    <Content Include="assets\Product\TR.jpg" />
+    <Content Include="assets\Product\TR450_FOCUS1-500x500.jpg" />
+    <Content Include="assets\Product\TR450_FOCUS2-500x500.jpg" />
+    <Content Include="assets\Product\tree1.jpg" />
+    <Content Include="assets\Product\tree2.jpg" />
+    <Content Include="assets\Product\TreeSpade-1.png" />
+    <Content Include="assets\Product\TreeSpade-2.png" />
+    <Content Include="assets\Product\TreeSpade-3.png" />
+    <Content Include="assets\Product\trincia-da-braccio-2048x1152-1.jpg" />
+    <Content Include="assets\Product\trincia-forestale-da-braccio-2048x1152-1.jpg" />
+    <Content Include="assets\Product\trinciatrice-frontale-forestale-TFM-TFF-2048x1152-1.jpg" />
+    <Content Include="assets\Product\Trinciatrice-frontale-TC-1024x576-1.jpg" />
+    <Content Include="assets\Product\tr_focus3-500x500.jpg" />
+    <Content Include="assets\Product\uklad-zraszania-ZMC-3_1.jpg" />
+    <Content Include="assets\Product\umbilical-reel-drives.jpg" />
+    <Content Include="assets\Product\Untitled-1...800.png" />
+    <Content Include="assets\Product\Untitled-1.800.png" />
+    <Content Include="assets\Product\van-1.png" />
+    <Content Include="assets\Product\van-2 .png" />
+    <Content Include="assets\Product\van-2.png" />
+    <Content Include="assets\Product\van-3.png" />
+    <Content Include="assets\Product\van-4.png" />
+    <Content Include="assets\Product\van-5.png" />
+    <Content Include="assets\Product\van-6.png" />
+    <Content Include="assets\Product\van-7.png" />
+    <Content Include="assets\Product\van-8.png" />
+    <Content Include="assets\Product\VB210.jpg" />
+    <Content Include="assets\Product\VB210_FOCUS2--500x500.jpg" />
+    <Content Include="assets\Product\VB210_FOCUS3-1-500x500.jpg" />
+    <Content Include="assets\Product\VB210_FOCUS3-400x400.jpg" />
+    <Content Include="assets\Product\VB210_FOCUS_1-1-500x500.jpg" />
+    <Content Include="assets\Product\VB210_FOCUS_1-500x500.jpg" />
+    <Content Include="assets\Product\Vietz-GmbH-Germany-48---50-Hydraulic-Mandrel-1.png" />
+    <Content Include="assets\Product\Vietz-GmbH-Germany-48---50-Hydraulic-Mandrel-2.png" />
+    <Content Include="assets\Product\Vietz-GmbH-Germany-48---50-Hydraulic-Mandrel-3.png" />
+    <Content Include="assets\Product\Vietz-GmbH-Germany-48---50-Hydraulic-Mandrel-4.png" />
+    <Content Include="assets\Product\Vietz1.jpg" />
+    <Content Include="assets\Product\Vietz2.jpg" />
+    <Content Include="assets\Product\Vietz3.jpg" />
+    <Content Include="assets\Product\Vietz4.jpg" />
+    <Content Include="assets\Product\Vietz5.jpg" />
+    <Content Include="assets\Product\visual-grabs-294x300.png" />
+    <Content Include="assets\Product\visual-hammers-294x300.png" />
+    <Content Include="assets\Product\WE.jpg" />
+    <Content Include="assets\Product\weldlight-1.png" />
+    <Content Include="assets\Product\weldlight-11.JPG" />
+    <Content Include="assets\Product\weldlight-2.png" />
+    <Content Include="assets\Product\weldlight-3.png" />
+    <Content Include="assets\Product\weldlight-33.JPG" />
+    <Content Include="assets\Product\weldlight-44.JPG" />
+    <Content Include="assets\Product\Weldstar-1.png" />
+    <Content Include="assets\Product\Weldstar-2.png" />
+    <Content Include="assets\Product\Weldstar-3.png" />
+    <Content Include="assets\Product\Weldstar400_1.png" />
+    <Content Include="assets\Product\Weldstar400_2.png" />
+    <Content Include="assets\Product\Weldstar400_3.png" />
+    <Content Include="assets\Product\Weldstar400_4.png" />
+    <Content Include="assets\Product\WhatsApp Image 2023-12-16 at 15.26.00.jpeg" />
+    <Content Include="assets\Product\wieldlight.png" />
+    <Content Include="assets\Product\wieldlight1.png" />
+    <Content Include="assets\Product\wieldlight2.png" />
+    <Content Include="assets\Product\wieldlight3.png" />
+    <Content Include="assets\Product\Wirtgen-W1900-Cold-Planer-1.png" />
+    <Content Include="assets\Product\Wirtgen-W1900-Cold-Planer-2.png" />
+    <Content Include="assets\Product\Wirtgen-W1900-Cold-Planer-3.png" />
+    <Content Include="assets\Product\Wirtgen-W1900-Cold-Planer-4.png" />
+    <Content Include="assets\Product\Wirtgen1.jpg" />
+    <Content Include="assets\Product\Wirtgen2.jpg" />
+    <Content Include="assets\Product\Wirtgen3.jpg" />
+    <Content Include="assets\Product\Wirtgen4.jpg" />
+    <Content Include="assets\Product\WS1.jpg" />
+    <Content Include="assets\Product\zamiatarka-samochodowa-zm-s25_new.800.png" />
+    <Content Include="assets\Product\zamiatarka-zm-p160_new.800.png" />
+    <Content Include="assets\Product\zamiatarka-ZMC2_new.800.png" />
+    <Content Include="assets\Product\zamiatarka-ZMC800.png" />
+    <Content Include="assets\Product\ZM2300M-pronar-szaretlo.800.png" />
+    <Content Include="assets\SalesEnq\01083571cyshy_dubai2.jpg" />
+    <Content Include="assets\SalesEnq\01083572cayshy_india.jpg" />
+    <Content Include="assets\SalesEnq\0108357e8y_thailand2.jpg" />
+    <Content Include="assets\SalesEnq\0213198db24.jpg" />
+    <Content Include="assets\SalesEnq\023330802ry-shopping.svg" />
+    <Content Include="assets\SalesEnq\05249489423.jpg" />
+    <Content Include="assets\SalesEnq\05364052b24.jpg" />
+    <Content Include="assets\SalesEnq\121893550profesinal.png" />
+    <Content Include="assets\SalesEnq\123177455eenshot-%281%29.png" />
+    <Content Include="assets\SalesEnq\12318024eenshot-%284%29.png" />
+    <Content Include="assets\SalesEnq\12318075eenshot-%282%29.png" />
+    <Content Include="assets\SalesEnq\123180b4eenshot-%283%29.png" />
+    <Content Include="assets\SalesEnq\1244501a6profesinal.png" />
+    <Content Include="assets\SalesEnq\1334945f6eenshot-%282%29.png" />
+    <Content Include="assets\SalesEnq\1432922bdebg-preview.png" />
+    <Content Include="assets\SalesEnq\1522720f4performance.svg" />
+    <Content Include="assets\SalesEnq\152575223mprehensive.png" />
+    <Content Include="assets\SalesEnq\152575225bout-us-img.png" />
+    <Content Include="assets\SalesEnq\15257522fcareerssvg.png" />
+    <Content Include="assets\SalesEnq\152575256-Management.jpg" />
+    <Content Include="assets\SalesEnq\1525752a3_bf753721f1.png" />
+    <Content Include="assets\SalesEnq\1525752a4_1b5b002258.png" />
+    <Content Include="assets\SalesEnq\1525752a616-1024x729.jpg" />
+    <Content Include="assets\SalesEnq\1525752e3_5a7cf6b2e2.png" />
+    <Content Include="assets\SalesEnq\152747638_5a7cf6b2e2.png" />
+    <Content Include="assets\SalesEnq\152747697_1b5b002258.png" />
+    <Content Include="assets\SalesEnq\1527476f3mprehensive.png" />
+    <Content Include="assets\SalesEnq\1530922b7eenshot-%281%29.png" />
+    <Content Include="assets\SalesEnq\15495801eperformance.svg" />
+    <Content Include="assets\SalesEnq\235665537500.png" />
+    <Content Include="assets\SalesEnq\3.jpg" />
+    <Content Include="assets\SalesEnq\ajashy_logo.svg" />
+    <Content Include="assets\SalesEnq\banner2.jpg" />
+    <Content Include="assets\SalesEnq\e3c36c2e-22fa-4aac-be2b-dbd8b20e07d8.mp3" />
+    <Content Include="assets\SalesEnq\orbit-logo.png" />
+    <Content Include="assets\SalesEnq\Screenshot %281%29.png" />
+    <Content Include="assets\SalesEnq\Screenshot %282%29.png" />
+    <Content Include="assets\SalesEnq\Screenshot %283%29.png" />
+    <Content Include="assets\SalesEnq\Screenshot %284%29.png" />
+    <Content Include="assets\SalesEnq\Screenshot 2023-12-09 005751.png" />
+    <Content Include="assets\SalesEnq\Screenshot 2023-12-10 224651.png" />
+    <Content Include="assets\subCat\1 %281%29.jpg" />
+    <Content Include="assets\subCat\3.jpg" />
+    <Content Include="assets\subCat\6-1.jpg" />
+    <Content Include="assets\subCat\7.jpg" />
+    <Content Include="assets\subCat\Ajashy-Engineering-Sales.png" />
+    <Content Include="assets\subCat\ajashy_logo.svg" />
+    <Content Include="assets\subCat\dealership-1.png" />
+    <Content Include="assets\subCat\dealership-2.png" />
+    <Content Include="assets\subCat\img.jpg" />
+    <Content Include="assets\subCat\jcb-logo.png" />
+    <Content Include="assets\subCat\Lighting-Mast-1.jpg" />
+    <Content Include="assets\subCat\MOBA-Logo-1.jpg" />
+    <Content Include="assets\subCat\Mobile-Service-Van-2-300x300.jpg" />
+    <Content Include="assets\subCat\no-image.jpg" />
+    <Content Include="assets\subCat\offshore.jpg" />
+    <Content Include="assets\subCat\POD-1024x1024.jpg" />
+    <Content Include="assets\subCat\pro_nar.png" />
+    <Content Include="assets\subCat\SCR1.jpg" />
+    <Content Include="assets\subCat\Screenshot 2023-12-09 005751.png" />
+    <Content Include="assets\subCat\Screenshot 2023-12-10 224711.png" />
+    <Content Include="assets\subCat\Screenshot 2023-12-21 184456.png" />
+    <Content Include="assets\testimonilal\Ace-pipline.png" />
+    <Content Include="assets\testimonilal\advance-infrastructures.png" />
+    <Content Include="assets\testimonilal\corrtech.png" />
+    <Content Include="assets\testimonilal\mkc.png" />
+    <Content Include="assets\testimonilal\patel2.png" />
+    <Content Include="assets\testimonilal\sapure.png" />
+    <Content Include="assets\testimonilal\tata.png" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Benitton_db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Benitton_db.Context.cs</LastGenOutput>
+      <DependentUpon>Benitton_db.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Benitton_db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Benitton_db.edmx</DependentUpon>
+      <LastGenOutput>Benitton_db.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="assets\.DS_Store" />
+    <EntityDeploy Include="Models\Benitton_db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Benitton_db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Benitton_db.edmx.diagram">
+      <DependentUpon>Benitton_db.edmx</DependentUpon>
+    </Content>
+    <Content Include="assets\Admin\js\tinymce\langs\README.md" />
+    <Content Include="assets\Admin\vendor\bootstrap-icon\fonts\bootstrap-icons3413.woff" />
+    <Content Include="assets\Admin\vendor\bootstrap-icon\fonts\bootstrap-icons3413.woff2" />
+    <Content Include="assets\Admin\vendor\fonts\fa-brands-400.eot" />
+    <Content Include="assets\Admin\vendor\fonts\fa-brands-400.woff" />
+    <Content Include="assets\Admin\vendor\fonts\fa-brands-400.woff2" />
+    <Content Include="assets\Admin\vendor\fonts\fa-brands-400d41d.eot" />
+    <Content Include="assets\Admin\vendor\fonts\fa-regular-400.eot" />
+    <Content Include="assets\Admin\vendor\fonts\fa-regular-400.woff" />
+    <Content Include="assets\Admin\vendor\fonts\fa-regular-400.woff2" />
+    <Content Include="assets\Admin\vendor\fonts\fa-regular-400d41d.eot" />
+    <Content Include="assets\Admin\vendor\fonts\fa-solid-900.eot" />
+    <Content Include="assets\Admin\vendor\fonts\fa-solid-900.woff" />
+    <Content Include="assets\Admin\vendor\fonts\fa-solid-900.woff2" />
+    <Content Include="assets\Admin\vendor\fonts\fa-solid-900d41d.eot" />
+    <Content Include="assets\carresume\113087982DOC.pdf" />
+    <Content Include="assets\carresume\114078901DOC.pdf" />
+    <Content Include="assets\carresume\150193014pressed-%282%29.pdf" />
+    <Content Include="assets\pdf\Ajashy-Container-Workshop.pdf" />
+    <Content Include="assets\pdf\Linea-tradale-Industrial-sweeper-SI-57.pdf" />
+    <Content Include="assets\pdf\Linea_Costruzioni_Concrete_mixer_bucket_-_BC_57.pdf" />
+    <Content Include="assets\pdf\Linea_Costruzioni_Leveling_blade_-_LB_57.pdf" />
+    <Content Include="assets\pdf\Linea_Costruzioni_Leveling_grader_-_LG_57.pdf" />
+    <Content Include="assets\pdf\Linea_Costruzioni_Multipurpose_bucket_-_BM_57.pdf" />
+    <Content Include="assets\pdf\Linea_Costruzioni_Pallet_fork_-_PF_57.pdf" />
+    <Content Include="assets\pdf\Linea_Costruzioni_Sideshift_backhoe_-_E_57 %282%29.pdf" />
+    <Content Include="assets\pdf\Linea_Costruzioni_Sideshift_backhoe_-_E_57.pdf" />
+    <Content Include="assets\pdf\Linea_Costruzioni_Tiltdozer_blade_-_LTD_57.pdf" />
+    <Content Include="assets\pdf\Linea_Stradale_Angle_Broom_-_SA_57.pdf" />
+    <Content Include="assets\pdf\Linea_Stradale_Industrial_sweeper_-_SI_57.pdf" />
+    <Content Include="assets\pdf\Linea_Stradale_Planer_-_CP_57.pdf" />
+    <Content Include="assets\pdf\Linea_Stradale_Sweeper_With_Collection_Bucket_-_SP_SW_SWH_57.pdf" />
+    <Content Include="assets\pdf\Linea_Stradale_Sweeper_with_collection_bucket_for_loaders_backhoe_loaders_telescopic_handlers_-_SPR_57.pdf" />
+    <Content Include="assets\pdf\Linea_Stradale_Swinging_planer_-_CPB_57.pdf" />
+    <Content Include="assets\pdf\Menu_tree.pdf" />
+    <Content Include="assets\pdf\Product Brochure - Ajashy External Line Up Clamps %281%29.pdf" />
+    <Content Include="assets\pdf\Product Brochure - Ajashy External Line Up Clamps- Rev 2024.pdf" />
+    <Content Include="assets\pdf\Product Brochure - Ajashy Internal Pneumatic Line Up Clamp-Rev2024.pdf" />
+    <Content Include="assets\pdf\Product Brochure - Ajashy Internal Pneumatic Line Up Clamp.pdf" />
+    <Content Include="assets\pdf\Product Flier - Ajashy Auto Winder Reels - Rev 2022.pdf" />
+    <Content Include="assets\pdf\Product Flier - Ajashy Container Workshop - Rev 2023.pdf" />
+    <Content Include="assets\pdf\Product Flier - Ajashy Slope Compactor Roller - Rev 2023.pdf" />
+    <Content Include="assets\pdf\Product Flier- Ajashy Cleaning Pump - Rev 2023.pdf" />
+    <Content Include="assets\pdf\Product Flier- Ajashy Fuel POD - Rev 2023_compressed.pdf" />
+    <Content Include="assets\pdf\Product Flier- Ajashy Lighting Mast - Rev 2023.pdf" />
+    <Content Include="assets\pdf\Product Flier- Ajashy Mobile Fuel Tanker - Rev 2023.pdf" />
+    <Content Include="assets\pdf\Product Flier- Ajashy Mobile Service Van - Rev 2023.pdf" />
+    <Content Include="assets\pdf\Product Flier- Ajashy Pipe Bending Machine - Rev 2023_compressed %282%29.pdf" />
+    <Content Include="assets\pdf\Product Flier- Ajashy Pipe Bending Machine - Rev 2023_compressed.pdf" />
+    <Content Include="assets\pdf\Product Flier- Ajashy Solar Lighting Mast - Rev 2023_compressed.pdf" />
+    <Content Include="assets\pdf\Product Flier- Ajashy Tree Spade - Rev 2023.pdf" />
+    <Content Include="assets\pdf\Product Flier- Ajashy Weldlight - Rev 2023.pdf" />
+    <Content Include="assets\pdf\Product Flier- Ajashy WeldStar - Rev 2023.pdf" />
+    <Content Include="assets\pdf\Product Flier_Ajashy Bear Cage_Rev 2020_compressed.pdf" />
+    <Content Include="assets\Product\manual-external-line-up-clamp-1000x1000.webp" />
+    <Content Include="assets\Product\Menu_tree.pdf" />
+    <Content Include="assets\SalesEnq\112838030DOC.pdf" />
+    <Content Include="assets\SalesEnq\1517946c5pressed-%282%29.pdf" />
+    <Content Include="assets\subCat\Menu_tree.pdf" />
+    <Content Include="assets\img\.DS_Store" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Login_LayoutPage.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Home\OurProduct.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\ECatalogue.cshtml" />
+    <Content Include="Views\Login\ForgetPassword.cshtml" />
+    <Content Include="Views\Admin\AboutCertification.cshtml" />
+    <Content Include="Views\Admin\AboutOurvalues.cshtml" />
+    <Content Include="Views\Admin\AboutOurvision.cshtml" />
+    <Content Include="Views\Admin\AboutTestimonil.cshtml" />
+    <Content Include="Views\Admin\AddAboutCertification.cshtml" />
+    <Content Include="Views\Admin\AddAboutOurvalues.cshtml" />
+    <Content Include="Views\Admin\AddAboutUs.cshtml" />
+    <Content Include="Views\Admin\AddAfterSale.cshtml" />
+    <Content Include="Views\Admin\AddBanner.cshtml" />
+    <Content Include="Views\Admin\AddCategory.cshtml" />
+    <Content Include="Views\Admin\AddCategoryPost.cshtml" />
+    <Content Include="Views\Admin\AddContactus.cshtml" />
+    <Content Include="Views\Admin\AddMenu.cshtml" />
+    <Content Include="Views\Admin\AddProduct.cshtml" />
+    <Content Include="Views\Admin\AddSubCategory.cshtml" />
+    <Content Include="Views\Admin\AddTestimonil.cshtml" />
+    <Content Include="Views\Admin\AfterSale.cshtml" />
+    <Content Include="Views\Admin\Banner.cshtml" />
+    <Content Include="Views\Admin\blog.cshtml" />
+    <Content Include="Views\Admin\Category.cshtml" />
+    <Content Include="Views\Admin\ChangePassword.cshtml" />
+    <Content Include="Views\Admin\contactusEnquiry.cshtml" />
+    <Content Include="Views\Admin\faq.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Menu.cshtml" />
+    <Content Include="Views\Admin\ProductEnquiry.cshtml" />
+    <Content Include="Views\Admin\Products.cshtml" />
+    <Content Include="Views\Admin\ServiceSupport.cshtml" />
+    <Content Include="Views\Admin\SubCategory.cshtml" />
+    <Content Include="Views\Admin\Subscribe.cshtml" />
+    <Content Include="Views\Admin\Updateblog.cshtml" />
+    <Content Include="Views\Admin\UpdateCategory.cshtml" />
+    <Content Include="Views\Admin\Updatefaq.cshtml" />
+    <Content Include="Views\Admin\UpdateProduct.cshtml" />
+    <Content Include="Views\Admin\UpdateSubcategory.cshtml" />
+    <Content Include="Views\Admin\UserProfile.cshtml" />
+    <Content Include="Views\Admin\Users.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Home\Product.cshtml" />
+    <Content Include="Views\Home\ProductDetail_Aj.cshtml" />
+    <Content Include="Views\Home\ProductDetail.cshtml" />
+    <Content Include="Views\Home\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Home\Catalogy.cshtml" />
+    <Content Include="Views\Home\CategoryProduct.cshtml" />
+    <Content Include="Views\Admin\UpdateMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="assets\Admin\js\tinymce\tinymce.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\Contact_Enq\" />
+    <Folder Include="assets\testimonial\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54144</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44310/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

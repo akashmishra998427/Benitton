@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="main-content">
+    <div class="panel mb-g">
+        <div class="panel-heading">
+            <h3>
+                <div class="col-sm-12 row">
+                    <div class="col-sm-4"><a href="/Admin/AboutTestimonil/1/1" id="" class="btn btn-sm btn-success buttonHideShow"><i class="bi bi-add-square"></i>Cancel</a></div>
+                    <div class="col-sm-4">
+                        Add Testimonial
+                    </div>
+                </div>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <form method="post" enctype="multipart/form-data" id="form_AddAddTestimonil">
+                <input type="hidden" name="ID">
+                <div class="col-sm-4 mb-15">
+                    <label for="exampleInputName" class="form-label">image*  File size must be less than 500 KB</label>
+                    <div>
+                        <img alt="" src="~/assets/aboutcertificate/">
+                    </div>
+                    <input type="file" name="image_file" id="image_file" class="form-control form-control-lg" accept="image/*" required>
+                </div>
+
+                <div class="col-sm-12 btn-box justify-content-start">
+                    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                    <a href="" type="reset" class="btn btn-lg btn-secondary">Reset</a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+

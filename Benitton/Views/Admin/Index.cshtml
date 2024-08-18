@@ -1,0 +1,185 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- main-content -->
+<div class="main-content">
+    <div class="row">
+        <div class="col">
+            <div class="panel mb-g">
+                <div class="panel-body">
+                    <div class="sale-top-box">
+                        <a href="/Admin/Products/1/1">
+                            <div class="part-icon bg-primary">
+                                @ViewBag.CountProduct
+                                                        @*<span><i class="bi bi-list"></i></span>*@
+                                                    </div>
+                        </a>
+                        <div class="part-txt">
+                            <h5><span>Products</span></h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="panel mb-g">
+                <div class="panel-body">
+                    <div class="sale-top-box">
+                        <a href="/Admin/Category/1/1">
+                            <div class="part-icon bg-success">
+                                @ViewBag.countCat
+                                                        @*<span><i class="bi bi-list"></i></span>*@
+                                                    </div>
+                        </a>
+                        <div class="part-txt">
+                            <h5><span>Categories</span></h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="panel mb-g">
+                <div class="panel-body">
+                    <div class="sale-top-box">
+                        <a href="/Admin/SubCategory/1/1">
+                            <div class="part-icon bg-success">
+                                @ViewBag.CountSubCat
+                                                        @*<span><i class="bi bi-list"></i></span>*@
+                                                    </div>
+                        </a>
+                        <div class="part-txt">
+                            <h5><span>SubCategories</span></h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="col">
+            <div class="panel mb-g">
+                <div class="panel-body">
+                    <div class="sale-top-box">
+                        <a href="/Admin/contactusEnquiry/1/1">
+                            <div class="part-icon bg-success">
+                                @ViewBag.CountContact
+                                                        @*<span><i class="bi bi-list"></i></span>*@
+                                                    </div>
+                        </a>
+                        <div class="part-txt">
+                            <h5><span>Cont. Enquiry</span></h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="panel mb-g">
+                <div class="panel-body">
+                    <div class="sale-top-box">
+                        <a href="/Admin/ProductEnquiry/1/1">
+                            <div class="part-icon bg-success">
+                                @ViewBag.Countsubscribe
+                                                        @*<span><i class="bi bi-list"></i></span>*@
+                                                    </div>
+                        </a>
+                        <div class="part-txt">
+                            <h5><span> Pro. Enquiry</span></h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="row">
+
+        @if (TempData["msgErr"] != null)
+        {
+            <div class="col-md-12 text-center alert alert-danger">
+                @TempData["msgErr"].ToString()
+            </div>
+        }
+
+        @if (TempData["msgSuccess"] != null)
+        {
+            <div class="col-md-12 text-center alert alert-success">
+
+                @TempData["msgSuccess"].ToString()
+            </div>
+        }
+        <div class="col-xl-12 col-lg-12">
+            <div class="panel mb-g">
+                <div class="panel-heading">
+                    <h3>Contact Enquiry</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="ecommerce-table">
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sr. No.</th>
+
+                                        <th scope="col">FUll Name</th>
+                                        <th scope="col">Contact Number.</th>
+                                        <th scope="col">Email Address</th>
+                                        <th scope="col">Enquiry For</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Action</th>
+                                        <th scope="col">Document</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null)
+                                    {
+                                        var sr = 0;
+                                        foreach (var item in Model)
+                                        {
+
+                                            sr = sr + 1;
+                                    <tr>
+                                        <td>@sr</td>
+
+                                        <td>@item.contact_name</td>
+                                        <td>@item.mobile</td>
+                                        <td>@item.email</td>
+                                        <td>@item.message_detail</td>
+                                        <td>@item.created_at</td>
+
+
+                                        <td>
+                                            <div class="btn-box">
+                                                @*<a href="~/Admin/AddCategory/@item.ID" class="btn btn-sm btn-success"><i class="bi bi-pencil-square"></i></a>*@
+                                                <a href="~/Admin/DeletePermanentContactDashboar/@item.contact_id/Del/1/1" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
+                                            </div>
+                                        </td>
+                                        <td><a href="~/@item.organisation_name" class="btn btn-sm btn-success" target="_blank"><i class="bi bi-book-fill"></i></a></td>
+                                    </tr>
+
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr><td colspan='3'><div class='alert alert-warning'><center>Record not found!</center></div></td></tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- main-content -->

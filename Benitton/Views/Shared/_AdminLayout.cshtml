@@ -1,0 +1,1916 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <link rel="icon" type="image/x-icon" href="~/assets/img/fav-icon.svg">
+    <link rel="stylesheet" href="~/assets/Admin/vendor/bootstrap-icon/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/assets/Admin/vendor/css/simplebar.css">
+    <link rel="stylesheet" href="~/assets/Admin/vendor/css/bootstrap.min.css">
+    <link id="styles" rel="stylesheet" href="~/assets/Admin/css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/Admin/css/pnotify.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+
+</head>
+<body>
+    <div class="container-fluid">
+
+        <!-- Theme customization -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h4 id="offcanvasRightLabel">Theme Customization</h4>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="nav-position mb-30">
+                    <p><span class="text-primary"><i class="bi bi-octagon-fill"></i></span> Click the button bellow to change navbar position <strong>(Top/Left)</strong></p>
+                    <a role="button" class="btn btn-primary" id="navChange"><i class="bi bi-arrow-bar-up"></i></a>
+                </div>
+                <div class="theme-color">
+                    <p><span class="text-primary"><i class="bi bi-octagon-fill"></i></span> Click on any color bellow to change theme color</p>
+                    <button class="btn-color color-1" id="color-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Violets Are Blue"></button>
+                    <button class="btn-color color-2" id="color-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Lavender Indigo"></button>
+                    <button class="btn-color color-3" id="color-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Deep Magenta"></button>
+                    <button class="btn-color color-4" id="color-4" data-bs-toggle="tooltip" data-bs-placement="top" title="Blue"></button>
+                    <button class="btn-color color-5" id="color-5" data-bs-toggle="tooltip" data-bs-placement="top" title="Medium Aquamarine"></button>
+                    <button class="btn-color color-6" id="color-6" data-bs-toggle="tooltip" data-bs-placement="top" title="Orioles Orange"></button>
+                    <button class="btn-color color-7" id="color-7" data-bs-toggle="tooltip" data-bs-placement="top" title="Maya Blue"></button>
+                    <button class="btn-color color-8" id="color-8" data-bs-toggle="tooltip" data-bs-placement="top" title="Deep Violet"></button>
+                    <button class="btn-color color-9" id="color-9" data-bs-toggle="tooltip" data-bs-placement="top" title="Dark"></button>
+                </div>
+            </div>
+        </div>
+        <!-- Theme customization -->
+        <!-- header -->
+        <div class="header">
+            <div class="top-header">
+                <div class="row justify-content-between">
+                    <div class="col-xl-3 col-lg-4 col-sm-4 col-6">
+                        <div class="d-flex align-items-center">
+                            <div class="logo">
+                                <div class="logo-big">
+                                    <a href="/Admin">
+                                        <img src="~/assets/img/header-logo.svg" id="logoBig" alt="Logo big" style="">
+                                    </a>
+                                </div>
+                                <div class="logo-small">
+                                    <a href="/Admin">
+                                        <img src="~/assets/img/header-logo.svg" id="logoSmall" alt="Logo small">
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="sidebar-collapse">
+                                <i class="bi bi-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-8 col-sm-8 col-6">
+                        <div class="top-right">
+                            <nav class="navbar navbar-expand">
+                                <div class="navbar-collapse" id="navbarSupportedContent">
+                                    <form class="nav-form d-flex">
+                                        <input type="search" placeholder="Search" aria-label="Search">
+                                        <button type="submit"><i class="bi bi-search"></i></button>
+                                    </form>
+                                    <ul class="navbar-nav">
+                                        @*<li class="nav-item dropdown">
+                                                <button class="message-dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bi bi-bell-fill"></i>
+                                                    <span class="position-absolute p-1 bg-danger border border-light rounded-circle">
+                                                        <span class="visually-hidden">New alerts</span>
+                                                    </span>
+                                                </button>
+
+                                            </li>*@
+                                        <li class="nav-item dropdown">
+                                            @*<button class="message-dropdown" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bi bi-chat-text-fill"></i>
+                                                    <span class="position-absolute p-1 bg-danger border border-light rounded-circle">
+                                                        <span class="visually-hidden">New alerts</span>
+                                                    </span>
+                                                </button>*@
+
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <button class="profile-dropdown" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <img src="~/assets/img/header-logo.svg" alt="user">
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                                <li><a class="dropdown-item" href="/Admin/UserProfile/1/1/"><i class="bi bi-person-badge-fill"></i>profile</a></li>
+                                                @*<li><a class="dropdown-item" href="#"><i class="bi bi-envelope-fill"></i>inbox</a></li>
+                                                    <li><a class="dropdown-item" href="#"><i class="bi bi-list-task"></i>tasks</a></li>*@
+                                                <li><hr class="dropdown-divider"></li>
+                                                <li><a class="dropdown-item" href="/Admin/ChangePassword/1/1"><i class="bi bi-gear-fill"></i>settings</a></li>
+                                                @*<li><a class="dropdown-item" href="#"><i class="bi bi-shield-lock-fill"></i>lock screen</a></li>*@
+                                                <li><a class="dropdown-item" href="/Login/Logout/1/1"><i class="bi bi-box-arrow-right"></i>sign out</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            @*<button class="nav-link offcanvas-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-gear"></i></button>*@
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="horizontal-menu bg-primary">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-dark">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="javascript:void();" id="ecommerceDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="ecommerceDropdown">
+
+                                            <li><a href="/Admin/Menu/1/1" class="dropdown-item">Menu</a></li>
+                                            <li><a href="/Admin/Products/1/1" class="dropdown-item">Products</a></li>
+                                            <li><a href="/Admin/Category/1/1" class="dropdown-item">Category</a></li>
+                                            <li><a href="/Admin/SubCategory/1/1" class="dropdown-item">Sub Category</a></li>
+                                            @*<li><a href="/Admin/Users" class="dropdown-item">Users</a></li>*@
+                                            <li><a href="/Admin/contactusEnquiry/1/1" class="dropdown-item">Contact</a></li>
+                                            <li><a href="/Admin/ServiceSupport/1/1" class="dropdown-item">Sales Support</a></li>
+                                            @*<li><a href="/Admin/Menu" class="dropdown-item">Menu</a></li>*@
+
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header -->
+        <!-- main sidebar -->
+        <div class="fixed-sidebar sidebar-mini" data-simplebar>
+            <div class="profile">
+                <div class="sidebar-profile">
+                    <button id="profileClose"><i class="bi bi-x-circle-fill"></i></button>
+                    <div class="part-img">
+                        <img src="~/assets/Admin/images/ajashy_logoAdmin.png" alt="user">
+                    </div>
+                    <div class="part-txt">
+                        <a href="~/Admin/UserProfile/1/1" class="name">Benitton</a>
+                        @*<span>Co founder</span>*@
+                        <ul>
+                            <li><a href="~/Admin/ChangePassword/1/1" data-bs-toggle="tooltip" data-bs-placement="top" tabindex="0" title="Settings"><i class="bi bi-gear-fill"></i></a></li>
+                            <li><a href="~/Admin/UserProfile/1/1" data-bs-toggle="tooltip" data-bs-placement="top" tabindex="0" title="profile"><i class="bi bi-person-badge-fill"></i></a></li>
+                            @*<li><a href="/Admin/UserProfile" data-bs-toggle="tooltip" data-bs-placement="top" tabindex="0" title="Follower"><i class="bi bi-person-plus-fill"></i></a></li>*@
+                            <li><a href="~/Login/Logout/1/1" data-bs-toggle="tooltip" data-bs-placement="top" tabindex="0" title="Log out"><i class="bi bi-power"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- sidebar menu -->
+            <div class="menu">
+                <div class="sidebar-menu">
+                    <ul>
+                        <li class="sidebar-item"><a href="~/Admin" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="" tabindex="0"><i class="bi bi-grid-fill"></i> <span>Dashboard</span></a></li>
+                        <li class="sidebar-item has-sub">
+                            <a role="button" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="" tabindex="0"><i class="bi bi-list"></i> <span>Manage Products</span></a>
+                            <ul class="sub-menu">
+                                <li><a href="~/Admin/Menu/1/1" class="dropdown-item">Menu</a></li>
+                                <li><a href="~/Admin/Products/1/1" class="dropdown-item">Products</a></li>
+                                <li><a href="~/Admin/Category/1/1" class="dropdown-item">Category</a></li>
+                                <li><a href="~/Admin/SubCategory/1/1" class="dropdown-item">Sub Category</a></li>
+
+                                @*<li><a href="/Admin/Menu" class="dropdown-item">Menu</a></li>*@
+
+                            </ul>
+                        </li>
+                        @*<li class="sidebar-item has-sub">
+                            <a role="button" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="" tabindex="0"><i class="bi bi-list"></i> <span>Manage Blogs</span></a>
+                            <ul class="sub-menu">
+                                <li><a href="~/Admin/blog/1/1" class="dropdown-item">Blog</a></li>
+
+                            </ul>
+                        </li>*@
+
+                        <li class="sidebar-item has-sub">
+                            <a role="button" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="" tabindex="0"><i class="bi bi-list"></i> <span>Manage WebSite</span></a>
+                            <ul class="sub-menu">
+
+                                <li><a href="~/Admin/Banner/1/1" class="dropdown-item">Banner</a></li>
+                                @*<li><a href="~/Admin/AfterSale/1/1" class="dropdown-item"> After Sale</a></li>*@
+                                @*<li><a href="~/Admin/AboutCertification/1/1" class="dropdown-item">  Certificate</a></li>
+        <li><a href="~/Admin/AboutTestimonil/1/1" class="dropdown-item">  Testimonial</a></li>
+        <li><a href="~/Admin/AboutOurvalues/1/1" class="dropdown-item"> About Our Values</a></li>
+        <li><a href="~/Admin/AboutOurvision/1/1" class="dropdown-item">Our Vission</a></li>*@
+                                <li><a href="~/Admin/AddContactus/1/1" class="dropdown-item"> Contact us</a></li>
+                                @*<li><a href="~/Admin/AddAboutUs/1/1" class="dropdown-item"> About Us</a></li>
+        <li><a href="~/Admin/faq/1/1" class="dropdown-item"> Faq</a></li>*@
+                            </ul>
+                        </li>
+                        <li class="sidebar-item has-sub">
+                            <a role="button" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="" tabindex="0"><i class="bi bi-person-badge-fill"></i> <span>Enquiry</span></a>
+                            <ul class="sub-menu">
+
+                                <li><a href="~/Admin/contactusEnquiry/1/1" class="dropdown-item">Contact</a></li>
+                                <li><a href="~/Admin/ProductEnquiry/1/1" class="dropdown-item">Product</a></li>
+
+                                @*<li><a href="~/Admin/ServiceSupport//1/1" class="dropdown-item">Sales Support</a></li>
+        <li><a href="~/Admin/Subscribe/1/1" class="dropdown-item">Subscribe</a></li>*@
+
+                            </ul>
+                        </li>
+                        <li class="sidebar-item has-sub">
+                            <a role="button" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="" tabindex="0"><i class="bi bi-gear-fill"></i> <span>Settings</span></a>
+                            <ul class="sub-menu">
+
+
+                                <li><a href="~/Admin/ChangePassword/1/1" class="sub-menu-item">Change Password</a></li>
+                                <li><a href="~/Admin/UserProfile/1/1" class="sub-menu-item">Profile</a></li>
+                                <li><a href="~/Login/Logout/1/1" class="sub-menu-item">Log Out</a></li>
+
+
+                                <!--li><a href="/AdminwebsiteSetting" class="sub-menu-item">Website Basic Setting</a></li-->
+
+                            </ul>
+                        </li>
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+            <!-- sidebar menu -->
+        </div>
+        <!-- main sidebar -->
+
+
+        @RenderBody()
+
+
+        <style type="text/css">
+            .ck-editor__editable {
+                min-height: 200px !important;
+            }
+
+            .loader {
+                position: fixed;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                z-index: 9999;
+                background: url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') 50% 50% no-repeat rgb(249,249,249);
+            }
+        </style>
+
+        <div class="loader" id="myLoadingElement" style="display: none;">
+        </div>
+
+    </div>
+    @*<script src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>*@
+
+    <!--<script src="https://cdn.tiny.cloud/1/5fxbkvhsf6963dlc99sw1jroe298knqol81hn4o9ry01cpoh/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>-->
+    <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
+    <!--<script>
+            tinymce.init({
+                selector: '.textareaeditor',
+                plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
+                toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                tinycomments_mode: 'embedded',
+                tinycomments_author: 'Author name',
+                mergetags_list: [
+                    { value: 'First.Name', title: 'First Name' },
+                    { value: 'Email', title: 'Email' },
+                ],
+                ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+            });
+        </script>-->
+    @*<script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+        <script>
+            ClassicEditor
+                .create(document.querySelector('.textareaeditor'))
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>*@
+
+    <script src="~/assets/Admin/js/tinymce/tinymce.min.js"></script>
+    <script src="~/assets/Admin/js/script.js"></script>
+    <script src="~/assets/Admin/vendor/js/jquery-3.6.0.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            //var currentLocation = window.location.pathname;
+            //alert(currentLocation);
+            $('.DivAdd').hide();
+            $('.buttonHideShow').click(function () {
+                //alert();
+                if ($('.DivAdd').is(':hidden')) {
+                    $('.DivAdd').show();
+                } else {
+                    $('.DivAdd').hide();
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+
+        function RemoveProductImage(ID, columnName) {
+            var formdata = new FormData();
+
+            formdata.append("ID", ID);
+            formdata.append('Image_1', columnName);
+            $("#myLoadingElement").show();
+            debugger;
+            $.ajax({
+                
+                url: "/Admin/RemoveProductImage/1/1",
+                type: "POST",
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response && response.status == 1) {
+                        debugger;
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        // $("#" + columnName + "HideShow").css("display", "none");
+                        // $("#" + columnName + "HideShow").hide();
+                        alertG("Remove image successfully");
+
+                        window.setTimeout(function () {
+                            // do whatever you want to do
+                            window.location.href = "";
+
+                        }, 1000);
+                        //$("#form_AddCategory")[0].reset();
+                    }
+                    else if (response && response.status == 2) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertInfo(response.message);
+                    }
+                    else if (response && response.status == 0) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertR(response.message);
+                    }
+                },
+                error: function (err) {
+                    $("#myLoadingElement").css("display", "none");
+                    $("#myLoadingElement").hide();
+                    console.log(err);
+                    alertR("Something went wrong");
+                }
+            });
+
+            return false;
+        }
+        function otherCatPage(homedisplayAndID) {
+            debugger;
+            var formdata = new FormData();
+            formdata.append("ID", homedisplayAndID.split(',')[0]);
+            formdata.append("otherCatID", homedisplayAndID.split(',')[1]);
+            $("#myLoadingElement").show();
+            $.ajax({
+                url: "/Admin/otherCatPage/1/1",
+                type: "POST",
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response && response.status == 1) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertG("Record updated successfully");
+                        window.setTimeout(function () {
+                            // do whatever you want to do
+                            window.location.href = "";
+                        }, 1000);
+                        //$("#form_AddCategory")[0].reset();
+                    }
+                    else if (response && response.status == 2) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertInfo(response.message);
+                    }
+                    else if (response && response.status == 0) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertR(response.message);
+                    }
+                },
+                error: function (err) {
+                    $("#myLoadingElement").css("display", "none");
+                    $("#myLoadingElement").hide();
+                    console.log(err);
+                    alertR("Something went wrong");
+                }
+            });
+
+            return false;
+        }
+
+        function DisplayProductHomePage(homedisplayAndID) {
+            debugger;
+            var formdata = new FormData();
+            formdata.append("ID", homedisplayAndID.split(',')[0]);
+            formdata.append("display_on_home", homedisplayAndID.split(',')[1]);
+            $("#myLoadingElement").show();
+            $.ajax({
+                url: "/Admin/DisplayProductHomePage/1/1",
+                type: "POST",
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response && response.status == 1) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertG("Record updated successfully");
+                        window.setTimeout(function () {
+                            // do whatever you want to do
+                            window.location.href = "";
+                        }, 1000);
+                        //$("#form_AddCategory")[0].reset();
+                    }
+                    else if (response && response.status == 2) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertInfo(response.message);
+                    }
+                    else if (response && response.status == 0) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertR(response.message);
+                    }
+                },
+                error: function (err) {
+                    $("#myLoadingElement").css("display", "none");
+                    $("#myLoadingElement").hide();
+                    console.log(err);
+                    alertR("Something went wrong");
+                }
+            });
+
+            return false;
+        }
+
+        function setorderProduct(orderidAndID) {
+            //alert(orderidAndID.split(',')[0]);
+            //alert(orderidAndID.split(',')[1]);
+            debugger;
+            var formdata = new FormData();
+            formdata.append("ID", orderidAndID.split(',')[1]);
+            formdata.append("serialorder", orderidAndID.split(',')[0]);
+            $("#myLoadingElement").show();
+            $.ajax({
+                url: "/Admin/setorderProduct/1/1",
+                type: "POST",
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response && response.status == 1) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertG("order updated successfully");
+                        window.setTimeout(function () {
+                            // do whatever you want to do
+                            window.location.href = "";
+                        }, 1000);
+                        //$("#form_AddCategory")[0].reset();
+                    }
+                    else if (response && response.status == 2) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertInfo(response.message);
+                    }
+                    else if (response && response.status == 0) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertR(response.message);
+                    }
+                },
+                error: function (err) {
+                    $("#myLoadingElement").css("display", "none");
+                    $("#myLoadingElement").hide();
+                    console.log(err);
+                    alertR("Something went wrong");
+                }
+            });
+
+            return false;
+        }
+
+        function setorderSubcat(orderidAndID) {
+            //alert(orderidAndID.split(',')[0]);
+            //alert(orderidAndID.split(',')[1]);
+            debugger;
+            var formdata = new FormData();
+            formdata.append("ID", orderidAndID.split(',')[1]);
+            formdata.append("serialorder", orderidAndID.split(',')[0]);
+            $("#myLoadingElement").show();
+            $.ajax({
+                url: "/Admin/setorderSubcat/1/1",
+                type: "POST",
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response && response.status == 1) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertG("order updated successfully");
+                        window.setTimeout(function () {
+                            // do whatever you want to do
+                            window.location.href = "";
+                        }, 1000);
+                        //$("#form_AddCategory")[0].reset();
+                    }
+                    else if (response && response.status == 2) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertInfo(response.message);
+                    }
+                    else if (response && response.status == 0) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertR(response.message);
+                    }
+                },
+                error: function (err) {
+                    $("#myLoadingElement").css("display", "none");
+                    $("#myLoadingElement").hide();
+                    console.log(err);
+                    alertR("Something went wrong");
+                }
+            });
+
+            return false;
+        }
+
+        function switcherActionCat(ID) {
+            debugger;
+            var iddd = "#switchercatidss_" + ID;
+            var x = $(iddd).is(":checked");
+            var formdata = new FormData();
+            formdata.append("ID", ID);
+            formdata.append("IsActive", $(iddd).is(":checked"));
+
+            $("#myLoadingElement").show();
+            $.ajax({
+                url: "/Admin/SwitchCategory/1/1",
+                type: "POST",
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response && response.status == 1) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertG("Record updated successfully");
+                        window.setTimeout(function () {
+                            // do whatever you want to do
+                            window.location.href = "";
+                        }, 1000);
+                        //$("#form_AddCategory")[0].reset();
+                    }
+                    else if (response && response.status == 2) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertInfo(response.message);
+                    }
+                    else if (response && response.status == 0) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertR(response.message);
+                    }
+                },
+                error: function (err) {
+                    $("#myLoadingElement").css("display", "none");
+                    $("#myLoadingElement").hide();
+                    console.log(err);
+                    alertR("Something went wrong");
+                }
+            });
+
+            return false;
+        }
+
+
+
+        function ActiveDeactivePro(ID, TableName, ColumnName) {
+            debugger;
+            var iddd = "#switchercatidss_" + ID;
+            var x = $(iddd).is(":checked");
+            var formdata = new FormData();
+            formdata.append("ID", ID);
+            formdata.append("TableName", TableName);
+            formdata.append("ColumnName", ColumnName);
+            formdata.append("IsActive", $(iddd).is(":checked"));
+
+            $("#myLoadingElement").show();
+            $.ajax({
+                url: "/Admin/ActiveDeactivePro/1/1",
+                type: "POST",
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response && response.status == 1) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertG("Record updated successfully");
+                        window.setTimeout(function () {
+                            // do whatever you want to do
+                            window.location.href = "";
+                        }, 1000);
+                        //$("#form_AddCategory")[0].reset();
+                    }
+                    else if (response && response.status == 2) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertInfo(response.message);
+                    }
+                    else if (response && response.status == 0) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertR(response.message);
+                    }
+                },
+                error: function (err) {
+                    $("#myLoadingElement").css("display", "none");
+                    $("#myLoadingElement").hide();
+                    console.log(err);
+                    alertR("Something went wrong");
+                }
+            });
+
+            return false;
+        }
+
+        function changePassword() {
+
+            $.ajax({
+                url: "/Admin/ChangePassword/1/1",
+                type: "POST",
+                data: $("#change_password").serialize(),
+                success: function (response) {
+                    if (response && response.status == 1) {
+                        alertG("Password changed successfully");
+                        $("#change_password")[0].reset();
+                    }
+                    else if (response && response.status == 2) {
+                        alertInfo(response.message);
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                    alertR("Something went wrong");
+                }
+            });
+
+            return false;
+        }
+
+        function updateProfile() {
+            $.ajax({
+                url: "/Admin/UserProfile/1/1",
+                type: "POST",
+                data: $("#form_UpdateProfile").serialize(),
+                success: function (response) {
+                    if (response && response.status == 1) {
+                        alertG("Profile update successfully");
+                        $("#form_AddEmployee")[0].reset();
+                        //test();
+                    } else if (response && response.status == 2) {
+                        alertG(response.message);
+                        //test();
+                    } else if (response && response.status == 0) {
+                        alertR(response.message);
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                    alertR("Something went wrong");
+                }
+            });
+            return false;
+        }
+
+        function switcherActionSubCat(ID) {
+
+            debugger;
+            var iddd = "#switchersubcatidss_" + ID;
+            // var x = $(iddd).is(":checked");
+            var formdata = new FormData();
+            formdata.append("ID", ID);
+            formdata.append("IsActive", $(iddd).is(":checked"));
+            alert();
+            $("#myLoadingElement").show();
+            $.ajax({
+                url: "/Admin/SwitchSubCategory/1/1",
+                type: "POST",
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response && response.status == 1) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertG("Record updated successfully");
+                        window.setTimeout(function () {
+                            // do whatever you want to do
+                            window.location.href = "";
+                        }, 1000);
+                        //$("#form_AddCategory")[0].reset();
+                    }
+                    else if (response && response.status == 2) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertInfo(response.message);
+                    }
+                    else if (response && response.status == 0) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertR(response.message);
+                    }
+                },
+                error: function (err) {
+                    $("#myLoadingElement").css("display", "none");
+                    $("#myLoadingElement").hide();
+                    console.log(err);
+                    alertR("Something went wrong");
+                }
+            });
+
+            return false;
+        }
+
+        function switcherActionProduct(ID) {
+
+            debugger;
+            var iddd = "#switcherproidss_" + ID;
+            var x = $(iddd).is(":checked");
+            var formdata = new FormData();
+            formdata.append("ID", ID);
+            formdata.append("IsActive", $(iddd).is(":checked"));
+
+            $("#myLoadingElement").show();
+            $.ajax({
+                url: "/Admin/SwitchProduct/1/1",
+                type: "POST",
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response && response.status == 1) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertG("Record updated successfully");
+                        /*  window.setTimeout(function () {
+                              // do whatever you want to do
+                              window.location.href = "";
+                          }, 1000); */
+                        //$("#form_AddCategory")[0].reset();
+                    }
+                    else if (response && response.status == 2) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertInfo(response.message);
+                    }
+                    else if (response && response.status == 0) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertR(response.message);
+                    }
+                },
+                error: function (err) {
+                    $("#myLoadingElement").css("display", "none");
+                    $("#myLoadingElement").hide();
+                    console.log(err);
+                    alertR("Something went wrong");
+                }
+            });
+
+            return false;
+        }
+
+        function switcherActionBlog(ID) {
+
+            debugger;
+            var iddd = "#switcherproidss_" + ID;
+            var x = $(iddd).is(":checked");
+            var formdata = new FormData();
+            formdata.append("ID", ID);
+            formdata.append("IsActive", $(iddd).is(":checked"));
+
+            $("#myLoadingElement").show();
+            $.ajax({
+                url: "/Admin/SwitchBlog/1/1",
+                type: "POST",
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response && response.status == 1) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        window.setTimeout(function () {
+                            // do whatever you want to do
+                            window.location.href = "";
+                        }, 1000);
+                        alertG("Record updated successfully");
+                    }
+                    else if (response && response.status == 2) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertInfo(response.message);
+                    }
+                    else if (response && response.status == 0) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertR(response.message);
+                    }
+                },
+                error: function (err) {
+                    $("#myLoadingElement").css("display", "none");
+                    $("#myLoadingElement").hide();
+                    console.log(err);
+                    alertR("Something went wrong");
+                }
+            });
+
+            return false;
+        }
+        function switcherActionFaq(ID) {
+
+            debugger;
+            var iddd = "#switcherproidss_" + ID;
+            var x = $(iddd).is(":checked");
+            var formdata = new FormData();
+            formdata.append("ID", ID);
+            formdata.append("IsActive", $(iddd).is(":checked"));
+
+            $("#myLoadingElement").show();
+            $.ajax({
+                url: "/Admin/switchFaq/1/1",
+                type: "POST",
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response && response.status == 1) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertG("Record updated successfully");
+
+                    }
+                    else if (response && response.status == 2) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertInfo(response.message);
+                    }
+                    else if (response && response.status == 0) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertR(response.message);
+                    }
+                },
+                error: function (err) {
+                    $("#myLoadingElement").css("display", "none");
+                    $("#myLoadingElement").hide();
+                    console.log(err);
+                    alertR("Something went wrong");
+                }
+            });
+
+            return false;
+        }
+
+
+    </script>
+
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+            debugger;
+            //$("#categoryActiveDeactive").on("change", function (event) {
+
+            //});
+
+
+
+            $("#form_AddCategory").on("submit", function (event) {
+                //alert();
+                debugger;
+                var DataT = $("#exampleInputName").text();
+               
+                var formdata = new FormData();
+                formdata.append("title", $("#title").val());
+                formdata.append("detail", $("#detail").val());
+                formdata.append("MenuID", $("#ddlmenuItem").find('option:selected').val());
+
+                //var formdata2 = new formdata2();
+                var file = document.getElementById('image_file').files[0];
+                formdata.append("image_file", file);
+
+                $("#myLoadingElement").show();
+                $.ajax({
+                    url: "/Admin/AddCategory/1/1",
+                    type: "POST",
+                    data: formdata,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+
+                        debugger;
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Category added successfully");
+                            $("#form_AddCategory")[0].reset();
+
+                           // window.location.href = "/Admin/AddCategory/1/1";
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        //console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+            $("#form_AddMenu").on("submit", function (event) {
+                //  alert();
+                debugger;
+                $("#myLoadingElement").show();
+                $.ajax({
+                    url: "/Admin/AddMenu/1/1",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Menu added successfully");
+                            $("#form_AddMenu")[0].reset();
+
+                            window.location.href = "/Admin/Menu/1/1";
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+            $("#form_UpdateMenu").on("submit", function (event) {
+                // alert('product');
+                debugger;
+                $("#myLoadingElement").show();
+                //alert();
+
+                $.ajax({
+                    url: "/Admin/UpdatemenuItem/1/1",
+                    type: "POST",
+                    //data: formdata,
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Record updated successfully");
+                            // $("#form_UpdateSubCategory")[0].reset();
+                            // $(".main-content").delay(9000).fadeIn();
+                            //$('.DivAdd').hide();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "/Admin/Menu/1/1";
+                            }, 1000);
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+            $("#form_UpdateCategory").on("submit", function (event) {
+                // alert();
+                debugger;
+                $("#myLoadingElement").show();
+                $.ajax({
+                    url: "/Admin/UpdateCategory/1/1",
+                    type: "POST",
+                    //data: formdata,
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        //  alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Record updated successfully");
+                            // $("#form_AddProduct")[0].reset();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "/Admin/Category/1/1";
+                            }, 1000);
+                            // $('.DivAdd').hide();
+                            //window.location.href = "";
+
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+
+                return false;
+            });
+
+
+
+
+            $("#form_AddBlog").on("submit", function (event) {
+                // alert('product');
+                debugger;
+                $("#myLoadingElement").show();
+                $.ajax({
+                    url: "/Admin/Addblog/1/1",
+                    type: "POST",
+                    //data: formdata,
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        //alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Blog added successfully");
+                            $("#form_AddBlog")[0].reset();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "";
+                            }, 1000);
+
+                            $('.DivAdd').hide();
+                            window.location.href = "";
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+            $("#form_AddFaq").on("submit", function (event) {
+                // alert('product');
+                debugger;
+                $("#myLoadingElement").show();
+                $.ajax({
+                    url: "/Admin/Addfaq/1/1",
+                    type: "POST",
+                    //data: formdata,
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        //alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Faq added successfully");
+                            $("#form_AddFaq")[0].reset();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "";
+                            }, 1000);
+
+                            $('.DivAdd').hide();
+                            window.location.href = "";
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+            $("#form_UpdateBlog").on("submit", function (event) {
+                //alert('blog');
+                debugger;
+                $("#myLoadingElement").show();
+                // alert();
+
+                $.ajax({
+                    url: "/Admin/Updateblog/1/1",
+                    type: "POST",
+                    //data: formdata,
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        //alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Record updated successfully");
+                            // $("#form_AddProduct")[0].reset();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "";
+                            }, 1000);
+                            // $('.DivAdd').hide();
+                            //window.location.href = "";
+
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+            $("#form_UpdateFaq").on("submit", function (event) {
+                //alert('blog');
+                debugger;
+                $("#myLoadingElement").show();
+                // alert();
+
+                $.ajax({
+                    url: "/Admin/Updatefaq/1/1",
+                    type: "POST",
+                    //data: formdata,
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        //alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Record updated successfully");
+                            // $("#form_AddProduct")[0].reset();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "/Admin/faq";
+                            }, 1000);
+                            // $('.DivAdd').hide();
+                            //window.location.href = "";
+
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+            $("#form_AddProduct").on("submit", function (event) {
+              
+                debugger;
+                $("#myLoadingElement").show();
+                
+                $.ajax({
+                    url: "/Admin/Products/1/1",
+                    type: "POST",
+                    
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        debugger;
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Product added successfully");
+                            $("#form_AddProduct")[0].reset();
+
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "/Admin/Products/1/1";
+                            }, 1000);
+
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        debugger;
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+            $("#form_UpdateProduct").on("submit", function (event) {
+                // alert('product');
+                debugger;
+                $("#myLoadingElement").show();
+                // alert();
+
+                $.ajax({
+                    url: "/Admin/UpdateProduct/1/1/1",
+                    type: "POST",
+                    //data: formdata,
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Record updated successfully");
+                            // $("#form_AddProduct")[0].reset();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "";
+                            }, 1000);
+                            // $('.DivAdd').hide();
+                            //window.location.href = "";
+
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+            $("#form_AddSubCategory").on("submit", function (event) {
+                //  alert();
+                debugger;
+                $("#myLoadingElement").show();
+                $.ajax({
+                    url: "/Admin/AddSubCategory/1/1",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Category added successfully");
+                            $("#form_AddSubCategory")[0].reset();
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+            $("#form_UpdateSubCategory").on("submit", function (event) {
+                // alert('product');
+                debugger;
+                $("#myLoadingElement").show();
+                //alert();
+
+                $.ajax({
+                    url: "/Admin/UpdateSubCategory/1/1",
+                    type: "POST",
+                    //data: formdata,
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Record updated successfully");
+                            // $("#form_UpdateSubCategory")[0].reset();
+                            // $(".main-content").delay(9000).fadeIn();
+                            //$('.DivAdd').hide();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "/Admin/SubCategory/1/1";
+                            }, 1000);
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+            $("#form_AddAfterSale").on("submit", function (event) {
+                debugger;
+                $("#myLoadingElement").show();
+
+                $.ajax({
+                    url: "/Admin/AddAfterSale/1/1",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        //alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Record added successfully");
+                            $("#form_AddAfterSale")[0].reset();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "AfterSale";
+                            }, 1000);
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+
+            $("#form_AddBanner").on("submit", function (event) {
+                debugger;
+                $("#myLoadingElement").show();
+
+                $.ajax({
+                    url: "/Admin/AddBanner/1/1",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        // alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Recor added successfully");
+                            $("#form_AddBanner")[0].reset();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "/Admin/Banner/1/1";
+                            }, 1000);
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+            $("#form_AddContactus").on("submit", function (event) {
+                debugger;
+                $("#myLoadingElement").show();
+                $.ajax({
+                    url: "/Admin/AddContactus/1/1",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        //alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Record updated successfully");
+                            $("#form_AddContactus")[0].reset();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "";
+                            }, 1000);
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+            $("#form_AddAboutUs").on("submit", function (event) {
+                debugger;
+                $("#myLoadingElement").show();
+                $.ajax({
+                    url: "/Admin/AddAboutUs/1/1",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        //alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Record updated successfully");
+                            //   $("#form_AddContactus")[0].reset();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "";
+                            }, 1000);
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+
+
+            $("#form_AddAboutOurvalues").on("submit", function (event) {
+                debugger;
+                $("#myLoadingElement").show();
+                $.ajax({
+                    url: "/Admin/AddAboutOurvalues/1/1",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        // alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Record added successfully");
+                            $("#form_AddAboutOurvalues")[0].reset();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "AboutOurvalues";
+                            }, 1000);
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+            $("#Add_AboutOurvision").on("submit", function (event) {
+                debugger;
+                $("#myLoadingElement").show();
+                $.ajax({
+                    url: "/Admin/AboutOurvision/1/1",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        // alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Record added successfully");
+                            //$("#form_AddAboutOurvalues")[0].reset();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "AboutOurvision";
+                            }, 1000);
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+
+
+            $("#form_AddAboutCertification").on("submit", function (event) {
+                debugger;
+                $("#myLoadingElement").show();
+                $.ajax({
+                    url: "/Admin/AddAboutCertification/1/1",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        //alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Records added successfully");
+                            $("#form_AddAboutCertification")[0].reset();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "AboutCertification";
+                            }, 1000);
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+            $("#form_AddAddTestimonil").on("submit", function (event) {
+                debugger;
+                $("#myLoadingElement").show();
+                $.ajax({
+                    url: "/Admin/AddTestimonil/1/1",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        //alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertG("Records added successfully");
+                            $("#form_AddAddTestimonil")[0].reset();
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                window.location.href = "/Admin/AboutTestimonil/1/1";
+                            }, 1000);
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+        });
+    </script>
+
+
+    @*@{ if (ViewBag.submitForm == "1"){
+                <script>
+                $(document).ready(function () {
+                $('.DivAdd').show();
+                });
+                </script>
+                }
+                else
+                {
+                <script>
+                    $(document).ready(function () {
+                        $('.DivAdd').hide();
+                    });
+                </script>
+                }
+        }*@
+
+
+    <script type="text/javascript">
+        $(function () {
+            $("#btnAdd").bind("click", function () {
+                var div = $("<div />");
+                div.html(GetDynamicTextBox(""));
+                $("#TextBoxContainer").append(div);
+            });
+            $("#btnGet").bind("click", function () {
+                var values = "";
+                $("input[name=DynamicTextBox]").each(function () {
+                    values += $(this).val() + "\n";
+                });
+                alert(values);
+            });
+            $("body").on("click", ".remove", function () {
+                $(this).closest("div").remove();
+            });
+        });
+        function GetDynamicTextBox(value) {
+            return '<div class="col-sm-12 row  mb-15"><div class="col-sm-10"><input name = "salient_features[]" type="text" value = "' + value + '" class="form-control form-control-lg"/></div>' +
+                ' <div class="col-sm-2"><input type="button" value="Remove" class="remove" /></div></div>'
+        }
+    </script>
+
+
+
+    <script src="~/assets/Admin/vendor/js/simplebar.min.js"></script>
+    @*<script src="~/assets/Admin/vendor/js/apexcharts.js"></script>*@
+    <script src="~/assets/Admin/vendor/js/dragula.min.js"></script>
+    <script src="~/assets/Admin/vendor/js/bs-dropzone.min.js"></script>
+    <script src="~/assets/Admin/vendor/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/Admin/js/main.js"></script>
+    @*<script src="~/assets/Admin/js/sales-page-chart.js"></script>*@
+
+    <script src="~/assets/Admin/js/popper.min.js"></script>
+    <script src="~/assets/Admin/js/mainAlert.js?v=1.1"></script>
+    <script src="~/assets/Admin/js/bootstrap.min.js"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="~/assets/Admin/js/plugins/pace.min.js"></script>
+    <script src="~/assets/Admin/js/ajaxPage.js"></script>
+    <script src="~/assets/Admin/js/pnotify.custom.min.js"></script>
+
+    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+
+</body>
+
+
+</html>

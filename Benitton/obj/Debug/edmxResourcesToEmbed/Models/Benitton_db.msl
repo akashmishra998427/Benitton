@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Benitton_dbModelStoreContainer" CdmEntityContainer="Benitton_dbEntities">
+    <EntitySetMapping Name="about_certification">
+      <EntityTypeMapping TypeName="Benitton_dbModel.about_certification">
+        <MappingFragment StoreEntitySet="about_certification">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="image_file" ColumnName="image_file" />
+          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="about_ourvalues">
+      <EntityTypeMapping TypeName="Benitton_dbModel.about_ourvalues">
+        <MappingFragment StoreEntitySet="about_ourvalues">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="sort_description" ColumnName="sort_description" />
+          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="image_file" ColumnName="image_file" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="about_ourvision">
+      <EntityTypeMapping TypeName="Benitton_dbModel.about_ourvision">
+        <MappingFragment StoreEntitySet="about_ourvision">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="title1" ColumnName="title1" />
+          <ScalarProperty Name="sort_description1" ColumnName="sort_description1" />
+          <ScalarProperty Name="image_1" ColumnName="image_1" />
+          <ScalarProperty Name="title2" ColumnName="title2" />
+          <ScalarProperty Name="sort_description2" ColumnName="sort_description2" />
+          <ScalarProperty Name="image_2" ColumnName="image_2" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="image_file" ColumnName="image_file" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="about_us">
+      <EntityTypeMapping TypeName="Benitton_dbModel.about_us">
+        <MappingFragment StoreEntitySet="about_us">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="sort_description_home" ColumnName="sort_description_home" />
+          <ScalarProperty Name="full_description" ColumnName="full_description" />
+          <ScalarProperty Name="about_image" ColumnName="about_image" />
+          <ScalarProperty Name="about_image_home" ColumnName="about_image_home" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contact_detail">
+      <EntityTypeMapping TypeName="Benitton_dbModel.contact_detail">
+        <MappingFragment StoreEntitySet="contact_detail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="sort_description" ColumnName="sort_description" />
+          <ScalarProperty Name="contact_no" ColumnName="contact_no" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="office_address" ColumnName="office_address" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contact_us">
+      <EntityTypeMapping TypeName="Benitton_dbModel.contact_us">
+        <MappingFragment StoreEntitySet="contact_us">
+          <ScalarProperty Name="contact_id" ColumnName="contact_id" />
+          <ScalarProperty Name="organisation_name" ColumnName="organisation_name" />
+          <ScalarProperty Name="contact_name" ColumnName="contact_name" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="message_detail" ColumnName="message_detail" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sale_support">
+      <EntityTypeMapping TypeName="Benitton_dbModel.sale_support">
+        <MappingFragment StoreEntitySet="sale_support">
+          <ScalarProperty Name="complaint_id" ColumnName="complaint_id" />
+          <ScalarProperty Name="equipment_make" ColumnName="equipment_make" />
+          <ScalarProperty Name="serial_no" ColumnName="serial_no" />
+          <ScalarProperty Name="customer_company" ColumnName="customer_company" />
+          <ScalarProperty Name="contact_person" ColumnName="contact_person" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="problem_type" ColumnName="problem_type" />
+          <ScalarProperty Name="urgency_level" ColumnName="urgency_level" />
+          <ScalarProperty Name="equipment_model" ColumnName="equipment_model" />
+          <ScalarProperty Name="meter_radio" ColumnName="meter_radio" />
+          <ScalarProperty Name="meter_number" ColumnName="meter_number" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="nature_problem" ColumnName="nature_problem" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="complaint_number" ColumnName="complaint_number" />
+          <ScalarProperty Name="equipment_description" ColumnName="equipment_description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="attachment" ColumnName="attachment" />
+          <ScalarProperty Name="ticket_number" ColumnName="ticket_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_admin">
+      <EntityTypeMapping TypeName="Benitton_dbModel.tbl_admin">
+        <MappingFragment StoreEntitySet="tbl_admin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="emailid" ColumnName="emailid" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="mobile_no" ColumnName="mobile_no" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_blog">
+      <EntityTypeMapping TypeName="Benitton_dbModel.Tbl_blog">
+        <MappingFragment StoreEntitySet="Tbl_blog">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="image_file" ColumnName="image_file" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="display_on_mainpage" ColumnName="display_on_mainpage" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_career">
+      <EntityTypeMapping TypeName="Benitton_dbModel.tbl_career">
+        <MappingFragment StoreEntitySet="tbl_career">
+          <ScalarProperty Name="career_id" ColumnName="career_id" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="enquiry_for" ColumnName="enquiry_for" />
+          <ScalarProperty Name="msg_detail" ColumnName="msg_detail" />
+          <ScalarProperty Name="attach_resume" ColumnName="attach_resume" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_category">
+      <EntityTypeMapping TypeName="Benitton_dbModel.tbl_category">
+        <MappingFragment StoreEntitySet="tbl_category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="image_file" ColumnName="image_file" />
+          <ScalarProperty Name="Isdelete" ColumnName="Isdelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Contact">
+      <EntityTypeMapping TypeName="Benitton_dbModel.Tbl_Contact">
+        <MappingFragment StoreEntitySet="Tbl_Contact">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_faq">
+      <EntityTypeMapping TypeName="Benitton_dbModel.Tbl_faq">
+        <MappingFragment StoreEntitySet="Tbl_faq">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_product">
+      <EntityTypeMapping TypeName="Benitton_dbModel.tbl_product">
+        <MappingFragment StoreEntitySet="tbl_product">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="Image_1" ColumnName="Image_1" />
+          <ScalarProperty Name="Image_2" ColumnName="Image_2" />
+          <ScalarProperty Name="Image_3" ColumnName="Image_3" />
+          <ScalarProperty Name="Image_4" ColumnName="Image_4" />
+          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="display_on_home" ColumnName="display_on_home" />
+          <ScalarProperty Name="Image_5" ColumnName="Image_5" />
+          <ScalarProperty Name="Image_6" ColumnName="Image_6" />
+          <ScalarProperty Name="Image_7" ColumnName="Image_7" />
+          <ScalarProperty Name="Image_8" ColumnName="Image_8" />
+          <ScalarProperty Name="salient_features" ColumnName="salient_features" />
+          <ScalarProperty Name="specifications" ColumnName="specifications" />
+          <ScalarProperty Name="pdf_image" ColumnName="pdf_image" />
+          <ScalarProperty Name="sale_status" ColumnName="sale_status" />
+          <ScalarProperty Name="Isdelete" ColumnName="Isdelete" />
+          <ScalarProperty Name="serialorder" ColumnName="serialorder" />
+          <ScalarProperty Name="otherCatID" ColumnName="otherCatID" />
+          <ScalarProperty Name="video_iframe" ColumnName="video_iframe" />
+          <ScalarProperty Name="optional_ddetail" ColumnName="optional_ddetail" />
+          <ScalarProperty Name="home_image" ColumnName="home_image" />
+          <ScalarProperty Name="Meta_Title" ColumnName="Meta_Title" />
+          <ScalarProperty Name="Meta_Keywords" ColumnName="Meta_Keywords" />
+          <ScalarProperty Name="Meta_Canical" ColumnName="Meta_Canical" />
+          <ScalarProperty Name="Meta_description" ColumnName="Meta_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_saleSupportBannes">
+      <EntityTypeMapping TypeName="Benitton_dbModel.Tbl_saleSupportBannes">
+        <MappingFragment StoreEntitySet="Tbl_saleSupportBannes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="image_file" ColumnName="image_file" />
+          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_subCategory">
+      <EntityTypeMapping TypeName="Benitton_dbModel.Tbl_subCategory">
+        <MappingFragment StoreEntitySet="Tbl_subCategory">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="image_file" ColumnName="image_file" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="display_on_home" ColumnName="display_on_home" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Isdelete" ColumnName="Isdelete" />
+          <ScalarProperty Name="serialorder" ColumnName="serialorder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_subscribe">
+      <EntityTypeMapping TypeName="Benitton_dbModel.tbl_subscribe">
+        <MappingFragment StoreEntitySet="tbl_subscribe">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Emailid" ColumnName="Emailid" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_testimonial">
+      <EntityTypeMapping TypeName="Benitton_dbModel.tbl_testimonial">
+        <MappingFragment StoreEntitySet="tbl_testimonial">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="image_file" ColumnName="image_file" />
+          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_banner">
+      <EntityTypeMapping TypeName="Benitton_dbModel.Tbl_banner">
+        <MappingFragment StoreEntitySet="Tbl_banner">
+          <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="image_file" ColumnName="image_file" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product_enq">
+      <EntityTypeMapping TypeName="Benitton_dbModel.product_enq">
+        <MappingFragment StoreEntitySet="product_enq">
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="message_detail" ColumnName="message_detail" />
+          <ScalarProperty Name="product_url" ColumnName="product_url" />
+          <ScalarProperty Name="product_title" ColumnName="product_title" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="contact_name" ColumnName="contact_name" />
+          <ScalarProperty Name="organisation_name" ColumnName="organisation_name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Menu">
+      <EntityTypeMapping TypeName="Benitton_dbModel.tbl_Menu">
+        <MappingFragment StoreEntitySet="tbl_Menu">
+          <ScalarProperty Name="image_file" ColumnName="image_file" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+          <ScalarProperty Name="MenuOrder" ColumnName="MenuOrder" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

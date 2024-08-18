@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link href="~/assets/css/css.css" rel="stylesheet" />
+<link href="~/assets/css/responsive.css" rel="stylesheet" />
+<link href="~/assets/css/style.css" rel="stylesheet" />
+<script src="~/assets/js/index.js"></script>
+
+<!-- header-start -->
+<section class="page-header">
+    <div class="bg-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-8 mx-auto">
+                    <div class="position-relative py-5">
+                        <div class="header-heading">
+                            <h1>Contact Us</h1>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="app-breadcrumb bg-light">
+        <div class="container">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="~/Home">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<!-- header-end -->
+<!-- contact-us-section-start -->
+<section class="contact-us-section">
+    <div class="container">
+        <div class="row row-cols-xxl-3 row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-1 g-4">
+            <div class="col d-flex">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="~/assets/img/office-bulding.svg" alt="office-bulding">
+                        <h5 class="card-title">Offices</h5>
+                        <p class="card-text">Corp Office : Pune, Maharashtra-412308</p>
+                        <p class="card-text">Factory 1: Industrial area, Bawana, New Delhi-110039</p>
+                        <p class="card-text">Factory 2: Morbi, Gujrat-363641</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="~/assets/img/email.svg" alt="email">
+                        <h5 class="card-title">Email</h5>
+                        <p class="card-text">
+                            <a href="mailto:support@benittonbathware.com">support@benittonbathware.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="~/assets/img/call.svg" alt="call">
+                        <h5 class="card-title">Call with us</h5>
+                        <p class="card-text">
+                            <a href="tel:18003090780">+91- 1800 309 0780</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact-us-section-end -->
+<!-- contact-us-start -->
+<section class="contact-us-form">
+    <div class="container">
+        <div class="card">
+            <div class="row row-cols-xxl-2 row-cols-xl-2 row-cols-lg-2 row-cols-md-1 row-cols-1 g-0">
+                <div class="col d-flex">
+                    <img src="~/assets/img/contact-us-img.png" alt="contact-us-img" class="img-fluid">
+                </div>
+                <div class="col d-flex">
+                    <div class="card-body">
+                        <h2 class="card-title">Dealership Enquiry</h2>
+                        <form action="" class="needs-validation" novalidate>
+                            <div class="row row-cols-xxl-2 row-cols-xl-2 row-cols-lg-2 row-cols-md-2 row-cols-1 g-3">
+                                <div class="col">
+                                    <label for="fullName" class="form-label">full Name<span>*</span></label>
+                                    <input type="text" name="" id="fullName" class="form-control" required>
+                                </div>
+                                <div class="col">
+                                    <label for="Subject" class="form-label">Subject<span>*</span></label>
+                                    <input type="text" name="" id="Subject" class="form-control" required>
+                                </div>
+                                <div class="col">
+                                    <label for="number" class="form-label">Mobile Number<span>*</span></label>
+                                    <input type="text" name="" id="MobileNumber" class="form-control" required>
+                                </div>
+                                <div class="col">
+                                    <label for="Email" class="form-label">Email<span>*</span></label>
+                                    <input type="email" name="" id="Email" class="form-control" required>
+                                </div>
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                                    <label for="UploadImage" class="form-label">Upload Image<span>*</span></label>
+                                    <input type="file" name="" id="UploadImage" class="form-control">
+                                </div>
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                                    <label for="Message" class="form-label">Message<span>*</span></label>
+                                    <textarea class="form-control" id="Message" rows="3"></textarea>
+                                </div>
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                                    <button type="submit" class="btn btn-danger px-5">submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact-us-end -->

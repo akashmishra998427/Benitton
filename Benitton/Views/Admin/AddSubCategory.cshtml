@@ -1,0 +1,75 @@
+﻿@model List<Benitton.Models.tbl_category>
+@{
+    ViewBag.Title = "AddSubCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- main-content -->
+<div class="main-content">
+    <div class="panel mb-g DivAdd1">
+        <div class="panel-heading">
+            <h3>
+                <div class="col-sm-12 row">
+                    <div class="col-sm-4"><a href="/Admin/SubCategory/1/1" id="" class="btn btn-sm btn-success buttonHideShow"><i class="bi bi-add-square"></i>Cancel</a></div>
+                    <div class="col-sm-4">
+                        Add Sub Category
+                    </div>
+                </div>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <form method="post" enctype="multipart/form-data" id="form_AddSubCategory">
+                <div class="row">
+
+                    <div class="col-sm-3 mb-15">
+                        <label for="exampleInputName" class="form-label">Select Category</label>
+                        <select class="form-select form-control-lg status-dropdown" name="CategoryID" id="CategoryID" required>
+                            <option value="" hidden>Select Category</option>
+                            @if (Model != null)
+                            {
+
+                                foreach (var item in Model)
+                                {
+                                    <option value="@item.ID">@item.title</option>
+                                }
+                            }
+
+                        </select>
+                    </div>
+                    <div class="col-sm-3 mb-15">
+                        <label for="exampleInputName" class="form-label">Sub Category</label>
+                        <input type="text" name="Title" id="Title" class="form-control form-control-lg" placeholder="Sub Category Name">
+                    </div>
+                    <div class="col-sm-3 mb-15">
+                        <label for="exampleInputName" class="form-label">Display on home page</label>
+                        <select name="display_on_homeVal" id="display_on_home" class="form-select form-control form-control-lg" required>
+                            @*<option value="" selected hidden>Select Status</option>*@
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3 mb-15">
+                        <label for="exampleInputName" class="form-label">File size must be less than 500 KB *</label>
+                        <input type="file" name="image_file" id="image_file" class="form-control form-control-lg" accept="image/*" />
+                    </div>
+                    <div class="col-sm-12 mb-15">
+                        <label for="">Descriptions</label>
+                        <textarea name="detail" id="detail" rows="4" class="form-control"></textarea>
+                    </div>
+
+                    <div class="col-sm-12  btn-box justify-content-start">
+                        <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-lg btn-secondary">Reset</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+<!-- main-content -->

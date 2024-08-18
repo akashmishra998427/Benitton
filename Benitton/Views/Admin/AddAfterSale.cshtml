@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "AddAfterSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="main-content">
+    <div class="panel mb-g">
+        <div class="panel-heading">
+            <h3>
+                <div class="col-sm-12 row">
+                    <div class="col-sm-4"><a href="/Admin/AfterSale/1/1" id="" class="btn btn-sm btn-success buttonHideShow"><i class="bi bi-add-square"></i>Cancel</a></div>
+                    <div class="col-sm-4">
+                        Add After Sale
+                    </div>
+                </div>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <form method="post" enctype="multipart/form-data" id="form_AddAfterSale" >
+                <input type="hidden" name="ID">
+                <div class="col-sm-4 mb-15">
+                    <label for="exampleInputName" class="form-label">image*  File size must be less than 500 KB</label>
+                    <div>
+                        <img alt="" src="~/assets/AfterSale/">
+                    </div>
+                    <input type="file" name="image_file" id="image_file" class="form-control form-control-lg" accept="image/*" required>
+                </div>
+              
+                <div class="col-sm-12  btn-box justify-content-start">
+                    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                    <a href="" type="reset" class="btn btn-lg btn-secondary">Reset</a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .loader {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') 50% 50% no-repeat rgb(249,249,249);
+    }
+</style>
+
+<div class="loader" id="myLoadingElement" style="display: none;">
+</div>
+<script type="text/javascript">
+
+    $(function () {
+        $("#form_AddAfterSale").on("submit", function (event) {
+            debugger;
+            $("#myLoadingElement").show();
+
+            $.ajax({
+                url: "../Admin/AddAfterSale",
+                type: "POST",
+                data: new FormData(this),
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    alert(response);
+                    if (response && response.status == 1) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertG("Record added successfully");
+                        $("#form_AddAfterSale")[0].reset();
+                    }
+                    else if (response && response.status == 2) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertInfo(response.message);
+                    }
+                    else if (response && response.status == 0) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        alertR(response.message);
+                    }
+                },
+                error: function (err) {
+                    $("#myLoadingElement").css("display", "none");
+                    $("#myLoadingElement").hide();
+                    console.log(err);
+                    alertR("Something went wrong");
+                }
+            });
+
+            return false;
+        });
+    });
+</script>
+
+

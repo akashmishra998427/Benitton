@@ -1,0 +1,59 @@
+﻿@model Benitton.Models.contact_detail
+@{
+    ViewBag.Title = "AddContactus";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="main-content">
+    <div class="panel mb-g">
+        <div class="panel-heading">
+            <h3>
+                <div class="col-sm-12 row">
+                    <div class="col-sm-4"><a href="/Admin/" id="" class="btn btn-sm btn-success buttonHideShow"><i class="bi bi-add-square"></i>Cancel</a></div>
+                </div>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <form method="post" enctype="multipart/form-data" id="form_AddContactus">
+                <input type="hidden" name="ID" id="ID" value="@Model.ID">
+                <div class="row col-sm-10">
+                    <div class="col-sm-4 mb-15">
+                        <label for="exampleInputName" class="form-label">Sub Heading*</label>
+                        <input type="text" class="form-control form-control-lg" value="@Model.sort_description" name="sort_description" id="sort_description">
+                    </div>
+
+                    <div class="col-sm-4 mb-15">
+                        <label for="exampleInputName" class="form-label">Contact Number</label>
+                        <input type="text" class="form-control form-control-lg" value="@Model.contact_no" name="contact_no" id="contact_no">
+                    </div>
+                    <div class="col-sm-4 mb-15">
+                        <label for="exampleInputName" class="form-label">Email ID</label>
+                        <input type="text" class="form-control form-control-lg" value="@Model.email" name="email" id="email">
+                    </div>
+
+                    <div class="col-sm-8 mb-15">
+                        <label for="exampleInputName" class="form-label">Office Address</label>
+                        <textarea name="office_address" id="office_address"  rows="6" column="30" class="form-control">@Model.office_address</textarea>
+                    </div>
+
+
+
+                    @*<div class="col-sm-4 mb-15">
+                <label for="exampleInputName" class="form-label">Select Menu</label>
+                <select class="form-select form-control-lg status-dropdown" name="MenuID">
+                    <option hidden>Select Menu</option>
+                    <option value="1">Fashion</option>
+                    <option value="2">Shoe</option>
+                </select>
+
+            </div>*@
+
+                    <div class="col-sm-12  btn-box">
+                        <button type="submit" name="save" class="btn btn-lg btn-primary">Update</button>
+                        <a href="" type="reset" class="btn btn-lg btn-secondary">Reset</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

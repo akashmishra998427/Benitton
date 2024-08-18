@@ -1,0 +1,138 @@
+﻿@model Benitton.Models.ViewProducts
+@{
+    ViewBag.Title = "SubCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!-- main-content -->
+<div class="main-content">
+   
+    <div class="row">
+        <div class="col-xl-12 col-lg-12">
+            <div class="panel mb-g">
+                <div class="panel-heading">
+                    <h3>
+                        <div class="col-sm-12 row">
+                            <div class="col-sm-4"><a href="/Admin/AddSubCategory/1/1" id="" class="btn btn-sm btn-success buttonHideShow"><i class="bi bi-add-square"></i>Add</a></div>
+                            <div class="col-sm-4">
+                                Sub Category
+                            </div>
+                        </div>
+
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="ecommerce-table">
+                        <div class="table-top-control mb-g">
+                            <form method="post" action="/Admin/SubCategory/1/1">
+                                <div class="row g-lg-4 g-md-3 g-sm-2 g-3">
+                                    <div class="col-sm-4" id="tableRowConut"></div>
+                                    <div class="col-sm-4">
+                                        <select name="CategoryID" id="CategoryID" class="form-select form-control status-dropdown" required>
+                                            @{
+                                                var selectItem = "";
+                                                    <option value="" selected="selected">Select Category</option>
+                                                
+                                                if (Model != null && Model.categoryMd != null)
+                                                {
+                                                    // var seletedtItem = "";
+
+                                                    foreach (var item in Model.categoryMd)
+                                                    {
+                                                        if(Request["CategoryID"] != null && item.ID == Convert.ToInt32(Request["CategoryID"])) { selectItem = "selected"; }
+
+                                                    <option value="@item.ID" @selectItem>@item.title</option>
+                                                         selectItem = "";
+                                                    }
+                                                }
+                                                }
+
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-4" id="tableSearch">
+
+                                        <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <table id="myTable" class="table data-table">
+                            <thead>
+                                <tr>
+                                   
+                                    <th scope="col">Sr No.</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Sub Category</th>
+                                    <th scope="col">Order</th>
+                                    <th scope="col">Published</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null && Model.subcategoryMd != null)
+                                {
+                                    var sr = 0;
+                                    var srorder = 0;
+                                    foreach (var item in Model.subcategoryMd)
+                                    {
+                                        sr = sr + 1;
+                                        var switchactdeact = "";
+                                        if (item.Isactive == true)
+                                        {
+                                            switchactdeact = "checked";
+                                        }
+                                        var imgPath = "assets/Front/img/ajashy_logo.svg";
+                                        if (item.image_file != "" && item.image_file != null)
+                                        {
+
+                                            imgPath = item.image_file;
+                                        }
+                                        <tr>
+                                            <td>@sr</td>
+                                            <td>
+                                                <a href="~/@imgPath" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" tabindex="0">
+                                                    <img src="~/@imgPath" alt="@item.title" style="height:100px;width:100px;object-fit:contain;border-radius:5%">
+                                                </a>
+                                            </td>
+                                            <td>@item.title</td>
+                                            <td>@item.serialorder</td>
+
+                                            <td>
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="switchersubcatidss_@item.ID" onchange="switcherActionSubCat(@item.ID)" @{ @switchactdeact  }>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="btn-box">
+                                                    <a href="/Admin/UpdateSubcategory/@item.ID/1/1" class="btn btn-sm btn-success"><i class="bi bi-pencil-square"></i></a>
+                                                    @*<a href="~/Admin/DeleteSubCategory/@item.ID/Del/1/1" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>*@
+                                                    <select name="serialorder" id="serialorder" class="form-select form-control status-dropdown" onchange="setorderSubcat(this.value)" style="width:150px;">
+                                                        <option value="" selected="selected">Update Order</option>
+                                                        @for (srorder = 1; srorder <= Model.subcategoryMd.Count; srorder++)
+                                                        {
+                                                            //if (itemorder.CategoryID == 26) {
+
+                                                            <option value="@srorder,@item.ID">@srorder</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        // srorder++;
+                                    }
+                                }
+                                else
+                                {
+                                    <tr><td colspan='7'><div class='alert alert-warning'><center>Record not found!</center></div></td></tr>
+                                }
+                            </tbody>
+                        </table>
+                        <div class="table-bottom-control"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- main-content -->

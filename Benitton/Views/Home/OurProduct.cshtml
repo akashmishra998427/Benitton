@@ -1,0 +1,100 @@
+﻿
+@{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- header-start -->
+<section class="page-header">
+    <div class="bg-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-8 mx-auto">
+                    <div class="position-relative py-5">
+                        <div class="header-heading">
+                            <h1>@ViewBag.Title</h1>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                        <div class="global-searchbar">
+                            <form action="" novalidate class="needs-validation">
+                                <div class="form-group">
+                                    <input type="search" class="form-control" id="global-searchbar"
+                                           placeholder="Search categories, product, etc." required>
+                                    <div class="invalid-feedback">
+                                        Please enter keywords.
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class='bx bx-search-alt-2'></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="app-breadcrumb">
+        <div class="container">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">@ViewBag.Title</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<!-- header-end -->
+<!-- our-product-start -->
+<section class="our-product-section">
+    <div class="container">
+        <div class="row row-cols-xxl-3 row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-1 g-4">
+
+
+            @{
+                
+                foreach (Benitton.Models.Category AllCategory in Session["AllCategory"] as List<Benitton.Models.Category>)
+                {
+                    <div class="col d-flex">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="~/Catalogy/@AllCategory.CatName.Replace(" ", "-")" class="stretched-link">
+                                                <img src="~/@AllCategory.image_file" alt="PTMT-img" class="card-img-top">
+                                </a>
+                                <h5 class="card-title">@AllCategory.CatName</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            }
+
+
+           
+        </div>
+    </div>
+</section>
+<!-- our-product-end -->
+<section class="e-catalogue">
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="row g-4 align-items-center">
+                    <div class="col col-xxl-4 col-xl-4 col-lg-4 col-md-6 text-center">
+                        <img src="~/assets/img/e-catalogue-img.png" alt="e-catalogue" class="img-fluid">
+                    </div>
+                    <div class="col col-xxl-5 col-xl-5 col-lg-5 col-md-6 ms-auto">
+                        <h1 class="card-title">E-Catalogue</h1>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+                            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                        </p>
+                        <a href="~/E-Catalogue" class="btn btn-primary px-5">View more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

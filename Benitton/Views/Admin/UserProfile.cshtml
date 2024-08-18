@@ -1,0 +1,47 @@
+﻿@model Benitton.Models.tbl_admin
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="main-content">
+    <div class="panel mb-g">
+        <div class="panel-heading">
+            <h3>Profile</h3>
+        </div>
+        <div class="panel-body">
+
+            <form method="post" onsubmit="return updateProfile()" id="form_UpdateProfile">
+                <input type="hidden" name="prid" value="@Model.id" />
+                <div class="row">
+                    <div class="col-sm-12 form-group mb-15">
+                        <label for="exampleInputName" class="form-label">Name</label>
+                        <input type="text" name="name"  value="@Model.name"  class="form-control form-control-lg" id="exampleInputName" placeholder="Name">
+                    </div>
+                    <div class="col-sm-12 form-group mb-15">
+                        <label for="exampleInputName" class="form-label">Email ID</label>
+                        <input type="text"  name="emailid" value="@Model.emailid" class="form-control form-control-lg" id="exampleInputName" placeholder="Email">
+                    </div>
+                    <div class="col-sm-12 form-group mb-15">
+                        <label for="exampleInputName" class="form-label">Moile Numer</label>
+                        <input type="text" name="mobile_no"  value="@Model.mobile_no" class="form-control form-control-lg" id="exampleInputName" placeholder="Mobile">
+                    </div>
+                    @*<div class="col-sm-12 form-group mb-15">
+                        <label for="exampleInputName" class="form-label">City</label>
+                        <input type="text" name="mobile_no"  value="@Model.cit"  class="form-control form-control-lg" id="exampleInputName" placeholder="City">
+                    </div>*@
+
+                    <div class="col-sm-12  btn-box">
+                        <button type="submit" class="btn btn-lg btn-primary">Update</button>
+                        <a href="" class="btn btn-lg btn-secondary">Reset</a>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+

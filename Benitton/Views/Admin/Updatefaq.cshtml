@@ -1,0 +1,49 @@
+﻿@model Tbl_faq
+@{
+    ViewBag.Title = "Updatefaq";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!-- main-content -->
+<div class="main-content">
+    <div class="panel mb-g">
+        <div class="panel-heading">
+            <h3>
+                <div class="col-sm-12 row">
+                    <div class="col-sm-4"><a href="/Admin/faq/1/1" id="" class="btn btn-sm btn-success "><i class="bi bi-add-square"></i>Cancel</a></div>
+                    <div class="col-sm-4">
+                        Edit Faq
+                    </div>
+                </div>
+            </h3>
+        </div>
+        <div class="panel-body">
+
+            <form method="post" id="form_UpdateFaq">
+                <input type="hidden" name="Pid" id="Pid" value="@Model.ID">
+                <div class="row g-lg-4 g-2 align-items-center">
+                    <div class="col-sm-12">
+                        <label for="ProductName">Title :</label>
+                        <input type="text" id="title" name="title" class="form-control form-control-lg" placeholder="Product Name" value="@Model.title" required>
+                    </div>
+                    <div class="col-sm-12 mb-15">
+                        <label for="ProductDscr"> Description :</label>
+                        <textarea name="Detail" id="Detail" rows="3" class="form-control form-control-lg textareaeditor">@Model.detail</textarea>
+                    </div>
+
+                   
+
+                    <div class="col-sm-12  btn-box">
+                        <button type="submit" name="save" class="btn btn-lg btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-lg btn-secondary">Reset</button>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+<!-- main-content -->

@@ -1,0 +1,126 @@
+﻿
+@model Benitton.Models.contact_detail
+@{
+    ViewBag.Title = "Contact-us";
+}
+<!-- header-start -->
+<section class="page-header">
+    <div class="bg-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-8 mx-auto">
+                    <div class="position-relative py-5">
+                        <div class="header-heading">
+                            <h1>Contact Us</h1>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="app-breadcrumb bg-light">
+        <div class="container">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="~/Home">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<!-- header-end -->
+<!-- contact-us-section-start -->
+<section class="contact-us-section">
+    <div class="container">
+        <div class="row row-cols-xxl-3 row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-1 g-4">
+            <div class="col d-flex">
+                <div class="card">
+                    @if (Model != null)
+                    {
+                        <div class="card-body">
+                            <img src="~/assets/img/office-bulding.svg" alt="office-bulding">
+                            <h5 class="card-title">Offices</h5>
+                            <h6>@Html.Raw(@Model.office_address)</h6>
+                        </div>
+                    }
+                    </div>
+            </div>
+            <div class="col d-flex">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="~/assets/img/email.svg" alt="email">
+                        <h5 class="card-title">Email</h5>
+                        <p class="card-text">
+                            <a href="mailto:" @Model.email>@Model.email</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="~/assets/img/call.svg" alt="call">
+                        <h5 class="card-title">Call with us</h5>
+                        <p class="card-text">
+                            <a href="tel:@Model.contact_no">@Model.contact_no</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact-us-section-end -->
+<!-- contact-us-start -->
+<section class="contact-us-form">
+    <div class="container">
+        <div class="card">
+            <div class="row row-cols-xxl-2 row-cols-xl-2 row-cols-lg-2 row-cols-md-1 row-cols-1 g-0">
+                <div class="col d-flex">
+                    <img src="~/assets/img/contact-us-img.png" alt="contact-us-img" class="img-fluid">
+                </div>
+                <div class="col d-flex">
+                    <div class="card-body">
+                        <h2 class="card-title">Dealership Enquiry</h2>
+                        
+                        <form method="post" id="form_AddContactFormSe" novalidate="">
+
+                            <div class="row row-cols-xxl-2 row-cols-xl-2 row-cols-lg-2 row-cols-md-2 row-cols-1 g-3">
+                                <div class="col">
+                                    <label for="fullName" class="form-label">full Name<span>*</span></label>
+                                    <input type="text" name="" id="fullNameAll" class="form-control" required>
+                                </div>
+                               
+                                <div class="col">
+                                    <label for="MobileNumberAll" class="form-label">Mobile Number<span>*</span></label>
+                                    <input type="number" name="" id="MobileNumberAll" class="form-control" required>
+                                </div>
+                                <div class="col">
+                                    <label for="EmailAll" class="form-label">Email<span>*</span></label>
+                                    <input type="email" name="" id="EmailAll" class="form-control" required>
+                                </div>
+                                <div class="col">
+                                    <label for="UploadImageAll" class="form-label">Upload Image<span>*</span></label>
+                                    <input type="file" name="" id="UploadImageAll" class="form-control">
+                                </div>
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                                    <label for="MessageAll" class="form-label">Message<span>*</span></label>
+                                    <textarea class="form-control" id="MessageAll" rows="3" required></textarea>
+                                </div>
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                                    <div id="ErrorMagFormFoot" class="text-danger"></div>
+                                </div>
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                                    <button type="submit" class="btn btn-danger px-5">submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact-us-end -->

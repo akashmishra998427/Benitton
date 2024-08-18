@@ -1,0 +1,204 @@
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\Benitton.dll.config
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\Benitton.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\Benitton.pdb
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\csc.exe
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\csc.exe.config
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\csc.rsp
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\csi.exe
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\csi.exe.config
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\csi.rsp
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\System.Buffers.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\System.Collections.Immutable.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\System.Memory.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\System.Numerics.Vectors.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\System.Reflection.Metadata.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\vbc.exe
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\vbc.exe.config
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\vbc.rsp
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\VBCSCompiler.exe
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\roslyn\VBCSCompiler.exe.config
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\Antlr3.Runtime.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\EntityFramework.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\EntityFramework.SqlServer.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\HtmlAgilityPack.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\Microsoft.Web.Infrastructure.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\Newtonsoft.Json.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\System.Web.Helpers.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\System.Web.Mvc.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\System.Web.Optimization.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\System.Web.Razor.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\System.Web.WebPages.Deployment.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\System.Web.WebPages.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\System.Web.WebPages.Razor.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\WebGrease.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\EntityFramework.xml
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\EntityFramework.SqlServer.xml
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\HtmlAgilityPack.pdb
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\HtmlAgilityPack.xml
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\System.Web.Helpers.xml
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\System.Web.Mvc.xml
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\System.Web.Optimization.xml
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\System.Web.Razor.xml
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\System.Web.WebPages.xml
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\System.Web.WebPages.Deployment.xml
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\System.Web.WebPages.Razor.xml
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\Newtonsoft.Json.xml
+E:\Bitbucket_New\Benitton\Benitton\Benitton\bin\Antlr3.Runtime.pdb
+E:\Bitbucket_New\Benitton\Benitton\Benitton\obj\Debug\Benitton.csproj.AssemblyReference.cache
+E:\Bitbucket_New\Benitton\Benitton\Benitton\obj\Debug\Benitton.csproj.CoreCompileInputs.cache
+E:\Bitbucket_New\Benitton\Benitton\Benitton\obj\Debug\Benitton.csproj.CopyComplete
+E:\Bitbucket_New\Benitton\Benitton\Benitton\obj\Debug\Benitton.dll
+E:\Bitbucket_New\Benitton\Benitton\Benitton\obj\Debug\Benitton.pdb
+D:\all project vcqru\Benitton\Benitton\bin\Benitton.dll.config
+D:\all project vcqru\Benitton\Benitton\bin\Benitton.dll
+D:\all project vcqru\Benitton\Benitton\bin\Benitton.pdb
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\csc.exe
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\csc.exe.config
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\csc.rsp
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\csi.exe
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\csi.exe.config
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\csi.rsp
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\Microsoft.Managed.Core.targets
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\System.Buffers.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\System.Collections.Immutable.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\System.Memory.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\System.Numerics.Vectors.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\System.Reflection.Metadata.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\vbc.exe
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\vbc.exe.config
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\vbc.rsp
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\VBCSCompiler.exe
+D:\all project vcqru\Benitton\Benitton\bin\roslyn\VBCSCompiler.exe.config
+D:\all project vcqru\Benitton\Benitton\bin\Antlr3.Runtime.dll
+D:\all project vcqru\Benitton\Benitton\bin\EntityFramework.dll
+D:\all project vcqru\Benitton\Benitton\bin\EntityFramework.SqlServer.dll
+D:\all project vcqru\Benitton\Benitton\bin\HtmlAgilityPack.dll
+D:\all project vcqru\Benitton\Benitton\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\all project vcqru\Benitton\Benitton\bin\Microsoft.Web.Infrastructure.dll
+D:\all project vcqru\Benitton\Benitton\bin\Newtonsoft.Json.dll
+D:\all project vcqru\Benitton\Benitton\bin\System.Web.Helpers.dll
+D:\all project vcqru\Benitton\Benitton\bin\System.Web.Mvc.dll
+D:\all project vcqru\Benitton\Benitton\bin\System.Web.Optimization.dll
+D:\all project vcqru\Benitton\Benitton\bin\System.Web.Razor.dll
+D:\all project vcqru\Benitton\Benitton\bin\System.Web.WebPages.Deployment.dll
+D:\all project vcqru\Benitton\Benitton\bin\System.Web.WebPages.dll
+D:\all project vcqru\Benitton\Benitton\bin\System.Web.WebPages.Razor.dll
+D:\all project vcqru\Benitton\Benitton\bin\WebGrease.dll
+D:\all project vcqru\Benitton\Benitton\bin\EntityFramework.xml
+D:\all project vcqru\Benitton\Benitton\bin\EntityFramework.SqlServer.xml
+D:\all project vcqru\Benitton\Benitton\bin\HtmlAgilityPack.pdb
+D:\all project vcqru\Benitton\Benitton\bin\HtmlAgilityPack.xml
+D:\all project vcqru\Benitton\Benitton\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\all project vcqru\Benitton\Benitton\bin\System.Web.Helpers.xml
+D:\all project vcqru\Benitton\Benitton\bin\System.Web.Mvc.xml
+D:\all project vcqru\Benitton\Benitton\bin\System.Web.Optimization.xml
+D:\all project vcqru\Benitton\Benitton\bin\System.Web.Razor.xml
+D:\all project vcqru\Benitton\Benitton\bin\System.Web.WebPages.xml
+D:\all project vcqru\Benitton\Benitton\bin\System.Web.WebPages.Deployment.xml
+D:\all project vcqru\Benitton\Benitton\bin\System.Web.WebPages.Razor.xml
+D:\all project vcqru\Benitton\Benitton\bin\Newtonsoft.Json.xml
+D:\all project vcqru\Benitton\Benitton\bin\Antlr3.Runtime.pdb
+D:\all project vcqru\Benitton\Benitton\obj\Debug\Benitton.csproj.AssemblyReference.cache
+D:\all project vcqru\Benitton\Benitton\obj\Debug\Benitton.csproj.CoreCompileInputs.cache
+D:\all project vcqru\Benitton\Benitton\obj\Debug\Benitton.csproj.CopyComplete
+D:\all project vcqru\Benitton\Benitton\obj\Debug\Benitton.dll
+D:\all project vcqru\Benitton\Benitton\obj\Debug\Benitton.pdb
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\Benitton.dll.config
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\Benitton.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\Benitton.pdb
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\csc.exe
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\csc.exe.config
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\csc.rsp
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\csi.exe
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\csi.exe.config
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\csi.rsp
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\System.Buffers.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\System.Memory.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\vbc.exe
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\vbc.exe.config
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\vbc.rsp
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\VBCSCompiler.exe
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\Antlr3.Runtime.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\EntityFramework.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\EntityFramework.SqlServer.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\HtmlAgilityPack.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\Newtonsoft.Json.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\System.Web.Helpers.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\System.Web.Mvc.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\System.Web.Optimization.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\System.Web.Razor.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\System.Web.WebPages.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\System.Web.WebPages.Razor.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\WebGrease.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\EntityFramework.xml
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\EntityFramework.SqlServer.xml
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\HtmlAgilityPack.pdb
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\HtmlAgilityPack.xml
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\System.Web.Helpers.xml
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\System.Web.Mvc.xml
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\System.Web.Optimization.xml
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\System.Web.Razor.xml
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\System.Web.WebPages.xml
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\System.Web.WebPages.Razor.xml
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\Newtonsoft.Json.xml
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\bin\Antlr3.Runtime.pdb
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\obj\Debug\Benitton.csproj.AssemblyReference.cache
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\obj\Debug\Benitton.csproj.CoreCompileInputs.cache
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\obj\Debug\Benitton.csproj.Up2Date
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\obj\Debug\Benitton.dll
+C:\Users\Akash mishra\Desktop\Benitton\Benitton\obj\Debug\Benitton.pdb

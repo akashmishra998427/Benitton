@@ -1,0 +1,332 @@
+﻿@model Benitton.Models.ViewProducts
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- main-content -->
+<div class="main-content">
+    <div class="panel mb-g DivAdd">
+        <div class="panel-heading">
+            <h3>
+                <div class="col-sm-12 row">
+                    <div class="col-sm-4"><a href="javascript:void(0)" id="" class="btn btn-sm btn-success buttonHideShow"><i class="bi bi-add-square"></i>Hide</a></div>
+                    <div class="col-sm-4">
+                        Add  Product
+                    </div>
+                </div>
+
+            </h3>
+
+        </div>
+        <div class="panel-body">
+
+            <form method="post" enctype="multipart/form-data" id="form_AddProduct">
+                <div class="row g-lg-4 g-2 align-items-center">
+
+                    @*<div class="col-sm-4">
+                            <label for="SKU">Product SKU :</label>
+
+                            <input type="text" id="SKU" name="SKU" class="form-control form-control-lg">
+                        </div>*@
+                    <div class="col-sm-3">
+                        <label for="ProductName">Product Name :</label>
+
+                        <input type="text" id="Title" name="Title" class="form-control form-control-lg" placeholder="Product Name" required>
+                    </div>
+
+
+                    <div class="col-sm-3">
+                        <label for="Category">Product Category :</label>
+
+                        <select name="CategoryID" id="CategoryID" class="form-select form-control form-control-lg" required>
+                            <option value="" selected hidden>Select Category</option>
+                            @if (Model != null && Model.categoryMd != null)
+                            {
+
+                                foreach (var item in Model.categoryMd)
+                                {
+                                    <option value="@item.ID">@item.title</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="Category">Product Sub Category :</label>
+
+                        <select name="SubCategoryID" id="SubCategoryID" class="form-select form-control form-control-lg" required>
+                            <option value="" selected hidden>Select Sub Category</option>
+                            @if (Model != null && Model.subcategoryMd != null)
+                            {
+
+                                foreach (var item in Model.subcategoryMd)
+                                {
+                                    <option value="0">Not Required</option>
+                                    <option value="@item.ID">@item.title</option>
+                                }
+                            }
+
+                        </select>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label for="AddProduct">Pdf File size must be less than 500 KB :</label>
+                        <input type="file" id="pdf_image" name="pdf_image" class="form-control form-control-lg" accept=".pdf">
+                    </div>
+
+
+
+
+                    <div class="col-sm-3">
+                        <label for="AddProduct">File size must be less than 500 KB :</label>
+                        <input type="file" id="Image_1" name="Image_1" class="form-control form-control-lg" accept=".jpg,.jpeg,.png" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="">Image  File size must be less than 500 KB</label>
+                        <input type="file" name="Image_2" id="Image_2" class="form-control  form-control-lg" accept="image/*" />
+                    </div>
+                    <div class="col-md-3">
+                        <label for="">Image  File size must be less than 500 KB</label>
+                        <input type="file" name="Image_3" id="Image_3" class="form-control  form-control-lg" accept="image/*" />
+                    </div>
+                    <div class="col-md-3">
+                        <label for="">Image  File size must be less than 500 KB</label>
+                        <input type="file" name="Image_4" id="Image_4" class="form-control  form-control-lg" accept="image/*" />
+                    </div>
+                    <div class="col-md-3">
+                        <label for="">Image  File size must be less than 500 KB</label>
+                        <input type="file" name="Image_5" id="Image_4" class="form-control  form-control-lg" accept="image/*" />
+                    </div>
+                    <div class="col-md-3">
+                        <label for="">Image  File size must be less than 500 KB</label>
+                        <input type="file" name="Image_6" id="Image_4" class="form-control  form-control-lg" accept="image/*" />
+                    </div>
+                   
+
+                    <div class="col-sm-12 mb-15">
+                        <label for="ProductDscr">Product Description :</label>
+                        <textarea name="Detail" id="Detail" rows="3" class="form-control form-control-lg textareaeditor"></textarea>
+                    </div>
+                    <div class="col-sm-12 mb-15">
+                        <label for="ProductDscr">Salient Features :</label>
+                        <textarea name="salient_features" id="Detail" rows="10" class="form-control form-control-lg textareaeditor"></textarea>
+                    </div>
+                    <div class="col-sm-12 mb-15">
+                        <label for="ProductDscr">Specifications :</label>
+                        <textarea name="specifications" id="Detail" rows="12" class="form-control form-control-lg textareaeditor"></textarea>
+                    </div>
+
+                  
+
+
+
+
+
+
+
+                    <div class="col-sm-12  btn-box">
+                        <button type="submit" name="save" class="btn btn-lg btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-lg btn-secondary">Reset</button>
+                    </div>
+
+                </div>
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="col-xl-12 col-lg-12">
+
+            @if (TempData["msgErr"] != null)
+            {
+                <div class="col-md-12 text-center alert alert-danger">
+                    @TempData["msgErr"].ToString()
+                </div>
+            }
+
+            @if (TempData["msgSuccess"] != null)
+            {
+                <div class="col-md-12 text-center alert alert-success">
+
+                    @TempData["msgSuccess"].ToString()
+                </div>
+            }
+
+
+            <div class="panel mb-g">
+                <div class="panel-heading">
+                    <h3>
+                        <div class="col-sm-12 row">
+                            <div class="col-sm-4"><a href="javascript:void(0)" id="" class="btn btn-sm btn-success buttonHideShow"><i class="bi bi-add-square"></i>Add</a></div>
+                            <div class="col-sm-4">
+                                Products
+                            </div>
+                        </div>
+
+                    </h3>
+                </div>
+
+                <div class="panel-body">
+                    <div class="ecommerce-table">
+                        <div class="table-top-control mb-g">
+                            <form method="post" action="/Admin/Products/1/1">
+                                <div class="row g-lg-4 g-md-3 g-sm-2 g-3">
+                                    <div class="col-sm-2" id="tableRowConut"></div>
+                                    <div class="col-sm-3">
+                                        <select name="subCategoryID" id="subCategoryID" class="form-select form-control status-dropdown" required>
+                                            @{
+
+                                                <option value="" hidden>Select Sub Category</option>
+                                                if (Model != null && Model.subcategoryMd != null)
+                                                {
+
+                                                    foreach (var item in Model.subcategoryMd)
+                                                    {
+                                                        var selectItem = "";
+                                                        if (item.ID.ToString() == ViewBag.catid.ToString()) { selectItem = "selected"; }
+                                                        <option value="@item.ID" @selectItem>@item.title</option>
+                                                    }
+                                                }
+                                            }
+                                        </select>
+
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <select name="otherCatID" id="otherCatID" class="form-select form-control status-dropdown">
+                                            <option value="0" selected="selected">Other Cat</option>
+                                            <option value="1">Road Line</option>
+                                            <option value="2">Snow Line</option>
+                                            <option value="3">Green Line</option>
+                                            <option value="4">Construction Line</option>
+                                        </select>
+
+                                    </div>
+                                    <div class="col-sm-2" id="tableSearch"> <button type="submit" class="btn btn-lg btn-primary">Submit</button></div>
+                                </div>
+                            </form>
+                        </div>
+
+
+                        <div class="table-responsive">
+                            <table id="myTable" class="table data-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sr No.</th>
+                                        @*<th scope="col">Product Image</th>*@
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Order</th>
+                                        <th scope="col">Published</th>
+                                        <th scope="col">Display Home</th>
+                                        <th scope="col">Other Cat.</th>
+                                        <th scope="col">Action</th>
+                                        <th scope="col">Order</th>
+                                        <th scope="col" colspan="2">View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null && Model.ProductMd != null)
+                                    {
+                                        var sr = 0;
+                                        var srorder = 0;
+                                        foreach (var item in Model.ProductMd)
+                                        {
+
+                                            sr = sr + 1;
+                                            var switchactdeact = "";
+                                            var sHomeProduct = "No";
+                                            if (item.Isactive == true)
+                                            {
+                                                switchactdeact = "checked";
+                                            }
+                                            if (item.display_on_home == true)
+                                            {
+                                                sHomeProduct = "Yes";
+                                            }
+
+                                            //var imgPath = "assets/Front/img/ajashy_logo.svg";
+                                            //if (item.Image_1 != "" && item.Image_1 != null)
+                                            //{
+
+                                            //    imgPath = item.Image_1;
+                                            //}
+                                            <tr>
+                                                <td>@sr</td>
+                                                @*<td>
+                                                        <a href="~/@imgPath" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" tabindex="0">
+                                                            <img src="~/@imgPath" alt="@item.Title">
+                                                        </a>
+                                                    </td>*@
+                                                <td>@item.Title</td>
+                                                <td>@item.serialorder</td>
+                                                <td>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="switcherproidss_@item.ID" onchange="switcherActionProduct(@item.ID)" @{ @switchactdeact  }>
+                                                    </div>
+                                                </td>
+                                                <td>@sHomeProduct</td>
+                                                <td>
+                                                    <select name="otherCatID" id="otherCatID" class="form-select form-control status-dropdown" onchange="otherCatPage(this.value)" style="width:150px;">
+                                                        <option value="" selected="selected">Other Cat</option>
+                                                        <option value="@item.ID,1">Road Line</option>
+                                                        <option value="@item.ID,2">Snow Line</option>
+                                                        <option value="@item.ID,3">Green Line</option>
+                                                        <option value="@item.ID,4">Construction Line</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select name="display_on_home" id="display_on_home" class="form-select form-control status-dropdown" onchange="DisplayProductHomePage(this.value)" style="width:150px;">
+                                                        <option value="" selected="selected">Display Home</option>
+                                                        <option value="@item.ID,1">Yes</option>
+                                                        <option value="@item.ID,0">No</option>
+
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select name="serialorder" id="serialorder" class="form-select form-control status-dropdown" onchange="setorderProduct(this.value)" style="width:150px;">
+                                                        <option value="" selected="selected">Order</option>
+                                                        @for (srorder = 1; srorder <= Model.ProductMd.Count; srorder++)
+                                                        {
+                                                            //if (itemorder.CategoryID == 26) {
+
+                                                            <option value="@srorder,@item.ID">@srorder</option>
+                                                        }
+                                                    </select>
+                                                </td>
+
+                                                <td colspan="2">
+                                                    <div class="btn-box">
+                                                        @*<button class="btn btn-sm btn-success"><i class="bi bi-eye"></i></button>*@
+                                                        <a href="/Admin/UpdateProduct/@item.ID/1/1" class="btn btn-sm btn-success"><i class="bi bi-pencil-square"></i></a>
+                                                        <a href="/Admin/DeleteProductPermenet/@item.ID/Del/1/1" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this item?');"><i class="bi bi-trash"></i></a>
+
+
+
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr><td colspan='3'><div class='alert alert-warning'><center>Record not found!</center></div></td></tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- main-content -->

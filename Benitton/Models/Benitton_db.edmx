@@ -1,0 +1,948 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Benitton_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="about_certification">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="image_file" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Isactive" Type="bit" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="about_ourvalues">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="sort_description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Isactive" Type="bit" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="image_file" Type="nvarchar" MaxLength="70" />
+        </EntityType>
+        <EntityType Name="about_ourvision">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title1" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="sort_description1" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="image_1" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="title2" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="sort_description2" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="image_2" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="image_file" Type="nvarchar" MaxLength="70" />
+        </EntityType>
+        <EntityType Name="about_us">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sort_description_home" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="full_description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="about_image" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="about_image_home" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="contact_detail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sort_description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="contact_no" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="office_address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="contact_us">
+          <Key>
+            <PropertyRef Name="contact_id" />
+          </Key>
+          <Property Name="contact_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="organisation_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="contact_name" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="mobile" Type="nvarchar" MaxLength="25" />
+          <Property Name="email" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="message_detail" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product_enq">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="organisation_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="contact_name" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="mobile" Type="nvarchar" MaxLength="25" />
+          <Property Name="email" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="product_title" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="product_url" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="message_detail" Type="nvarchar" MaxLength="255" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="sale_support">
+          <Key>
+            <PropertyRef Name="complaint_id" />
+          </Key>
+          <Property Name="complaint_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="equipment_make" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="serial_no" Type="bigint" Nullable="false" />
+          <Property Name="customer_company" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="contact_person" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="problem_type" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="urgency_level" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="equipment_model" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="meter_radio" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="meter_number" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="mobile" Type="nvarchar" MaxLength="25" />
+          <Property Name="nature_problem" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="position" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="complaint_number" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="equipment_description" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="attachment" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ticket_number" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tbl_admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="emailid" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="mobile_no" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="user_type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_banner">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" />
+          <Property Name="image_file" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Isactive" Type="bit" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="Subtitle" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Tbl_blog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="image_file" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="detail" Type="nvarchar(max)" />
+          <Property Name="Isactive" Type="bit" />
+          <Property Name="display_on_mainpage" Type="bit" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_career">
+          <Key>
+            <PropertyRef Name="career_id" />
+          </Key>
+          <Property Name="career_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="full_name" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="mobile" Type="nvarchar" MaxLength="25" />
+          <Property Name="email" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="enquiry_for" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="msg_detail" Type="nvarchar(max)" />
+          <Property Name="attach_resume" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuID" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar(max)" />
+          <Property Name="detail" Type="nvarchar(max)" />
+          <Property Name="Isactive" Type="bit" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="image_file" Type="char" MaxLength="100" />
+          <Property Name="Isdelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Contact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Subject" Type="varchar(max)" />
+          <Property Name="Message" Type="varchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tbl_faq">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="detail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Isactive" Type="bit" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Menu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar(max)" />
+          <Property Name="MenuOrder" Type="int" />
+          <Property Name="Isactive" Type="bit" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="image_file" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tbl_product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Qty" Type="int" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="Detail" Type="nvarchar(max)" />
+          <Property Name="Image_1" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Image_2" Type="varchar" MaxLength="150" />
+          <Property Name="Image_3" Type="varchar" MaxLength="150" />
+          <Property Name="Image_4" Type="varchar" MaxLength="150" />
+          <Property Name="Isactive" Type="bit" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="SubCategoryID" Type="int" />
+          <Property Name="display_on_home" Type="bit" Nullable="false" />
+          <Property Name="Image_5" Type="nvarchar" MaxLength="70" />
+          <Property Name="Image_6" Type="nvarchar" MaxLength="70" />
+          <Property Name="Image_7" Type="nvarchar" MaxLength="70" />
+          <Property Name="Image_8" Type="nvarchar" MaxLength="70" />
+          <Property Name="salient_features" Type="nvarchar(max)" />
+          <Property Name="specifications" Type="nvarchar(max)" />
+          <Property Name="pdf_image" Type="nvarchar" MaxLength="100" />
+          <Property Name="sale_status" Type="varchar" MaxLength="20" />
+          <Property Name="Isdelete" Type="bit" Nullable="false" />
+          <Property Name="serialorder" Type="int" />
+          <Property Name="otherCatID" Type="int" />
+          <Property Name="video_iframe" Type="nvarchar(max)" />
+          <Property Name="optional_ddetail" Type="nvarchar(max)" />
+          <Property Name="home_image" Type="nvarchar" MaxLength="200" />
+          <Property Name="Meta_Title" Type="varchar" MaxLength="500" />
+          <Property Name="Meta_Keywords" Type="varchar" MaxLength="100" />
+          <Property Name="Meta_Canical" Type="varchar" MaxLength="100" />
+          <Property Name="Meta_description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Tbl_saleSupportBannes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="image_file" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Isactive" Type="bit" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_subCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="image_file" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="detail" Type="nvarchar(max)" />
+          <Property Name="Isactive" Type="bit" />
+          <Property Name="display_on_home" Type="bit" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+          <Property Name="Isdelete" Type="bit" Nullable="false" />
+          <Property Name="serialorder" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_subscribe">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Emailid" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_testimonial">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="image_file" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Isactive" Type="bit" Nullable="false" />
+          <Property Name="created_at" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Benitton_dbModelStoreContainer">
+          <EntitySet Name="about_certification" EntityType="Self.about_certification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="about_ourvalues" EntityType="Self.about_ourvalues" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="about_ourvision" EntityType="Self.about_ourvision" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="about_us" EntityType="Self.about_us" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contact_detail" EntityType="Self.contact_detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contact_us" EntityType="Self.contact_us" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="product_enq" EntityType="Self.product_enq" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sale_support" EntityType="Self.sale_support" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_admin" EntityType="Self.tbl_admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_banner" EntityType="Self.Tbl_banner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_blog" EntityType="Self.Tbl_blog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_career" EntityType="Self.tbl_career" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_category" EntityType="Self.tbl_category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Contact" EntityType="Self.Tbl_Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_faq" EntityType="Self.Tbl_faq" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Menu" EntityType="Self.tbl_Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_product" EntityType="Self.tbl_product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_saleSupportBannes" EntityType="Self.Tbl_saleSupportBannes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_subCategory" EntityType="Self.Tbl_subCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_subscribe" EntityType="Self.tbl_subscribe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_testimonial" EntityType="Self.tbl_testimonial" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Benitton_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="about_certification">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="image_file" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Isactive" Type="Boolean" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="about_ourvalues">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sort_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Isactive" Type="Boolean" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="image_file" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="about_ourvision">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sort_description1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="image_1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="title2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sort_description2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="image_2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="image_file" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="about_us">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sort_description_home" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="full_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="about_image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="about_image_home" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="contact_detail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sort_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="contact_no" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="office_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="contact_us">
+          <Key>
+            <PropertyRef Name="contact_id" />
+          </Key>
+          <Property Name="contact_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="organisation_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="contact_name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="message_detail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="sale_support">
+          <Key>
+            <PropertyRef Name="complaint_id" />
+          </Key>
+          <Property Name="complaint_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="equipment_make" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="serial_no" Type="Int64" Nullable="false" />
+          <Property Name="customer_company" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="contact_person" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="problem_type" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="urgency_level" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="equipment_model" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="meter_radio" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="meter_number" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="nature_problem" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="position" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="complaint_number" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="equipment_description" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="attachment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ticket_number" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="emailid" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mobile_no" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="user_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_blog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="image_file" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Isactive" Type="Boolean" />
+          <Property Name="display_on_mainpage" Type="Boolean" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_career">
+          <Key>
+            <PropertyRef Name="career_id" />
+          </Key>
+          <Property Name="career_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="full_name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="enquiry_for" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="msg_detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="attach_resume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuID" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Isactive" Type="Boolean" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="image_file" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="Isdelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Contact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Tbl_faq">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Isactive" Type="Boolean" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Qty" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Image_2" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Image_3" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Image_4" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Isactive" Type="Boolean" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SubCategoryID" Type="Int32" />
+          <Property Name="display_on_home" Type="Boolean" Nullable="false" />
+          <Property Name="Image_5" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Image_6" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Image_7" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Image_8" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="salient_features" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="specifications" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pdf_image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sale_status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Isdelete" Type="Boolean" Nullable="false" />
+          <Property Name="serialorder" Type="Int32" />
+          <Property Name="otherCatID" Type="Int32" />
+          <Property Name="video_iframe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="optional_ddetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="home_image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Meta_Title" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Meta_Keywords" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Meta_Canical" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Meta_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_saleSupportBannes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="image_file" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Isactive" Type="Boolean" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Tbl_subCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="image_file" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Isactive" Type="Boolean" />
+          <Property Name="display_on_home" Type="Boolean" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Isdelete" Type="Boolean" Nullable="false" />
+          <Property Name="serialorder" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_subscribe">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Emailid" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_testimonial">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="image_file" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Isactive" Type="Boolean" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="Benitton_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="about_certification" EntityType="Self.about_certification" />
+          <EntitySet Name="about_ourvalues" EntityType="Self.about_ourvalues" />
+          <EntitySet Name="about_ourvision" EntityType="Self.about_ourvision" />
+          <EntitySet Name="about_us" EntityType="Self.about_us" />
+          <EntitySet Name="contact_detail" EntityType="Self.contact_detail" />
+          <EntitySet Name="contact_us" EntityType="Self.contact_us" />
+          <EntitySet Name="sale_support" EntityType="Self.sale_support" />
+          <EntitySet Name="tbl_admin" EntityType="Self.tbl_admin" />
+          <EntitySet Name="Tbl_blog" EntityType="Self.Tbl_blog" />
+          <EntitySet Name="tbl_career" EntityType="Self.tbl_career" />
+          <EntitySet Name="tbl_category" EntityType="Self.tbl_category" />
+          <EntitySet Name="Tbl_Contact" EntityType="Self.Tbl_Contact" />
+          <EntitySet Name="Tbl_faq" EntityType="Self.Tbl_faq" />
+          <EntitySet Name="tbl_product" EntityType="Self.tbl_product" />
+          <EntitySet Name="Tbl_saleSupportBannes" EntityType="Self.Tbl_saleSupportBannes" />
+          <EntitySet Name="Tbl_subCategory" EntityType="Self.Tbl_subCategory" />
+          <EntitySet Name="tbl_subscribe" EntityType="Self.tbl_subscribe" />
+          <EntitySet Name="tbl_testimonial" EntityType="Self.tbl_testimonial" />
+          <EntitySet Name="Tbl_banner" EntityType="Benitton_dbModel.Tbl_banner" />
+          <EntitySet Name="product_enq" EntityType="Benitton_dbModel.product_enq" />
+          <EntitySet Name="tbl_Menu" EntityType="Benitton_dbModel.tbl_Menu" />
+        </EntityContainer>
+        <EntityType Name="Tbl_banner">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="image_file" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Isactive" Type="Boolean" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Subtitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="product_enq">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="organisation_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="contact_name" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="mobile" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="product_title" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="product_url" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="message_detail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="state" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Menu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MenuOrder" Type="Int32" />
+          <Property Name="Isactive" Type="Boolean" />
+          <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="image_file" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Benitton_dbModelStoreContainer" CdmEntityContainer="Benitton_dbEntities">
+          <EntitySetMapping Name="about_certification">
+            <EntityTypeMapping TypeName="Benitton_dbModel.about_certification">
+              <MappingFragment StoreEntitySet="about_certification">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="image_file" ColumnName="image_file" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="about_ourvalues">
+            <EntityTypeMapping TypeName="Benitton_dbModel.about_ourvalues">
+              <MappingFragment StoreEntitySet="about_ourvalues">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="sort_description" ColumnName="sort_description" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="image_file" ColumnName="image_file" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="about_ourvision">
+            <EntityTypeMapping TypeName="Benitton_dbModel.about_ourvision">
+              <MappingFragment StoreEntitySet="about_ourvision">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="title1" ColumnName="title1" />
+                <ScalarProperty Name="sort_description1" ColumnName="sort_description1" />
+                <ScalarProperty Name="image_1" ColumnName="image_1" />
+                <ScalarProperty Name="title2" ColumnName="title2" />
+                <ScalarProperty Name="sort_description2" ColumnName="sort_description2" />
+                <ScalarProperty Name="image_2" ColumnName="image_2" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="image_file" ColumnName="image_file" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="about_us">
+            <EntityTypeMapping TypeName="Benitton_dbModel.about_us">
+              <MappingFragment StoreEntitySet="about_us">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="sort_description_home" ColumnName="sort_description_home" />
+                <ScalarProperty Name="full_description" ColumnName="full_description" />
+                <ScalarProperty Name="about_image" ColumnName="about_image" />
+                <ScalarProperty Name="about_image_home" ColumnName="about_image_home" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contact_detail">
+            <EntityTypeMapping TypeName="Benitton_dbModel.contact_detail">
+              <MappingFragment StoreEntitySet="contact_detail">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="sort_description" ColumnName="sort_description" />
+                <ScalarProperty Name="contact_no" ColumnName="contact_no" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="office_address" ColumnName="office_address" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contact_us">
+            <EntityTypeMapping TypeName="Benitton_dbModel.contact_us">
+              <MappingFragment StoreEntitySet="contact_us">
+                <ScalarProperty Name="contact_id" ColumnName="contact_id" />
+                <ScalarProperty Name="organisation_name" ColumnName="organisation_name" />
+                <ScalarProperty Name="contact_name" ColumnName="contact_name" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="message_detail" ColumnName="message_detail" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sale_support">
+            <EntityTypeMapping TypeName="Benitton_dbModel.sale_support">
+              <MappingFragment StoreEntitySet="sale_support">
+                <ScalarProperty Name="complaint_id" ColumnName="complaint_id" />
+                <ScalarProperty Name="equipment_make" ColumnName="equipment_make" />
+                <ScalarProperty Name="serial_no" ColumnName="serial_no" />
+                <ScalarProperty Name="customer_company" ColumnName="customer_company" />
+                <ScalarProperty Name="contact_person" ColumnName="contact_person" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="problem_type" ColumnName="problem_type" />
+                <ScalarProperty Name="urgency_level" ColumnName="urgency_level" />
+                <ScalarProperty Name="equipment_model" ColumnName="equipment_model" />
+                <ScalarProperty Name="meter_radio" ColumnName="meter_radio" />
+                <ScalarProperty Name="meter_number" ColumnName="meter_number" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="nature_problem" ColumnName="nature_problem" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="complaint_number" ColumnName="complaint_number" />
+                <ScalarProperty Name="equipment_description" ColumnName="equipment_description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="attachment" ColumnName="attachment" />
+                <ScalarProperty Name="ticket_number" ColumnName="ticket_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_admin">
+            <EntityTypeMapping TypeName="Benitton_dbModel.tbl_admin">
+              <MappingFragment StoreEntitySet="tbl_admin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="emailid" ColumnName="emailid" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="mobile_no" ColumnName="mobile_no" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="user_type" ColumnName="user_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_blog">
+            <EntityTypeMapping TypeName="Benitton_dbModel.Tbl_blog">
+              <MappingFragment StoreEntitySet="Tbl_blog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="image_file" ColumnName="image_file" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="display_on_mainpage" ColumnName="display_on_mainpage" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_career">
+            <EntityTypeMapping TypeName="Benitton_dbModel.tbl_career">
+              <MappingFragment StoreEntitySet="tbl_career">
+                <ScalarProperty Name="career_id" ColumnName="career_id" />
+                <ScalarProperty Name="full_name" ColumnName="full_name" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="enquiry_for" ColumnName="enquiry_for" />
+                <ScalarProperty Name="msg_detail" ColumnName="msg_detail" />
+                <ScalarProperty Name="attach_resume" ColumnName="attach_resume" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_category">
+            <EntityTypeMapping TypeName="Benitton_dbModel.tbl_category">
+              <MappingFragment StoreEntitySet="tbl_category">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="image_file" ColumnName="image_file" />
+                <ScalarProperty Name="Isdelete" ColumnName="Isdelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Contact">
+            <EntityTypeMapping TypeName="Benitton_dbModel.Tbl_Contact">
+              <MappingFragment StoreEntitySet="Tbl_Contact">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_faq">
+            <EntityTypeMapping TypeName="Benitton_dbModel.Tbl_faq">
+              <MappingFragment StoreEntitySet="Tbl_faq">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_product">
+            <EntityTypeMapping TypeName="Benitton_dbModel.tbl_product">
+              <MappingFragment StoreEntitySet="tbl_product">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Image_1" ColumnName="Image_1" />
+                <ScalarProperty Name="Image_2" ColumnName="Image_2" />
+                <ScalarProperty Name="Image_3" ColumnName="Image_3" />
+                <ScalarProperty Name="Image_4" ColumnName="Image_4" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+                <ScalarProperty Name="display_on_home" ColumnName="display_on_home" />
+                <ScalarProperty Name="Image_5" ColumnName="Image_5" />
+                <ScalarProperty Name="Image_6" ColumnName="Image_6" />
+                <ScalarProperty Name="Image_7" ColumnName="Image_7" />
+                <ScalarProperty Name="Image_8" ColumnName="Image_8" />
+                <ScalarProperty Name="salient_features" ColumnName="salient_features" />
+                <ScalarProperty Name="specifications" ColumnName="specifications" />
+                <ScalarProperty Name="pdf_image" ColumnName="pdf_image" />
+                <ScalarProperty Name="sale_status" ColumnName="sale_status" />
+                <ScalarProperty Name="Isdelete" ColumnName="Isdelete" />
+                <ScalarProperty Name="serialorder" ColumnName="serialorder" />
+                <ScalarProperty Name="otherCatID" ColumnName="otherCatID" />
+                <ScalarProperty Name="video_iframe" ColumnName="video_iframe" />
+                <ScalarProperty Name="optional_ddetail" ColumnName="optional_ddetail" />
+                <ScalarProperty Name="home_image" ColumnName="home_image" />
+                <ScalarProperty Name="Meta_Title" ColumnName="Meta_Title" />
+                <ScalarProperty Name="Meta_Keywords" ColumnName="Meta_Keywords" />
+                <ScalarProperty Name="Meta_Canical" ColumnName="Meta_Canical" />
+                <ScalarProperty Name="Meta_description" ColumnName="Meta_description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_saleSupportBannes">
+            <EntityTypeMapping TypeName="Benitton_dbModel.Tbl_saleSupportBannes">
+              <MappingFragment StoreEntitySet="Tbl_saleSupportBannes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="image_file" ColumnName="image_file" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_subCategory">
+            <EntityTypeMapping TypeName="Benitton_dbModel.Tbl_subCategory">
+              <MappingFragment StoreEntitySet="Tbl_subCategory">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="image_file" ColumnName="image_file" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="display_on_home" ColumnName="display_on_home" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Isdelete" ColumnName="Isdelete" />
+                <ScalarProperty Name="serialorder" ColumnName="serialorder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_subscribe">
+            <EntityTypeMapping TypeName="Benitton_dbModel.tbl_subscribe">
+              <MappingFragment StoreEntitySet="tbl_subscribe">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Emailid" ColumnName="Emailid" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_testimonial">
+            <EntityTypeMapping TypeName="Benitton_dbModel.tbl_testimonial">
+              <MappingFragment StoreEntitySet="tbl_testimonial">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="image_file" ColumnName="image_file" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_banner">
+            <EntityTypeMapping TypeName="Benitton_dbModel.Tbl_banner">
+              <MappingFragment StoreEntitySet="Tbl_banner">
+                <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="image_file" ColumnName="image_file" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_enq">
+            <EntityTypeMapping TypeName="Benitton_dbModel.product_enq">
+              <MappingFragment StoreEntitySet="product_enq">
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="message_detail" ColumnName="message_detail" />
+                <ScalarProperty Name="product_url" ColumnName="product_url" />
+                <ScalarProperty Name="product_title" ColumnName="product_title" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="contact_name" ColumnName="contact_name" />
+                <ScalarProperty Name="organisation_name" ColumnName="organisation_name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Menu">
+            <EntityTypeMapping TypeName="Benitton_dbModel.tbl_Menu">
+              <MappingFragment StoreEntitySet="tbl_Menu">
+                <ScalarProperty Name="image_file" ColumnName="image_file" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="MenuOrder" ColumnName="MenuOrder" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

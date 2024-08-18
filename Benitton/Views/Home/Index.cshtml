@@ -1,0 +1,395 @@
+﻿
+@model Benitton.Models.ViewProducts
+@{
+    ViewBag.Title = "Benitton Home";
+}
+
+<!-- slider-start-header -->
+<section class="header-slider">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+
+        <div class="carousel-indicators">
+            @if (Model != null && Model.tbl_bannerList != null)
+            {
+                var isFirst = true;
+                var sr = 0;
+
+                foreach (var item in Model.tbl_bannerList)
+                {
+                    if (!string.IsNullOrEmpty(item.image_file))
+                    {
+                        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="@sr" class="@(isFirst ? "active" : "")" aria-current="@(isFirst ? "true" : "false")" aria-label="Slide @sr"></button>
+                        sr++;
+                        isFirst = false;
+                    }
+                }
+            }
+        </div>
+        <div class="carousel-inner">
+            @if (Model != null && Model.tbl_bannerList != null)
+            {
+                var isFirst = true;
+
+                foreach (var item in Model.tbl_bannerList)
+                {
+                    if (!string.IsNullOrEmpty(item.image_file))
+                    {
+                        <div class="carousel-item @(isFirst ? "active" : "")" data-bs-interval="3000">
+                            <img src="~/@item.image_file" class="d-block w-100" alt="Slider img">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h1>@item.title</h1>
+                                <p>@item.Subtitle</p>
+                            </div>
+                        </div>
+                        isFirst = false;
+                    }
+                }
+            }
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+<!-- slider-end-header -->
+<!-- counter-start -->
+ <section class="counter-start">
+            <div class="container">
+                <div class="row row-cols-xxl-4 row-cols-xl-4 row-cols-lg-4 row-cols-md-2 row-cols-1 g-3">
+                    <div class="col">
+                        <ul>
+                            <li>
+                                <img src="assets/img/demo-icon.svg" alt="demo-icon">
+                            </li>
+                            <li>
+                                <h5>Original Product</h5>
+                                <p>100% Original product that covered warranty</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>
+                                <img src="assets/img/demo-icon.svg" alt="demo-icon">
+                            </li>
+                            <li>
+                                <h5>Original Product</h5>
+                                <p>100% Original product that covered warranty</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>
+                                <img src="assets/img/demo-icon.svg" alt="demo-icon">
+                            </li>
+                            <li>
+                                <h5>Original Product</h5>
+                                <p>100% Original product that covered warranty</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li>
+                                <img src="assets/img/demo-icon.svg" alt="demo-icon">
+                            </li>
+                            <li>
+                                <h5>Original Product</h5>
+                                <p>100% Original product that covered warranty</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- counter-end -->
+<!-- about-us-start -->
+<section class="about-us-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-5 col-xl-5 col-lg-6 col-md-12 d-flex order-lg-1 order-2">
+                <div class="left-about-us">
+                    <h5 class="badge fs-5">about us</h5>
+                    <h2>
+                        Your source of the best
+                        bathroom & kitchen
+                        appliance.
+                    </h2>
+                    <p class="text-secondary">
+                        Lorem Ipsum is dummy text used in the printing industry since the
+                        1500s.
+                    </p>
+                    <ul>
+                        <li>
+                            <img src="assets/img/demo-icon.svg" alt="demo-icon">
+                            <div>
+                                <h5>Top-of-the-rung Products</h5>
+                                <p>
+                                    Unmatched quality and aesthetic design in our product range will leave you
+                                    gasping
+                                    for more and wondering how.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="assets/img/demo-icon.svg" alt="demo-icon">
+                            <div>
+                                <h5>Excellence in Customer Service</h5>
+                                <p>
+                                    We want to give you precedence in all matters with all our agents who will
+                                    interact
+                                    with you at their best.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="assets/img/demo-icon.svg" alt="demo-icon">
+                            <div>
+                                <h5>A Legacy Grounded in Family</h5>
+                                <p>
+                                    Having grown from the roots of an extremely well-established business family, we
+                                    are
+                                    groomed in catering to people.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="~/about-us" class="btn btn-primary px-5">read more</a>
+                </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 offset-xl-1 d-flex order-lg-2 order-1">
+                <img src="assets/img/about-us-img.svg" alt="about-us-img" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about-us-end -->
+<!-- benitton-category-start -->
+<section class="benitton-category">
+    <div class="container">
+        <div class="web-heading">
+            <h2 class="heading-title">Benitton Category</h2>
+        </div>
+        <div class="row row-cols-xxl-2 row-cols-xl-2 row-cols-lg-2 row-cols-md-2 row-cols-1 g-4">
+            @if (Model != null && Model.MenuMd != null)
+            {
+                var arrSubCat = Model.MenuMd.Where(x => x.Isactive == true && x.ID == 5).OrderBy(x => x.ID).ToList();
+                if (arrSubCat != null)
+                {
+                    foreach (var itemSubcat in arrSubCat)
+                    {
+                        <div class="col d-flex">
+                            <div class="card-hover-effect">
+                                <img src="~/@itemSubcat.image_file" alt="@itemSubcat.title" class="img-fluid">
+                                <div class="product-name">
+                                    <a href="~/our-product/@itemSubcat.ID" class="stretched-link fs-5">@itemSubcat.title</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+
+                }
+
+            }
+
+                <div class="col d-flex">
+                    <div class="row row-cols-xxl-2 row-cols-xl-2 row-cols-lg-2 row-cols-md-2 row-cols-1 g-4">
+                        @if (Model != null && Model.MenuMd != null)
+                         {
+
+            
+                        var arrFAUCETS = Model.MenuMd.Where(x => x.Isactive == true && x.ID == 1).OrderBy(x => x.ID).ToList();
+                        if (arrFAUCETS != null)
+                        {
+
+                            foreach (var itemFAUCETS in arrFAUCETS)
+                            {
+                                <div class="col d-flex">
+                                    <div class="card-hover-effect">
+                                        <img src="~/@itemFAUCETS.image_file"
+                                             alt="@itemFAUCETS.title" class="img-fluid">
+                                        <div class="product-name">
+                                            <a href="~/our-product/@itemFAUCETS.ID" class="stretched-link fs-5">@itemFAUCETS.title</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        }
+
+                        var arrKITCHEN = Model.MenuMd.Where(x => x.Isactive == true && x.ID == 2).OrderBy(x => x.ID).ToList();
+                        if (arrKITCHEN != null)
+                        {
+                            foreach (var itemKITCHEN in arrKITCHEN)
+                            {
+                                <div class="col d-flex">
+                                    <div class="card-hover-effect">
+                                        <img src="~/@itemKITCHEN.image_file"
+                                             alt="@itemKITCHEN.title" class="img-fluid">
+                                        <div class="product-name">
+                                            <a href="~/our-product/@itemKITCHEN.ID" class="stretched-link fs-5">@itemKITCHEN.title</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+
+                        }
+
+                        }
+
+                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-lg-12 col-md-12 d-flex">
+                        @if (Model != null && Model.MenuMd != null)
+                        {
+                           var arrSANITARYWARE = Model.MenuMd.Where(x => x.Isactive == true && x.ID == 3).OrderBy(x => x.ID).ToList();
+                            if (arrSANITARYWARE != null)
+                            {
+                                foreach (var itemSANITARYWARE in arrSANITARYWARE)
+                                {
+                                    <div class="card-hover-effect">
+                                        <img src="~/@itemSANITARYWARE.image_file" alt="@itemSANITARYWARE.title" class="img-fluid">
+                                        <div class="product-name">
+                                            <a href="~/our-product/@itemSANITARYWARE.ID" class="stretched-link fs-5">SANITARYWARE</a>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+
+
+                    </div>
+                    </div>
+                </div>
+
+
+
+           
+        </div>
+    </div>
+</section>
+<!-- benitton-category-end -->
+<!-- why-choose-us-start -->
+<section class="why-choose-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-6 col-xl-6 col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="badge fs-5">why choose us</h5>
+                        <h2 class="card-title">
+                            Your source of the best
+                            bathroom & kitchen
+                            appliance.
+                        </h2>
+                        <p class="text-secondary">
+                            Lorem Ipsum is dummy text used in the printing industry since
+                            the
+                            1500s.
+                        </p>
+                        <ul>
+                            <li>
+                                <img src="assets/img/demo-icon.svg" alt="demo-icon">
+                                <div>
+                                    <h5>Top-of-the-rung Products</h5>
+                                    <p>
+                                        Unmatched quality and aesthetic design in our product range will leave
+                                        you
+                                        gasping
+                                        for more and wondering how.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="assets/img/demo-icon.svg" alt="demo-icon">
+                                <div>
+                                    <h5>Excellence in Customer Service</h5>
+                                    <p>
+                                        We want to give you precedence in all matters with all our agents who
+                                        will
+                                        interact
+                                        with you at their best.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="assets/img/demo-icon.svg" alt="demo-icon">
+                                <div>
+                                    <h5>A Legacy Grounded in Family</h5>
+                                    <p>
+                                        Having grown from the roots of an extremely well-established business
+                                        family, we
+                                        are
+                                        groomed in catering to people.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- why-choose-us-end -->
+<!-- contact-us-start -->
+<section class="contact-us-form">
+    <div class="container">
+        <div class="card">
+            <div class="row row-cols-xxl-2 row-cols-xl-2 row-cols-lg-2 row-cols-md-1 row-cols-1 g-0">
+                <div class="col d-flex">
+                    <img src="assets/img/contact-us-img.png" alt="contact-us-img" class="img-fluid">
+                </div>
+                <div class="col d-flex">
+                    <div class="card-body">
+                        <h2 class="card-title">Dealership Enquiry</h2>
+                        <form method="post" id="form_AddContactEnq" class="needs-validation" novalidate>
+                            <div class="row row-cols-xxl-2 row-cols-xl-2 row-cols-lg-2 row-cols-md-2 row-cols-1 g-3">
+                                <div class="col">
+                                    <label for="fullName" class="form-label">full Name<span>*</span></label>
+                                    <input type="text" name="" id="fullName" class="form-control" required>
+                                </div>
+                                <div class="col">
+                                    <label for="Subject" class="form-label">Subject<span>*</span></label>
+                                    <input type="text" name="" id="Subject" class="form-control" required>
+                                </div>
+                                <div class="col">
+                                    <label for="number" class="form-label">Mobile Number<span>*</span></label>
+                                    <input type="text" name="" id="MobileNumber" class="form-control" required>
+                                </div>
+                                <div class="col">
+                                    <label for="Email" class="form-label">Email<span>*</span></label>
+                                    <input type="email" name="" id="Email" class="form-control" required>
+                                </div>
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                                    <label for="UploadImage" class="form-label">Upload Image<span>*</span></label>
+                                    <input type="file" name="" id="UploadImage" class="form-control">
+                                </div>
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                                    <label for="Message" class="form-label">Message<span>*</span></label>
+                                    <textarea class="form-control" id="Message" rows="3"></textarea>
+                                </div>
+                                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                                    <button type="submit" class="btn btn-danger px-5">submit</button>
+                                </div>
+                        <div id="ErrorMagDivFoot" class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-12">
+                            <div id="ErrorMagFormEnq" class="text-danger"></div>
+                        </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact-us-end -->

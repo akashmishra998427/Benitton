@@ -1,0 +1,94 @@
+@media screen and (max-width:768px) {
+    .app-navbar {
+        background: var(--bs-white);
+    }
+
+    .app-navbar .bottom-bar .navbar-brand img {
+        height: 3rem;
+    }
+
+    .salient-features ul {
+        column-count: 1;
+    }
+
+    .specifications .accordion .accordion-item .accordion-collapse .accordion-body .specifications-listing ul {
+        column-count: 1;
+    }
+
+    .specifications .accordion .accordion-item .accordion-collapse .accordion-body .specifications-listing ul li p {
+        min-width: auto;
+    }
+
+    .call-outs-btns .btn {
+        font-size: 14px;
+    }
+
+    .product-detail-slider .carousel-control-next,
+    .product-detail-slider .carousel-control-prev {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .product-detail-slider iframe {
+        height: 100% !important;
+    }
+    .app-navbar .navbar .container-fluid {
+        padding: 0;
+    }
+    .app-navbar .navbar-nav .nav-item .dropdown-menu{
+        box-shadow:none;
+    }
+    .app-navbar .navbar-nav .nav-item .dropdown-menu::before,
+    .app-navbar .navbar-nav .nav-item .dropdown-menu::after{
+        display:none;
+    }
+    .app-navbar .navbar-nav .nav-item .dropdown-menu{
+        height: 15rem;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .product-detail-slider .carousel .carousel-inner .carousel-item img{
+        height:20rem;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .contact-us-form .card.contact-us-info .card-body .get-address li {
+        display: block;
+    }
+
+    .contact-us-form .card.contact-us-info .card-body .get-address li img {
+        margin-bottom: 0.50rem;
+    }
+
+    .contact-us-form .card .card-body {
+        padding: 1rem;
+    }
+
+    .specifications .accordion .accordion-item .accordion-collapse .accordion-body .specifications-listing ul {
+        column-count: auto;
+    }
+    .product-categories.sub-category .card-hover-effect a img{
+        height: auto;
+    }
+    .g-recaptcha{
+        transform:scale(0.8);
+        display:flex;
+        justify-content:center;
+    }
+}
+@media screen and (max-width:1024px) {
+    .app-navbar .navbar-nav .nav-item .nav-link {
+        letter-spacing: normal;
+        padding:0.25rem;
+        font-size:12px;
+    }
+    .VIpgJd-ZVi9od-xl07Ob-lTBxed {
+        letter-spacing: normal;
+        padding: 0.25rem;
+        font-size: 12px;
+    }
+    .product-detail-description .product-overview-image::before{
+        display: none;
+    }
+}

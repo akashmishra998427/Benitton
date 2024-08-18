@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+    <div class="panel-body">
+        <div class="logo mb-4">
+            <img src="~/assets/img/header-logo.svg" id="logo" alt="logo">
+            @*<p class="text-center mt-20"><span class="d-block fw-bold mb-10 fs-6"></span> Sign in to continue.</p>*@
+            <br>
+        </div>
+        
+            <form class="mb-4" method="post" action="">
+                @if (@ViewBag.Message != null)
+                {
+                    <div class="alert alert-danger">@ViewBag.Message</div>
+                }
+                <div class="mb-4">
+                    <div class="form-group has-icon-left">
+                        <input type="text" name="username" id="username" class="form-control form-control-lg" placeholder="Email Address">
+                        <div class="form-control-icon">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="form-group has-icon-left">
+                        <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Password">
+                        <div class="form-control-icon">
+                            <i class="bi bi-key-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-check mb-4">
+                    <input type="checkbox" id="remember" class="form-check-input">
+                    <label for="remember">Remember Me</label>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary w-100">Sign In</button>
+            </form>
+            @*<p>Don't have an account? <a href="register.php">Sign up</a> here</p>*@
+            <a href="/Login/ForgetPassword/1/1">Forgot Password?</a>
+</div>
+
+

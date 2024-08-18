@@ -1,0 +1,139 @@
+﻿
+
+@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!-- main-content -->
+<div class="main-content">
+    <!--<div class="panel mb-g DivAdd" runate="server" id="AddID">
+        <div class="panel-heading">
+            <h3>
+                <div class="col-sm-12 row">
+                    <div class="col-sm-4"><a href="javascript:void(0)" id="" class="btn btn-sm btn-success buttonHideShow"><i class="bi bi-add-square"></i>Hide</a></div>
+                    <div class="col-sm-4">
+                        Add Menu
+                    </div>
+                </div>
+
+            </h3>
+        </div>
+        <div class="panel-body">
+
+            <form class="mb-4" method="post" action="~/Admin/Menu">
+                @if (@ViewBag.Message != null)
+                {
+                    <div class="alert alert-danger">@ViewBag.Message</div>
+                }
+                <div class="row">
+                    <div class="col-sm-4 mb-15">
+                        <label for="exampleInputName" class="form-label">Menu</label>
+                        <input type="text" name="title" class="form-control form-control-lg" id="title" placeholder="Menu Name" value="@Request["title"]">-->
+    @*@Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })*@
+    <!--</div>
+
+                    <div class="col-sm-4  btn-box justify-content-end">
+                        <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-lg btn-secondary">Reset</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>-->
+
+    <div class="row">
+        <div class="col-xl-12 col-lg-12">
+            <div class="panel mb-g">
+                <div class="panel-heading">
+                    <h3>
+                        <div class="col-sm-12 row">
+                            <div class="col-sm-4"><a href="~/Admin/AddMenu/1/1" id="" class="btn btn-sm btn-success buttonHideShow1"><i class="bi bi-add-square"></i>Add</a></div>
+                            <div class="col-sm-4">
+                                Main Menu
+                            </div>
+                        </div>
+
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="ecommerce-table">
+
+                        <table id="myTable" class="table data-table">
+                            <thead>
+                                <tr>
+
+
+                                    <th scope="col">Menu</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Published</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    var sr = 0;
+                                    foreach (var item in Model)
+                                    {
+
+                                        sr = sr + 1;
+                                        <tr>
+
+                                            <td>@item.title</td>
+                                            
+                                            <td>
+                                                <a href="~/@item.image_file" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" tabindex="0">
+                                                    <img src="~/@item.image_file" alt="@item.title" style="height:100px;width:100px;object-fit:contain;border-radius:5%">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch" checked>
+                                                </div>
+                                            </td>
+
+
+                                            <td>
+                                                <div class="btn-box">
+                                                    <a href="/Admin/UpdateMenu/@item.ID/1/1" class="btn btn-sm btn-success"><i class="bi bi-pencil-square"></i></a>
+                                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr><td colspan='3'><div class='alert alert-warning'><center>Record not found!</center></div></td></tr>
+                                }
+
+
+
+                                @*<tr>
+
+                                        <td>Shoe</td>
+                                        <td>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="btn-box">
+                                                <button class="btn btn-sm btn-success"><i class="bi bi-pencil-square"></i></button>
+                                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>*@
+
+                            </tbody>
+                        </table>
+                        <div class="table-bottom-control"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- main-content -->

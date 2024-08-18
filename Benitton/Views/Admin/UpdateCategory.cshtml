@@ -1,0 +1,67 @@
+﻿@model Benitton.Models.tbl_category
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!-- main-content -->
+<div class="main-content">
+    <div class="panel mb-g">
+        <div class="panel-heading">
+            <h3>
+                <div class="col-sm-12 row">
+                    <div class="col-sm-4"><a href="/Admin/Category/1/1" id="" class="btn btn-sm btn-success"><i class="bi bi-add-square"></i>Cancel</a></div>
+                    <div class="col-sm-4">
+                        Update Category
+                    </div>
+                </div>
+            </h3>
+        </div>
+        <div class="panel-body">
+            @*@using (Html.BeginForm("AddCategory", "Admin", FormMethod.Post))*@
+
+            <form method="post" enctype="multipart/form-data" id="form_UpdateCategory">
+                <input type="hidden" name="imageOldPath" id="imageOldPath" value="@Model.image_file">
+                <input type="hidden" name="Pid" id="Pid" value="@Model.ID">
+                <div class="row col-sm-12">
+                    <div class="col-sm-4 mb-15">
+                        <label for="exampleInputName" class="form-label">Category*</label>
+                        <input type="text" class="form-control form-control-lg" name="title" id="title" value="@Model.title" placeholder="Category Name" required>
+                        @*@Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })*@
+                    </div>
+
+                    <div class="col-sm-4 mb-15">
+                        <label for="exampleInputName" class="form-label">image*  File size must be less than 500 KB</label>
+                        <input type="file" name="image_file" id="image_file" class="form-control form-control-lg" accept="image/*" />
+                    </div>
+                    
+                        <div class="col-md-4">
+
+                            <a href="~/@Model.image_file" target="_blank"> <img src="~/@Model.image_file" style="height:100px;width:100px;object-fit:contain;"></a>
+                        </div>
+              
+
+                    <div class="col-sm-8 mb-15">
+                        <label for="">Descriptions</label>
+                        <textarea name="detail" id="detail" rows="6" class="form-control">@Model.detail</textarea>
+                    </div>
+
+
+
+                    <div class="col-sm-12  btn-box">
+                        <button type="submit" name="save" class="btn btn-lg btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-lg btn-secondary">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+

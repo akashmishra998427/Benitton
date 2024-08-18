@@ -1,0 +1,15 @@
+@media screen and (max-width:768px) {
+    .top-bar{
+        display: none;
+    }
+    .dealership-enquiry{
+        margin: 2rem 0;
+    }
+    .app-navbar .bottom-bar .navbar .navbar-nav .nav-item .dropdown-menu{
+        box-shadow: none;
+    }
+}
+
+@media screen and (max-width:1024px) {}
+
+@media screen and (max-width:425px) {}

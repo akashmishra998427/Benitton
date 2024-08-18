@@ -1,0 +1,70 @@
+﻿@model List<Benitton.Models.Tbl_saleSupportBannes>
+@{
+    ViewBag.Title = "AfterSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class=" main-content">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12">
+            <div class="panel mb-g">
+                <div class="panel-heading">
+                    <h3>
+                        <div class="col-sm-12 row">
+                            <div class="col-sm-4"><a href="/Admin/AddAfterSale/1/1" id="" class="btn btn-sm btn-success buttonHideShow"><i class="bi bi-add-square"></i>Add After Sale</a></div>
+                        </div>
+
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="ecommerce-table">
+                        <div class="table-responsive mt--10">
+                            <table id="" class="table data-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Sr No.</th>
+                                        <th>Image</th>
+                                        @*<th>Display On Home</th>*@
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <div class="row">
+                                        @if (Model != null)
+                                        {
+                                            var sr = 0;
+                                            foreach (var item in Model)
+                                            {
+
+                                                sr = sr + 1;
+                                            <tr>
+                                                <td>@sr</td>
+                                                <td><a href="../@item.image_file" target="_blank"><img src="~/@item.image_file" style="height:100px;width:100px;object-fit:contain;border-radius:5%"></a></td>
+
+
+                                                @*<td>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" checked>
+                                                    </div>
+                                                </td>*@
+                                                <td>
+                                                    <div class="btn-box">
+                                                        <a href="~/Admin/DeleteAddAfterSale/@item.ID" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr><td colspan='5'><div class='alert alert-warning'><center>Record not found!</center></div></td></tr>
+                                    }
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+

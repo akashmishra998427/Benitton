@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Benitton_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="about_certification">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="image_file" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Isactive" Type="Boolean" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="about_ourvalues">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sort_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Isactive" Type="Boolean" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="image_file" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="about_ourvision">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sort_description1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="image_1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="title2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sort_description2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="image_2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="image_file" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="about_us">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sort_description_home" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="full_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="about_image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="about_image_home" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="contact_detail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sort_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="contact_no" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="office_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="contact_us">
+    <Key>
+      <PropertyRef Name="contact_id" />
+    </Key>
+    <Property Name="contact_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="organisation_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="contact_name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mobile" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="message_detail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="sale_support">
+    <Key>
+      <PropertyRef Name="complaint_id" />
+    </Key>
+    <Property Name="complaint_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="equipment_make" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="serial_no" Type="Int64" Nullable="false" />
+    <Property Name="customer_company" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="contact_person" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="problem_type" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="urgency_level" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="equipment_model" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="meter_radio" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="meter_number" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mobile" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="nature_problem" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="position" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="complaint_number" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="equipment_description" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="attachment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ticket_number" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="emailid" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mobile_no" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="user_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tbl_blog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="image_file" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Isactive" Type="Boolean" />
+    <Property Name="display_on_mainpage" Type="Boolean" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_career">
+    <Key>
+      <PropertyRef Name="career_id" />
+    </Key>
+    <Property Name="career_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="full_name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mobile" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="enquiry_for" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="msg_detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="attach_resume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuID" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Isactive" Type="Boolean" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="image_file" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="Isdelete" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Contact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Tbl_faq">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Isactive" Type="Boolean" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_product">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image_1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Image_2" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Image_3" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Image_4" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Isactive" Type="Boolean" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SubCategoryID" Type="Int32" />
+    <Property Name="display_on_home" Type="Boolean" Nullable="false" />
+    <Property Name="Image_5" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Image_6" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Image_7" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Image_8" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="salient_features" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="specifications" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pdf_image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="sale_status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Isdelete" Type="Boolean" Nullable="false" />
+    <Property Name="serialorder" Type="Int32" />
+    <Property Name="otherCatID" Type="Int32" />
+    <Property Name="video_iframe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="optional_ddetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="home_image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Meta_Title" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Meta_Keywords" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Meta_Canical" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Meta_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tbl_saleSupportBannes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="image_file" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Isactive" Type="Boolean" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Tbl_subCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="image_file" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Isactive" Type="Boolean" />
+    <Property Name="display_on_home" Type="Boolean" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Isdelete" Type="Boolean" Nullable="false" />
+    <Property Name="serialorder" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_subscribe">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Emailid" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_testimonial">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="image_file" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Isactive" Type="Boolean" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="Benitton_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="about_certification" EntityType="Self.about_certification" />
+    <EntitySet Name="about_ourvalues" EntityType="Self.about_ourvalues" />
+    <EntitySet Name="about_ourvision" EntityType="Self.about_ourvision" />
+    <EntitySet Name="about_us" EntityType="Self.about_us" />
+    <EntitySet Name="contact_detail" EntityType="Self.contact_detail" />
+    <EntitySet Name="contact_us" EntityType="Self.contact_us" />
+    <EntitySet Name="sale_support" EntityType="Self.sale_support" />
+    <EntitySet Name="tbl_admin" EntityType="Self.tbl_admin" />
+    <EntitySet Name="Tbl_blog" EntityType="Self.Tbl_blog" />
+    <EntitySet Name="tbl_career" EntityType="Self.tbl_career" />
+    <EntitySet Name="tbl_category" EntityType="Self.tbl_category" />
+    <EntitySet Name="Tbl_Contact" EntityType="Self.Tbl_Contact" />
+    <EntitySet Name="Tbl_faq" EntityType="Self.Tbl_faq" />
+    <EntitySet Name="tbl_product" EntityType="Self.tbl_product" />
+    <EntitySet Name="Tbl_saleSupportBannes" EntityType="Self.Tbl_saleSupportBannes" />
+    <EntitySet Name="Tbl_subCategory" EntityType="Self.Tbl_subCategory" />
+    <EntitySet Name="tbl_subscribe" EntityType="Self.tbl_subscribe" />
+    <EntitySet Name="tbl_testimonial" EntityType="Self.tbl_testimonial" />
+    <EntitySet Name="Tbl_banner" EntityType="Benitton_dbModel.Tbl_banner" />
+    <EntitySet Name="product_enq" EntityType="Benitton_dbModel.product_enq" />
+    <EntitySet Name="tbl_Menu" EntityType="Benitton_dbModel.tbl_Menu" />
+  </EntityContainer>
+  <EntityType Name="Tbl_banner">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="image_file" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Isactive" Type="Boolean" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Subtitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="product_enq">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="organisation_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="contact_name" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="product_title" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="product_url" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="message_detail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="state" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Menu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MenuOrder" Type="Int32" />
+    <Property Name="Isactive" Type="Boolean" />
+    <Property Name="created_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="image_file" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,1318 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <!-- css -->
+    @*@Styles.Render("~/assets/front/css/css")*@
+    <link rel="shortcut icon" href="~/assets/Admin/fav-icon.svg">
+    <link href="~/assets/css/css.css" rel="stylesheet" />
+    <link href="~/assets/css/responsive.css" rel="stylesheet" />
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <!-- owl -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- font-family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+
+    <script>
+        var baseurl = "https://localhost:44310/";
+        // var baseurl = "http://benitton.vcqru.com/";
+    </script>
+</head>
+<body>
+    <!-- navbar-start -->
+    <div class="app-navbar">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-8 col-xl-8 col-lg-8">
+                        <div class="top-bar-links">
+                            <ul>
+                                <li>
+                                    <a href="tel:+91-18003090780">
+                                        <i class='bx bxs-phone-call bx-tada'></i>
+                                       1800 309 0780
+                                    </a>
+                                </li>
+                                <span>|</span>
+                                <li>
+                                    <a href="mailto:benittonbathware@gmail.com">
+                                        <i class='bx bxs-envelope bx-tada'></i>
+                                        benittonbathware@gmail.com
+                                    </a>
+                                </li>
+                                <span>|</span>
+                                <li>
+                                    <a href="#">
+                                        <i class='bx bx-current-location bx-tada'></i> Pune ,Maharashtra.
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xxl-4 col-xl-4 col-lg-4">
+                        <div class="social-links">
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/Benittonbathware/" target="_blank"><i class="bx bxl-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/benitton_bathware" target="_blank"><i class="bx bxl-instagram-alt"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/benitton-bathware" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://x.com/Benitton567" target="_blank"><i class="bx bxl-twitter"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="~/Home">
+                            <img src="~/assets/img/header-logo.svg" alt="Logo">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="~/about-us">about us</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Sanitaryware
+                                    </a>
+
+
+
+                                    <div class="dropdown-menu">
+                                        <div class="container">
+                                            <div class="row row-cols-xxl-6 row-cols-xl-6 row-cols-lg-5 row-cols-md-4 row-cols-2 g-3">
+
+                                               
+        @{
+            ((Benitton.Controllers.HomeController)this.ViewContext.Controller).getAllCategory(Convert.ToInt32(3));
+            foreach (Benitton.Models.Category AllCategory in Session["AllCategory"] as List<Benitton.Models.Category>)
+            {
+                <div class="col">
+                            <div class="card-hover-effect">
+                                @*<img src="~/assets/images/product-10.jpg" alt="FAUCETS" class="img-fluid">*@
+                                <img src="~/@AllCategory.image_file" alt="FAUCETS" class="img-fluid">
+                                <div class="product-name">
+                                    <a href="~/Catalogy/@AllCategory.CatName.Replace(" ", "-")" class="stretched-link">@AllCategory.CatName</a>
+                                </div>
+                            </div>
+                </div>
+
+            }
+        }
+   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Faucets
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <div class="container">
+                                            <div class="sub-menu">
+                                                <div class="row row-cols-xxl-6 row-cols-xl-6 row-cols-lg-5 row-cols-md-4 row-cols-2 g-3">
+
+                                                    @{
+                                                        ((Benitton.Controllers.HomeController)this.ViewContext.Controller).getAllCategory(Convert.ToInt32(1));
+        foreach (Benitton.Models.Category AllCategory in Session["AllCategory"] as List<Benitton.Models.Category>)
+        {
+                                                <div class="col">
+                                                    <div class="card-hover-effect">
+                                                        <img src="~/@AllCategory.image_file" alt="FAUCETS" class="img-fluid">
+                                                        <div class="product-name">
+                                                            <a href="~/Catalogy/@AllCategory.CatName.Replace(" ", "-")" class="stretched-link">@AllCategory.CatName</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            }
+                                                    }
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                @*<li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                       aria-expanded="false">
+                                        PTMT
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <div class="container">
+                                            <div class="row row-cols-xxl-6 row-cols-xl-6 row-cols-lg-5 row-cols-md-4 row-cols-2 g-3">
+
+                                                @{
+                                                    ((Benitton.Controllers.HomeController)this.ViewContext.Controller).getAllCategory(Convert.ToInt32(5));
+                                            foreach (Benitton.Models.Category AllCategory in Session["AllCategory"] as List<Benitton.Models.Category>)
+                                            {
+                                                <div class="col">
+                                                    <div class="card-hover-effect">
+                                                         <img src="@AllCategory.image_file" alt="FAUCETS" class="img-fluid">
+                                                        <div class="product-name">
+                                                            <a href="#" class="stretched-link">@AllCategory.CatName</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            }
+                                                }
+
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>*@
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kitchen Sinks</a>
+                                    <div class="dropdown-menu">
+                                        <div class="container">
+                                            <div class="row row-cols-xxl-6 row-cols-xl-6 row-cols-lg-5 row-cols-md-4 row-cols-2 g-3">
+
+                                                @{
+                                                    ((Benitton.Controllers.HomeController)this.ViewContext.Controller).getAllCategory(Convert.ToInt32(2));
+foreach (Benitton.Models.Category AllCategory in Session["AllCategory"] as List<Benitton.Models.Category>)
+{
+                                            <div class="col">
+                                                <div class="card-hover-effect">
+                                                    <img src="~/@AllCategory.image_file" alt="FAUCETS" class="img-fluid">
+                                                    <div class="product-name">
+                                                        <a href="~/Catalogy/@AllCategory.CatName.Replace(" ", "-")" class="stretched-link">@AllCategory.CatName</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        }
+                                                }
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="~/assets/pdf/Warranty_Details_Benetton.pdf" target="_blank">Our Quality</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="~/E-Catalogue">Downloads</a>
+                                </li>
+                            </ul>
+                            <div class="cta-btn">
+                                <a href="~/contact-us" class="btn btn-sm btn-danger">Contact Us</a>
+                                <a href="~/Login" class="btn btn-sm btn-outline-danger border-2">User Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+   
+
+
+    <div>
+        @RenderBody()
+        
+
+        <!-- footer-start -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row row-cols-xxl-4 row-cols-xl-4 row-cols-lg-4 row-cols-md-2 row-cols-1 g-3">
+                    <div class="col">
+                        <div class="footer-about">
+                            <img src="assets/img/footer-logo.svg" alt="footer-logo" class="img-fluid">
+                            <p>
+                                We have been manufacturing faucet accessories since 2010. The Benitton brand was established in 2021 with the mission to create a quality product that is honestly made and sincerely sold.
+                            </p>
+                        </div>
+                        <div class="social-links">
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/Benittonbathware/" target="_blank"><i class="bx bxl-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/benitton_bathware" target="_blank"><i class="bx bxl-instagram-alt"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/benitton-bathware" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://x.com/Benitton567" target="_blank"><i class="bx bxl-twitter"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h5>category</h5>
+                        <ul class="footer-links">
+                            @*<li>
+                                <a href="#">- PTMT</a>
+                            </li>*@
+                            <li>
+                                <a href="~/our-product/1">- Faucets</a>
+                            </li>
+                            
+                            <li>
+                                <a href="~/our-product/3">- sanitaryware</a>
+                            </li>
+                            <li>
+                                <a href="~/our-product/2">- kitchen Sinks</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h5>Other Links</h5>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="~/Home">- Home</a>
+                            </li>
+                            <li>
+                                <a href="~/about-us">- About us</a>
+                            </li>
+                            <li>
+                                <a href="~/contact-us">- Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="~/our-product/0">- Our Product</a>
+                            </li>
+                            <li>
+                                <a href="~/E-Catalogue">- Download</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h5>Our Contacts</h5>
+                        <ul class="our-plants">
+                            <li>
+                                <i class="bx bx-current-location"></i>
+                                <div>
+                                    <h6>Corp Office</h6>
+                                    <p>Pune, Maharashtra-412308</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="bx bxs-envelope"></i>
+                                <div>
+                                    <h6>Email</h6>
+                                    <a href="mailto:support@benittonbathware.com">support@benittonbathware.com</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="bx bxs-phone-call"></i>
+                                <div>
+                                    <h6>number</h6>
+                                    <a href="tel:1800 309 0780">1800 309 0780</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <p class="text-center mb-0">© Copyright 2024 Benitton Bathware Private Limited | All Rights Reserved.</p>
+            </div>
+        </footer>
+        <!-- footer-end -->
+    </div>
+
+    <!-- js -->
+    <script src="~/assets/js/index.js"></script>
+      <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                autoplay: true, // Enable autoplay
+                autoplayTimeout: 2000, // Autoplay interval in milliseconds
+                autoplayHoverPause: true, // Pause autoplay when hovering over carousel
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()</script>
+
+    <script>
+
+        $(document).ready(function () {
+            // Prevent copy-paste
+            $('#meter_number').on('paste', function (e) {
+                e.preventDefault();
+                //alert('Copying and pasting is not allowed.');
+            });
+        });
+
+
+
+        $(document).ready(function () {
+
+            // Listen for slide event
+            $('#carouselExampleAutoplaying').on('slide.bs.carousel', function () {
+                $("iframe").each(function () {
+                    var srcid = $(this).attr('id');
+                    //alert(srcid);
+                    if (srcid == "VideoIdIframe") {
+                        var src = $(this).attr('src');
+                        $(this).attr('src', src);
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+    <script type="text/javascript">
+        function validateNumber(evt) {
+            var theEvent = evt || window.event;
+            if (theEvent.type === 'paste') {
+                key = event.clipboardData.getData('text/plain');
+            } else {
+                // Handle key press
+                var key = theEvent.keyCode || theEvent.which;
+                key = String.fromCharCode(key);
+            }
+            var regex = /[0-9]|\./;
+            if (!regex.test(key)) {
+                theEvent.returnValue = false;
+                if (theEvent.preventDefault) theEvent.preventDefault();
+            }
+        }
+        function validateName(event) {
+            const key = event.key;
+            if (/[^a-zA-Z ]/.test(key)) {
+                return false;
+            }
+            // Allow alphabetic characters (a-z, A-Z), spaces, and certain punctuation marks (hyphen, apostrophe)
+            if (
+                (key >= 'a' && key <= 'z') ||              // lowercase letters
+                (key >= 'A' && key <= 'Z') ||              // uppercase letters
+                key === ' ' ||                             // space
+                //key === '-' ||                             // hyphen
+                //key === '\'' ||                            // apostrophe
+                event.keyCode === 8 ||                     // allow backspace (keyCode 8)
+                event.keyCode === 9 ||                     // allow tab (keyCode 9)
+                event.keyCode === 37 ||                    // allow left arrow (keyCode 37)
+                event.keyCode === 39                       // allow right arrow (keyCode 39)
+            ) {
+                return true; // Allow the key to be entered
+            } else {
+                return false; // Block the key
+            }
+        }
+
+        function validateOrganization(event) {
+            const key = event.key;
+            if (/[^a-zA-Z.0-9 ]/.test(key)) {
+                return false;
+            }
+
+            // Allow alphabetic characters (a-z, A-Z), digits (0-9), spaces, and certain punctuation marks (hyphen, comma, period, apostrophe)
+            if (
+                (key >= 'a' && key <= 'z') ||              // lowercase letters
+                (key >= 'A' && key <= 'Z') ||              // uppercase letters
+                (key >= '0' && key <= '9') ||              // digits
+                key === ' ' ||                             // space
+                key === '-' ||                             // hyphen
+                key === ',' ||                             // comma
+                key === '.' ||                             // period
+                //key === '\'' ||                            // apostrophe
+                event.keyCode === 8 ||                     // allow backspace (keyCode 8)
+                event.keyCode === 9 ||                     // allow tab (keyCode 9)
+                event.keyCode === 37 ||                    // allow left arrow (keyCode 37)
+                event.keyCode === 39                       // allow right arrow (keyCode 39)
+            ) {
+                return true; // Allow the key to be entered
+            } else {
+                return false; // Block the key
+            }
+        }
+
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+
+        function preventCountryCodeRemoval(event) {
+            //alert(event);
+            var phoneNumberInput = $("#phone").val();
+            //var caretPosition = phoneNumberInput.selectionStart;
+            var countryCode = $("#countryCode").val();
+            var countryCodeLength = countryCode.length; // Adjust this value based on your country code length
+            if (event.keyCode === 8 && phoneNumberInput.length <= countryCodeLength) {
+                event.preventDefault();
+            }
+        }
+
+        function validateEmail(event) {
+            const key = event.key;
+            if (key == "%" || key == "#" || key == "~" || key == "+" || key == "(" || key == ")" || key == "!" || key == "*" || key == "^" || key == "$" || key == "&" || key == "{" || key == "}" || key == ":" || key == ";" || key == '`' || key == "'" || key == '"' || key == '|' || key == '/' || key == "]" || key == "[" || key == "?" || key == "," || key == "<" || key == ">") {
+                return false;
+            }
+        }
+        function validatePhone(event) {
+            const key = event.key;
+            if (/[^0-9 ]/.test(key)) {
+                return false;
+            }
+        }
+
+        function getLengthAfterDot(email) {
+            const parts = email.split('.');
+            // Get the last part (substring after the last dot)
+            const lastPart = parts[parts.length - 1];
+            return lastPart.length;
+        }
+
+        function validateInputMail(input) {
+            const emailInput = $("#email").val();
+            const lengthAfterDot = getLengthAfterDot(emailInput);
+            if (emailInput.includes(".") == false) {
+                input.setCustomValidity('Invalid.');
+            } else if (lengthAfterDot < 2) {
+                input.setCustomValidity('Invalid.');
+            }
+            else {
+                input.setCustomValidity('');
+
+            }
+        }
+
+        function validateInputMailAll(input) {
+            const emailInput = $("#emailAll").val();
+            const lengthAfterDot = getLengthAfterDot(emailInput);
+            if (emailInput.includes(".") == false) {
+                input.setCustomValidity('Invalid.');
+            } else if (lengthAfterDot < 2) {
+                input.setCustomValidity('Invalid.');
+            }
+            else {
+                input.setCustomValidity('');
+
+            }
+        }
+
+        function checkWhitespace(str) {
+            var spaceCount = 0;
+
+            for (var i = 0; i < str.length; i++) {
+                if (str[i] === ' ') {
+                    spaceCount++;
+                }
+            }
+            return spaceCount;
+        }
+
+
+        function validateInput(input) {
+            var countryCode = $("#countryCode").val();
+            var inputData = input.value;
+            if (/[^0-9 ]/.test(inputData)) {
+                document.querySelector('.MobileVal').style.display = 'block';
+                return false;
+            }
+            if (countryCode == "+91 ") {
+                input.maxLength = 10 + checkWhitespace(inputData);
+                if (inputData.length < input.maxLength) {
+                    input.setCustomValidity('Invalid mobile number.');
+                    document.querySelector('.MobileVal').style.display = 'block';
+                    return false;
+                } else {
+                    input.value = input.value.slice(0, input.maxLength);
+                    input.setCustomValidity('');
+                    document.querySelector('.MobileVal').style.display = 'none';
+                    //input.preventDefault();
+                    return false;
+                }
+
+            } else {
+                input.maxLength = 15;
+                if (inputData.length < 7) {
+                    input.setCustomValidity('Invalid mobile number.');
+                    document.querySelector('.MobileVal').style.display = 'block';
+                    return false;
+                } else if (inputData.length > 7 && inputData.length < 16) {
+                    input.setCustomValidity('');
+                    document.querySelector('.MobileVal').style.display = 'none';
+                    return false;
+                } else {
+                    input.value = inputData.slice(0, input.maxLength);
+                    input.setCustomValidity('');
+                    document.querySelector('.MobileVal').style.display = 'none';
+                    return false;
+                }
+            }
+
+        }
+
+
+        function validateInputVall(input) {
+            var countryCode = $("#countryCodeFooter").val();
+            // var inputData = input.value.replace(/\s/g, "");
+            var inputData = input.value;
+            if (/[^0-9 ]/.test(inputData)) {
+                document.querySelector('.MobileValAll').style.display = 'block';
+                return false;
+            }
+
+            if (countryCode == "+91 ") {
+                input.maxLength = 10 + checkWhitespace(inputData);
+                if (inputData.length < input.maxLength) {
+                    input.setCustomValidity('Invalid mobile number.');
+                    document.querySelector('.MobileValAll').style.display = 'block';
+                    return false;
+                } else {
+                    input.value = input.value.slice(0, input.maxLength);
+                    input.setCustomValidity('');
+                    document.querySelector('.MobileValAll').style.display = 'none';
+                    //input.preventDefault();
+                    return false;
+                }
+
+            } else {
+                input.maxLength = 15;
+                if (inputData.length < 7) {
+                    input.setCustomValidity('Invalid mobile number.');
+                    document.querySelector('.MobileValAll').style.display = 'block';
+                    return false;
+                } else if (inputData.length > 7 && inputData.length < 16) {
+                    input.setCustomValidity('');
+                    document.querySelector('.MobileValAll').style.display = 'none';
+                    return false;
+                } else {
+                    input.value = inputData.slice(0, input.maxLength);
+                    input.setCustomValidity('');
+                    document.querySelector('.MobileValAll').style.display = 'none';
+                    return false;
+                }
+            }
+
+
+        }
+
+
+        function validateInput111Vall(input) {
+            var countryCode = $("#countryCodeFooter").val();
+            //var phoneCode = $("#phoneFooter").val();
+
+            CountLenPhone = countryCode.length + 7;
+
+
+            if (input.value.length > input.maxLength) {
+                input.value = input.value.slice(0, input.maxLength);
+                document.querySelector('.MobileValAll').style.display = 'block';
+            }
+            if (input.value.length < CountLenPhone) {
+                input.setCustomValidity('Invalid mobile number.');
+                document.querySelector('.MobileValAll').style.display = 'block';
+            } else {
+                input.setCustomValidity('');
+                document.querySelector('.MobileValAll').style.display = 'none';
+            }
+        }
+
+        function onCaptchaVerified(response) {
+            if (response) {
+                // reCAPTCHA is verified, do something with the response
+                //console.log('reCAPTCHA response:', response);
+                // Hide the error message if reCAPTCHA is verified
+                document.querySelector('.googleCaptchaVal').style.display = 'none';
+            } else {
+                // Show error message if reCAPTCHA is not verified
+                document.querySelector('.googleCaptchaVal').style.display = 'block';
+            }
+        }
+
+
+        $(document).ready(function () {
+
+            debugger;
+
+            
+            var FormId = Request.UrlReferrer;
+
+            $('#image_file').change(function () {
+
+                $(this).each(function () {
+                    var files = $(this)[0].files;
+                    // alert(files.length);
+                    for (var i = 0; i < files.length; i++) {
+                        var file = files[i];
+                        var fileName = file.name;
+                        var fileExtension = fileName.split('.').pop(); // Get the extension from the filename
+                        if ($.inArray(fileExtension, ['jpg', 'jpeg', 'png', 'gif', 'pdf', 'mp4', 'avi', 'mov', 'mkv']) !== -1) {
+                            document.querySelector('.imageValidate').style.display = 'none';
+                        } else {
+                            $('#image_file').val('');
+                            document.getElementById('image_file').setCustomValidity('');
+                            $('#uploadFile').val('');
+                            document.querySelector('.imageValidate').style.display = 'block';
+                            return false;
+                        }
+
+                        //if (!validator.element($(this))) {
+                        //    break;
+                        //}
+                    }
+                });
+            });
+
+            $('#iti-1__country-listbox li').on('click', function () {
+                var dialCode = $(this).data('dial-code');
+                //alert(dialCode+"+");
+                //var countryCode = $(this).data('country-code');
+                //var countryName = $(this).find('.iti__country-name').text();
+                // Set the updated mobile field value
+                // $('#phoneFooter').val("+"+dialCode+" ");
+                //alert(dialCode);
+                var input = document.querySelector("#phoneFooter");
+                input.placeholder = '';
+                $('#phoneFooter').val("");
+                $('#countryCodeFooter').val("+" + dialCode + " ");
+
+
+                setTimeout(function () {
+                    $('#phoneFooter').attr('placeholder', '');
+                }, 0.1);
+            });
+
+            $('#iti-0__country-listbox li').on('click', function () {
+                var dialCode = $(this).data('dial-code');
+
+                $('#phone').val("");
+                $('#countryCode').val("+" + dialCode + " ");
+
+                setTimeout(function () {
+                    $('#phone').attr('placeholder', '');
+                }, 0.1);
+
+            });
+
+            $("#form_validationSearch").on("submit", function (event) {
+                const forms = document.querySelectorAll('#form_validationSearch');
+                Array.from(forms).forEach(form => {
+                    if (!form.checkValidity()) {
+                        submitform = false;
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated')
+                })
+
+            });
+
+            $("#form_Catalogyglobal").on("submit", function (event) {
+
+                var SearchData = $("#SearchName").val()
+                window.location.href = "/Search/" + SearchData;
+
+                return false;
+            });
+
+            $("#Form_Searchglobal").on("submit", function (event) {
+
+                var SearchData = $("#SearchName_Search").val()
+                window.location.href = "/Search/" + SearchData;
+
+                return false;
+            });
+
+            $("#Form_Categoryproduct").on("submit", function (event) {
+
+                var SearchData = $("#searchbar_Categoryproduct").val()
+                window.location.href = "/Search/" + SearchData;
+
+                return false;
+            });
+
+            $("#Form_ProductDetails").on("submit", function (event) {
+
+                var SearchData = $("#searchbar_ProductDetails").val()
+                window.location.href = "/Search/" + SearchData;
+
+                return false;
+            });
+
+            $("#form_AddProductEnq").on("submit", function (event) {
+
+                debugger;
+                $("#ErrorMagForm").text("");
+                var submitform = true;
+                const forms = document.querySelectorAll('#form_AddProductEnq');
+                Array.from(forms).forEach(form => {
+                    if (!form.checkValidity()) {
+                        submitform = false;
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated')
+                })
+
+
+                var formData = new FormData(this);
+
+                formData.set('contact_name', $("#contact_name").val());
+                formData.set('mobile', $("#mobile").val());
+                formData.set('email', $("#email").val());
+                formData.set('message_detail', $("#message_detail").val());
+                formData.set('state', $("#state").val());
+                formData.set('product_title', $("#product_title").val());
+                formData.set('product_url', $("#product_url").val());
+
+
+                if (submitform == false) {
+                    return false;
+                }
+
+                var url1 = baseurl + "AddProductEnq";
+                $("#myLoadingElement").show();
+                $.ajax({
+                    url: url1,
+                    type: "POST",
+                    data: formData,
+                     //data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        // alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            //alertG("Contact Enquiry send successfully");
+                            $("#ErrorMagForm").text("Thanks for contacting us!");
+                            $("#ErrorMagForm").css('color', '#000');
+                            $("#form_AddProductEnq")[0].reset();
+                            grecaptcha.reset();
+
+                            Array.from(forms).forEach(form => {
+                                form.classList.remove('was-validated')
+                            })
+
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            $("#ErrorMagForm").text(response.message);
+                            $("#ErrorMagForm").css('color', '#000');
+                            // alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            //alertR(response.message);
+                            $("#ErrorMagForm").text(response.message);
+                            $("#ErrorMagForm").css('color', '#000');
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        $("#ErrorMagForm").text("Please try after some time!" + err);
+                        $("#ErrorMagForm").css('color', '#000');
+                        //alertR("Something went wrong");
+                    }
+                });
+
+
+                return false;
+            });
+
+            $("#form_AddContactFormSe").on("submit", function (event) {
+
+                var submitform = true;
+                $("#ErrorMagFormFoot").text("");
+                const forms = document.querySelectorAll('#form_AddContactFormSe');
+                Array.from(forms).forEach(form => {
+                    if (!form.checkValidity()) {
+                        submitform = false;
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated')
+                })
+                var currentForm = $(this);
+
+
+                var formData = new FormData(this);
+
+                formData.set('mobile', $("#MobileNumberAll").val());
+                formData.set('email', $("#EmailAll").val());
+                formData.set('message_detail', $("#MessageAll").val());
+                formData.set('contact_name', $("#fullNameAll").val());
+
+                var file = document.getElementById('UploadImageAll').files[0];
+                formData.append("image_file", file);
+                //formData.set('mobile', $("#MobileNumber").val());
+
+                var url1 = "/Home/AddContact";
+                $("#myLoadingElement").show();
+
+                $.ajax({
+                    url: url1,
+                    type: "POST",
+                    data: formData,
+                    // data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+
+                        debugger;
+
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            //alertG("Contact Enquiry send successfully");
+                            $("#ErrorMagFormFoot").text("Thanks for contacting us!");
+                            $("#ErrorMagFormFoot").css('color', '#000');
+                            $("#form_AddContactFormSe")[0].reset();
+
+                            //$("#form_AddContactFormSe").hide();
+                            //Array.from(forms).forEach(form => {
+                            //    form.classList.remove('was-validated')
+                            //})
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            $("#ErrorMagFormFoot").text(response.message);
+                            $("#ErrorMagFormFoot").css('color', '#000');
+                            // alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            //alertR(response.message);
+                            $("#ErrorMagFormFoot").text(response.message);
+                            $("#ErrorMagFormFoot").css('color', '#000');
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                       // console.log(err);
+                        $("#ErrorMagFormFoot").text("Please try after some time!");
+                        $("#ErrorMagFormFoot").css('color', '#000');
+                        //alertR("Something went wrong");
+                    }
+                });
+
+
+                return false;
+            });
+
+
+
+            $("#form_AddContactEnq").on("submit", function (event) {
+
+                debugger;
+                $("#ErrorMagFormEnq").text("");
+                var submitform = true;
+                const forms = document.querySelectorAll('#form_AddContactEnq');
+                // var submitform = true;
+                Array.from(forms).forEach(form => {
+                    if (!form.checkValidity()) {
+                        submitform = false;
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated')
+                })
+
+
+                var formData = new FormData(this);
+
+                formData.set('mobile', $("#MobileNumber").val());
+                formData.set('email', $("#Email").val());
+                formData.set('message_detail', $("#Message").val());
+                formData.set('contact_name', $("#fullName").val());
+                formData.set('contact_name', $("#fullName").val());
+
+                var file = document.getElementById('UploadImage').files[0];
+                formData.append("image_file", file);
+                //formData.set('mobile', $("#MobileNumber").val());
+
+                var url1 = "/Home/AddContact";
+                $("#myLoadingElement").show();
+
+                $.ajax({
+                    url: url1,
+                    type: "POST",
+                    data: formData,
+                    // data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        // alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            //alertG("Contact Enquiry send successfully");
+                            $("#ErrorMagFormEnq").text("Thanks for contacting us!");
+                            $("#ErrorMagFormEnq").css('color', '#000');
+                            $("#form_AddContactEnq")[0].reset();
+                            grecaptcha.reset();
+
+                            Array.from(forms).forEach(form => {
+                                form.classList.remove('was-validated')
+                            })
+
+                            window.setTimeout(function () {
+                                // do whatever you want to do
+                                //window.location.href = "";
+
+                            }, 1000);
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            $("#ErrorMagFormEnq").text(response.message);
+                            $("#ErrorMagFormEnq").css('color', '#000');
+                            // alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            //alertR(response.message);
+                            $("#ErrorMagFormEnq").text(response.message);
+                            $("#ErrorMagFormEnq").css('color', '#000');
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        $("#ErrorMagFormEnq").text("Please try after some time!");
+                        $("#ErrorMagFormEnq").css('color', '#000');
+                        //alertR("Something went wrong");
+                    }
+                });
+
+
+                return false;
+            });
+
+            $("#form_AddCareerEnq").on("submit", function (event) {
+                $("#ErrorMagForm").text("");
+                var submitform = true;
+                const forms = document.querySelectorAll('#form_AddCareerEnq');
+                //var submitform = true;
+                Array.from(forms).forEach(form => {
+                    if (!form.checkValidity()) {
+                        submitform = false;
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated')
+                })
+
+                var countryCode = $("#countryCode").val();
+                var phoneCode = $("#phone").val();
+                var countryCodeLength = countryCode.length; // Adjust this value based on your country code length
+                if (phoneCode.length <= 6) {
+                    document.querySelector('.MobileVal').style.display = 'block';
+                    //$("#ErrorMagForm").text("Invalid mobile number!");
+                    //$("#ErrorMagForm").css('color', '#000');
+                    submitform = false;
+                    event.preventDefault();
+                }
+                else if (countryCodeLength <= 1) {
+                    $("#ErrorMagForm").text("Please select country");
+                    $("#ErrorMagForm").css('color', '#000');
+                    submitform = false;
+                }
+
+                var enquiry_for = $("#enquiry_for").val();
+                var other_specify = $("#other_specify").val();
+                var response = grecaptcha.getResponse();
+                if (response.length == 0) {
+                    //submitform = false;
+                    document.querySelector('.googleCaptchaVal').style.display = 'block';
+                    submitform = false;
+                } else {
+                    document.querySelector('.googleCaptchaVal').style.display = 'none';
+                }
+
+                if (submitform == false) {
+                    return false;
+                }
+                var url1 = baseurl + "AddCareer";
+                $("#myLoadingElement").show();
+                var formData = new FormData(this);
+                //formData.set('mobile', phoneCode.replace(countryCode, "+" + countryCode + " - "));
+                //formData.set('mobile', phoneCode.replace(countryCode, countryCode + " - "));
+                if (enquiry_for == "Others") {
+                    formData.set('enquiry_for', enquiry_for + " - " + other_specify);
+                }
+                formData.set('mobile', countryCode + " - " + phoneCode);
+                $.ajax({
+                    url: url1,
+                    type: "POST",
+                    data: formData,
+                    // data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        // alert(response);
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            // alertG("Career Enquiry send successfully");
+                            $("#ErrorMagForm").text("Thanks for contacting us!");
+                            $("#ErrorMagForm").css('color', '#000');
+                            $("#form_AddCareerEnq")[0].reset();
+                            Array.from(forms).forEach(form => {
+                                form.classList.remove('was-validated')
+                            })
+                            grecaptcha.reset();
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            $("#ErrorMagForm").text(response.message);
+                            $("#ErrorMagForm").css('color', '#000');
+                            // alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            $("#ErrorMagForm").text(response.message);
+                            $("#ErrorMagForm").css('color', '#000');
+                            //alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        $("#ErrorMagForm").text("Please try after some time!");
+                        $("#ErrorMagForm").css('color', '#000');
+                        //alertR("Something went wrong");
+                    }
+                });
+                return false;
+            });
+
+            $("#form_addaftersales").on("submit", function (event) {
+                $("#ErrorMagForm").text("");
+                var submitform = true;
+                const forms = document.querySelectorAll('#form_addaftersales');
+                Array.from(forms).forEach(form => {
+                    if (!form.checkValidity()) {
+                        submitform = false;
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated')
+                })
+                var response = grecaptcha.getResponse();
+                if (response.length == 0) {
+                    document.querySelector('.googleCaptchaVal').style.display = 'block';
+                    submitform = false;
+                } else {
+                    document.querySelector('.googleCaptchaVal').style.display = 'none';
+                }
+
+                var countryCode = $("#countryCode").val();
+                var phoneCode = $("#phone").val();
+                var countryCodeLength = countryCode.length; // Adjust this value based on your country code length
+                if (phoneCode.length <= 6) {
+                    document.querySelector('.MobileVal').style.display = 'block';
+                    //  $("#ErrorMagForm").text("Invalid mobile number!");
+                    //$("#ErrorMagForm").css('color', '#000');
+                    submitform = false;
+                    event.preventDefault();
+                }
+                else if (countryCodeLength <= 1) {
+                    $("#ErrorMagForm").text("Please select country");
+                    $("#ErrorMagForm").css('color', '#000');
+                    submitform = false;
+                }
+                if (submitform == false) {
+                    return false;
+                }
+                $("#myLoadingElement").show();
+
+                var formData = new FormData(this);
+                // Update the mobile number field value in the FormData object
+                //formData.set('mobile', phoneCode.replace(countryCode, countryCode + " - "));
+                formData.set('mobile', countryCode + " - " + phoneCode);
+                $.ajax({
+                    url: baseurl + "AddAfterSalesSupport",
+                    type: "POST",
+                    data: formData,
+                    // data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            $("#ErrorMagForm").text("Thanks for contacting us!");
+                            $("#ErrorMagForm").css('color', '#000');
+                            // alertG("Thanks for contacting us!");
+                            $("#form_addaftersales")[0].reset();
+                            grecaptcha.reset();
+                            Array.from(forms).forEach(form => {
+                                form.classList.remove('was-validated')
+                            })
+                            $('.DivAdd').hide();
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            $("#ErrorMagForm").text(response.message);
+                            $("#ErrorMagForm").css('color', '#000');
+                            //alertInfo(response.message);
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            $("#ErrorMagForm").text(response.message);
+                            $("#ErrorMagForm").css('color', '#000');
+                            //alertR(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        $("#ErrorMagForm").text("Please try after some time!");
+                        $("#ErrorMagForm").css('color', '#000');
+                        //alertR("Something went wrong");
+                    }
+                });
+
+                return false;
+            });
+
+            $("#form_SubcribeEnq").on("submit", function (event) {
+                const forms = document.querySelectorAll('#form_SubcribeEnq');
+                var submitform = true;
+                Array.from(forms).forEach(form => {
+                    if (!form.checkValidity()) {
+                        submitform = false;
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated')
+                })
+                if (submitform == false) {
+                    return false;
+                }
+                debugger;
+                $("#myLoadingElement").show();
+                $.ajax({
+                    url: baseurl + "Subscribe",
+                    type: "POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response && response.status == 1) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            $("#ErrorMagSubscribe").text(response.message);
+                            $("#form_SubcribeEnq")[0].reset();
+                            Array.from(forms).forEach(form => {
+                                form.classList.remove('was-validated')
+                            })
+                        }
+                        else if (response && response.status == 2) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            $("#form_SubcribeEnq")[0].reset();
+                            //alertInfo(response.message);
+                            $("#ErrorMagSubscribe").text(response.message);
+                            $("#ErrorMagSubscribe").css('color', '#fff');
+                        }
+                        else if (response && response.status == 0) {
+                            $("#myLoadingElement").css("display", "none");
+                            $("#myLoadingElement").hide();
+                            // alertR(response.message);
+                            $("#ErrorMagSubscribe").text(response.message);
+                        }
+                    },
+                    error: function (err) {
+                        $("#myLoadingElement").css("display", "none");
+                        $("#myLoadingElement").hide();
+                        console.log(err);
+                        $("#ErrorMagSubscribe").text("Please try after some time!");
+                        //alertR("Something went wrong22");
+                    }
+                });
+
+                return false;
+            });
+
+        });
+    </script>
+    
+</body>
+</html>

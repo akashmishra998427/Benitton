@@ -1,0 +1,58 @@
+﻿@model Benitton.Models.about_us
+@{
+    ViewBag.Title = "Add About-us";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<div class="main-content">
+    <div class="panel mb-g">
+        <div class="panel-heading">
+            <h3>
+                <div class="col-sm-12 row">
+                    <div class="col-sm-4"><a href="/Admin" id="" class="btn btn-sm btn-success"><i class="bi bi-add-square"></i>Cancel</a></div>
+                </div>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <form method="post" enctype="multipart/form-data"  id="form_AddAboutUs">
+                <input type="hidden" name="ID" id="" value="@Model.ID">
+
+                <div class="row">
+                    <div class="col-md-6 mb-15">
+                        <label for="exampleInputName" class="form-label">Display on Home Page</label>
+                        <div>
+                            <img alt="" src="~/@Model.about_image_home">
+                        </div>
+                       <br> <input type="file" name="image_file1" id="image_file1" class="form-control form-control-lg" accept="image/*"  />
+                    </div>
+                    <div class="col-md-6 mb-15" style="display:none;">
+                        <label for="exampleInputName" class="form-label">Display on About Image</label>
+                        <div>
+                            <img alt="" src="~/@Model.about_image">
+                        </div>
+                        <br><input type="file" name="image_file2" id="image_file2" class="form-control form-control-lg" accept="image/*"  />
+                    </div>
+                    <div class="col-md-6 mb-15">
+                        <label for="exampleInputName" class="form-label">Display on Home Description</label>
+
+                        
+                        <textarea name="sort_description_home" id="sort_description_home" value="sort_description_home" rows="6" class="form-control" required>@Model.sort_description_home</textarea>
+                    </div>
+                    <div class="col-md-6 mb-15">
+                        <label for="exampleInputName" class="form-label">Display on About Description</label>
+                        <textarea name="full_description" id="full_description" value="full_description" rows="6" class="form-control" required>@Model.full_description</textarea>
+
+                    </div>
+
+                    <div class="col-sm-12  btn-box">
+                        <button type="submit" name="save" class="btn btn-lg btn-primary">Update</button>
+                        <a href="" type="reset" class="btn btn-lg btn-secondary">Reset</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

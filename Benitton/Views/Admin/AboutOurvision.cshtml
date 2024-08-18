@@ -1,0 +1,74 @@
+﻿@model Benitton.Models.about_ourvision
+@{
+    ViewBag.Title = "AboutOurvision";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="main-content">
+    <div class="panel mb-g">
+        <div class="panel-heading">
+            <h3>
+                <div class="col-sm-12 row">
+                    <div class="col-sm-4"><a href="/Admin" id="" class="btn btn-sm btn-success"><i class="bi bi-add-square"></i>Cancel</a></div>
+                </div>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <form method="post" enctype="multipart/form-data" id="Add_AboutOurvision">
+                <input type="hidden" name="ID" id="" value="@Model.ID">
+
+                <div class="row mb-15">
+                    <div class="col-sm-4 mb-15">
+                        <label for="exampleInputName" class="form-label">Vision Title</label>
+                        <input type="text" class="form-control form-control-lg" value="@Model.title1" name="title1" id="title1">
+                    </div>
+
+                    <div class="col-sm-4 mb-15">
+                        <label for="exampleInputName" class="form-label">Vision Image</label>
+                        <input type="file" name="image_1" id="image_1" class="form-control form-control-lg" accept="image/*" />
+                    </div>
+                    <div class="col-sm-4 mb-15">
+                        <label for="exampleInputName" class="form-label">Vision Image</label>
+
+                        <img alt="" src="~/@Model.image_1">
+                    </div>
+                </div>
+                <div class="col-sm-12 mb-15">
+                    <label for="exampleInputName" class="form-label">Vision Description</label>
+                    <input type="text" name="sort_description1" value="@Model.sort_description1" class="form-control" required>
+                </div>
+
+                <div class="row mb-15">
+                    <div class="col-sm-4 mb-15">
+                        <label for="exampleInputName" class="form-label">Mission Title</label>
+                        <input type="text" class="form-control form-control-lg" value="@Model.title2" name="title2" id="title2">
+                    </div>
+
+                    <div class="col-sm-4 mb-15">
+                        <label for="exampleInputName" class="form-label">Mission Image</label>
+                        <input type="file" name="image_2" id="image_2" class="form-control form-control-lg" accept="image/*" />
+                    </div>
+                    <div class="col-sm-4 mb-15">
+                        <label for="exampleInputName" class="form-label">Mission Image</label>
+
+                        <img alt="" src="~/@Model.image_2">
+                    </div>
+                </div>
+                <div class="col-sm-12 mb-15">
+                    <label for="exampleInputName" class="form-label">Mission Description</label>
+                    <input type="text" name="sort_description2" value="@Model.sort_description2" class="form-control" required>
+                </div>
+
+                <div class="col-sm-12  btn-box">
+                    <button type="submit" name="save" class="btn btn-lg btn-primary">Update</button>
+                    <a href="" type="reset" class="btn btn-lg btn-secondary">Reset</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

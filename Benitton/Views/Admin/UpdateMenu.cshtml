@@ -1,0 +1,56 @@
+﻿@model Benitton.Models.ViewProducts
+@{
+    ViewBag.Title = "Update Menu";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- main-content -->
+<div class="main-content">
+    <div class="panel mb-g" runate="server" id="">
+        <div class="panel-heading">
+            <h3>
+                <div class="col-sm-12 row">
+                    <div class="col-sm-4"><a href="~/Admin/Menu/1/1" id="" class="btn btn-sm btn-success buttonHideShow"><i class="bi bi-add-square"></i>Hide</a></div>
+                    <div class="col-sm-4">
+                        Update Menu
+                    </div>
+                </div>
+
+            </h3>
+        </div>
+        <div class="panel-body">
+            
+            <form class="mb-4" id="form_UpdateMenu" method="post" enctype="multipart/form-data" action="">
+                @if (@ViewBag.Message != null)
+                {
+                    <div class="alert alert-danger">@ViewBag.Message</div>
+                }
+            <div class="row">
+                <input type="hidden" name="Pid" id="Pid" value="@Model.tbl_singleMenu.ID">
+                <div class="col-sm-4 mb-15">
+                    <label for="exampleInputName" class="form-label">Menu</label>
+                    <input type="text" name="title" class="form-control form-control-lg" id="title" placeholder="Menu Name" value="@Model.tbl_singleMenu.title" required>
+
+                </div>
+                <div class="col-sm-4 mb-15">
+                    <label for="exampleInputName" class="form-label">File size must be less than 500 KB *</label>
+                    <input type="file" name="image_file" id="image_file" class="form-control form-control-lg" accept="image/*" required />
+                </div>
+                <div class="col-md-3">
+
+
+                    <a href="~/@Model.tbl_singleMenu.image_file" target="_blank"> <img src="~/@Model.tbl_singleMenu.image_file" style="height:100px;width:100px;object-fit:contain;"></a>
+                </div>
+                <div class="col-sm-4  btn-box justify-content-end">
+                    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-lg btn-secondary">Reset</button>
+                </div>
+            </div>
+            </form>
+
+
+        </div>
+    </div>
+
+</div>
+<!-- main-content -->

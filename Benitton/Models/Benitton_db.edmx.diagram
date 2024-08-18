@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="968d0beb7b1c4af7bc272f20d02e5d20" Name="Diagram1" ZoomLevel="62">
+        <EntityTypeShape EntityType="Benitton_dbModel.about_certification" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.about_ourvalues" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.about_ourvision" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.about_us" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.contact_detail" Width="1.875" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.contact_us" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.sale_support" Width="2" PointX="6.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.tbl_admin" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.Tbl_blog" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.tbl_career" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.tbl_category" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.Tbl_Contact" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.Tbl_faq" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.tbl_product" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.Tbl_saleSupportBannes" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.Tbl_subCategory" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.tbl_subscribe" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.tbl_testimonial" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Benitton_dbModel.Tbl_banner" Width="1.5" PointX="3.375" PointY="7.75" />
+        <EntityTypeShape EntityType="Benitton_dbModel.product_enq" Width="1.5" PointX="7.375" PointY="12.75" />
+        <EntityTypeShape EntityType="Benitton_dbModel.tbl_Menu" Width="1.5" PointX="0.75" PointY="13.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
